@@ -18,6 +18,11 @@ a:hover{
     font-size: 30px;
 }
 
+
+.classs{
+    color: red;
+}
+
 .container{
     display: flex;
     flex-direction: column;
