@@ -162,7 +162,7 @@
       <label
         >Name<input
           id="name"
-          placeholder="Search by country name"
+          placeholder="Country or capital"
           autocomplete="off"
       /></label>
       <label
@@ -190,10 +190,25 @@
         ["pop", "Population", 1],
         ["area", "Area (km²)", 1],
       ];
+      const COUNTRY_URLS = [
+        "https://cdn.jsdelivr.net/npm/world-countries/countries.json",
+        "https://cdn.jsdelivr.net/gh/mledoze/countries@master/countries.json",
+        "https://raw.githubusercontent.com/mledoze/countries/master/countries.json",
+      ];
+      const POP_URLS = [
+        "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=400&mrnev=1",
+        "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=400&date=2022",
+      ];
       const $ = (id) => document.getElementById(id);
       let all = [],
         view = [],
-        sort = { key: "name", dir: 1 };
+        sort = { key: "name", dir: 1 },
+        popError = "";
+      const esc = (s) =>
+        String(s).replace(
+          /[&<>"]/g,
+          (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c],
+        );
 
       COLS.forEach(([k, label, num]) => {
         const th = document.createElement("th");
@@ -210,46 +225,112 @@
         $("head").appendChild(th);
       });
 
-      async function load() {
-        try {
-          const [cr, pr] = await Promise.all([
-            fetch(
-              "https://cdn.jsdelivr.net/npm/world-countries@5/countries.json",
-            ),
-            fetch(
-              "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=400&mrnev=1",
-            ),
-          ]);
-          if (!cr.ok) throw new Error("countries HTTP " + cr.status);
-          const countries = await cr.json();
-          const pop = {};
+      async function firstJson(urls) {
+        let last;
+        for (const u of urls) {
           try {
-            if (pr.ok)
-              (await pr.json())[1].forEach((x) => {
-                if (x.value) pop[x.countryiso3code] = x.value;
-              });
-          } catch (e) {}
-          all = countries.map((c) => ({
-            flag: (c.cca2 || "").toLowerCase(),
-            name: c.name.common,
-            official: c.name.official,
-            capital: (c.capital || [])[0] || "—",
-            region: c.region || "Other",
-            pop: pop[c.cca3] ?? null,
-            area: c.area ?? null,
-          }));
-          [...new Set(all.map((c) => c.region))]
-            .filter(Boolean)
-            .sort()
-            .forEach((r) => $("region").add(new Option(r, r)));
-          filter();
+            const r = await fetch(u);
+            if (!r.ok) throw new Error("HTTP " + r.status);
+            return await r.json();
+          } catch (e) {
+            last = e;
+          }
+        }
+        throw last || new Error("no source worked");
+      }
+
+      async function load() {
+        let countries;
+        try {
+          countries = await firstJson(COUNTRY_URLS);
         } catch (e) {
           $("count").textContent =
             "Could not load country data (" +
             e.message +
-            "). Check your connection and reload.";
+            "). Check your internet connection and reload the page.";
+          return;
+        }
+
+        const pick = (c, keys) => {
+          for (const k of keys)
+            if (typeof c[k] === "string" && c[k]) return c[k];
+          return "";
+        };
+        all = countries
+          .map((c) => {
+            const name =
+              typeof c.name === "string"
+                ? c.name
+                : (c.name && (c.name.common || c.name.official)) || "";
+            const a2 = pick(c, [
+              "cca2",
+              "alpha2",
+              "iso2",
+              "iso3166-1-alpha-2",
+              "alpha-2",
+            ]).toUpperCase();
+            const a3 = pick(c, [
+              "cca3",
+              "alpha3",
+              "iso3",
+              "iso3166-1-alpha-3",
+              "alpha-3",
+            ]).toUpperCase();
+            return {
+              a2,
+              a3,
+              name,
+              official: (c.name && c.name.official) || "",
+              capital:
+                (Array.isArray(c.capital) ? c.capital[0] : c.capital) || "—",
+              region: c.region || "Other",
+              pop: null,
+              area: typeof c.area === "number" ? c.area : null,
+            };
+          })
+          .filter((c) => c.name);
+        [...new Set(all.map((c) => c.region))]
+          .sort()
+          .forEach((r) => $("region").add(new Option(r, r)));
+        filter(); // table is usable right away
+
+        try {
+          // population arrives later and never blocks the table
+          const data = await firstJson(POP_URLS);
+          const by3 = {},
+            by2 = {};
+          (data[1] || []).forEach((x) => {
+            if (!x.value) return;
+            if (x.countryiso3code) by3[x.countryiso3code] = x.value;
+            if (x.country && x.country.id) by2[x.country.id] = x.value;
+          });
+          all.forEach((c) => {
+            c.pop = by3[c.a3] ?? by2[c.a2] ?? null;
+          });
+          draw();
+        } catch (e) {
+          popError = e.message;
+          draw();
         }
       }
+
+      function flagFail(img) {
+        const cc = img.dataset.cc,
+          t = +img.dataset.try;
+        const next = [
+          `https://flagsapi.com/${cc}/flat/32.png`,
+          `https://flagcdn.com/48x36/${cc.toLowerCase()}.png`,
+        ];
+        if (t < next.length) {
+          img.dataset.try = t + 1;
+          img.src = next[t];
+        } else {
+          const sp = document.createElement("span");
+          sp.textContent = cc;
+          img.replaceWith(sp);
+        }
+      }
+
       function filter() {
         const q = $("name").value.trim().toLowerCase(),
           r = $("region").value;
@@ -258,10 +339,12 @@
             (!r || c.region === r) &&
             (!q ||
               c.name.toLowerCase().includes(q) ||
-              c.official.toLowerCase().includes(q)),
+              c.official.toLowerCase().includes(q) ||
+              c.capital.toLowerCase().includes(q)),
         );
         draw();
       }
+
       function draw() {
         const { key, dir } = sort;
         view.sort((a, b) => {
@@ -287,23 +370,30 @@
               : "none",
           );
         });
-        $("count").textContent = `${view.length} of ${all.length} countries`;
+        $("count").textContent =
+          `${view.length} of ${all.length} countries` +
+          (popError
+            ? ` (population unavailable: ${popError}. Open this file in a normal browser tab with internet access.)`
+            : "");
         const f = (n) => (n == null ? "—" : Math.round(n).toLocaleString());
         $("rows").innerHTML = view.length
           ? view
               .map(
                 (c) => `<tr>
-    <td>${c.flag ? `<img loading="lazy" src="https://flagcdn.com/w40/${c.flag}.png" alt="Flag of ${c.name.replace(/"/g, "")}">` : ""}</td>
-    <td>${c.name}</td><td>${c.capital}</td><td>${c.region}</td><td class="n">${f(c.pop)}</td><td class="n">${f(c.area)}</td></tr>`,
+    <td>${c.a2 ? `<img loading="lazy" src="https://flagcdn.com/w40/${c.a2.toLowerCase()}.png" data-cc="${c.a2}" data-try="0" onerror="flagFail(this)" alt="Flag of ${esc(c.name)}">` : "—"}</td>
+    <td>${esc(c.name)}</td><td>${esc(c.capital)}</td><td>${esc(c.region)}</td>
+    <td class="n">${f(c.pop)}</td><td class="n">${f(c.area)}</td></tr>`,
               )
               .join("")
           : '<tr><td colspan="6" class="empty">No countries match. Try a shorter name or another region.</td></tr>';
       }
+
       $("f").onsubmit = (e) => {
         e.preventDefault();
         filter();
       };
-      $("region").onchange = filter;
+      $("name").addEventListener("input", filter);
+      $("region").addEventListener("change", filter);
       load();
     </script>
   </body>
