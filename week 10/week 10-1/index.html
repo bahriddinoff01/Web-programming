@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 10</title>
+    <title>Week 10-1</title>
 
     <style>
         :root {
@@ -61,6 +61,7 @@
 
         .card a {
             display: block;
+            height: 100%;
             padding: 34px 24px;
             color: var(--ink);
             text-decoration: none;
@@ -70,6 +71,14 @@
             border: 3px solid var(--ink);
             box-shadow: 6px 6px 0 var(--ink);
             transition: transform 0.12s, box-shadow 0.12s;
+        }
+
+        .card .type {
+            display: block;
+            margin-top: 10px;
+            font-family: "Trebuchet MS", Verdana, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
         }
 
         .card:nth-child(5n+1) a { background: var(--lilac); }
@@ -83,9 +92,28 @@
             box-shadow: 9px 9px 0 var(--ink);
         }
 
-        .card a:focus-visible {
+        .card a:focus-visible,
+        .back:focus-visible {
             outline: 4px solid var(--ink);
             outline-offset: 4px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 32px;
+            padding: 10px 18px;
+            color: var(--ink);
+            background: #fff;
+            border: 3px solid var(--ink);
+            box-shadow: 4px 4px 0 var(--ink);
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.12s, box-shadow 0.12s;
+        }
+
+        .back:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 var(--ink);
         }
 
         footer {
@@ -102,11 +130,13 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .card a {
+            .card a,
+            .back {
                 transition: none;
             }
 
-            .card a:hover {
+            .card a:hover,
+            .back:hover {
                 transform: none;
             }
         }
@@ -115,14 +145,26 @@
 <body>
     <div class="container">
         <header>
-            <h1>These are assignments for Week 10</h1>
+            <h1>These are assignments for Week 10-1</h1>
         </header>
 
         <main>
             <ul class="week-container">
-                <li class="card"><a href="../week-3/week 3-2/Exercise-7.html">Week 10-1</a></li>
-                <li class="card"><a href="">Week 10-2</a></li>
+                <li class="card">
+                    <a href="https://bahriddinoff01.github.io/webpro-w9/">
+                        GitHub Pages
+                        <span class="type">Live website</span>
+                    </a>
+                </li>
+                <li class="card">
+                    <a href="https://github.com/bahriddinoff01/webpro-w9/">
+                        GitHub Repository
+                        <span class="type">Source code on GitHub</span>
+                    </a>
+                </li>
             </ul>
+
+            <a class="back" href="../../main%20container/Week10.html">&larr; Back to Week 10</a>
         </main>
 
         <footer>Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering</footer>
