@@ -3,25 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 10-2</title>
+    <meta name="description" content="Portfolio of Abdulazizbek, a Computer Engineering student: projects, skills and contact links.">
+    <title>Abdulazizbek | Portfolio</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ffe066'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial Black,Arial' font-size='18' fill='%2314121f'%3EA%3C/text%3E%3C/svg%3E">
+
+    <script>
+        // Apply the saved theme before the page draws, so it doesn't flash.
+        try {
+            const saved = localStorage.getItem("theme");
+            if (saved === "dark" || saved === "light") {
+                document.documentElement.setAttribute("data-theme", saved);
+            }
+        } catch (e) {}
+    </script>
 
     <style>
+        /* ---------- COLOURS ---------- */
+
         :root {
-            --ink: #14121f;
+            --text: #14121f;
+            --line: #14121f;
             --bg: #f3f3fa;
-            --tint: #b5f0d0;
+            --dots: #c9c9de;
+            --surface: #ffffff;
+            --on-pastel: #14121f;
+            --yellow: #ffe066;
+            --lilac: #cdbdff;
+            --mint: #b5f0d0;
+            --pink: #ffb8cd;
+            --sky: #aed6ff;
         }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --text: #f3f3fa;
+                --line: #f3f3fa;
+                --bg: #14121f;
+                --dots: #2e2b45;
+                --surface: #211e33;
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --text: #f3f3fa;
+            --line: #f3f3fa;
+            --bg: #14121f;
+            --dots: #2e2b45;
+            --surface: #211e33;
+        }
+
+        /* ---------- BASE ---------- */
 
         * {
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
         body {
             margin: 0;
             font-family: "Trebuchet MS", Verdana, sans-serif;
-            color: var(--ink);
+            color: var(--text);
             background-color: var(--bg);
-            background-image: radial-gradient(#c9c9de 1.5px, transparent 1.5px);
+            background-image: radial-gradient(var(--dots) 1.5px, transparent 1.5px);
             background-size: 22px 22px;
             line-height: 1.6;
         }
@@ -32,92 +79,579 @@
             padding: 0 24px;
         }
 
-        header {
-            padding: 72px 0 48px;
-        }
-
-        h1 {
-            margin: 0;
+        h1, h2, h3 {
             font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-            font-weight: 900;
-            font-size: clamp(32px, 7vw, 60px);
-            line-height: 1.05;
+            line-height: 1.1;
         }
 
-        .panel {
-            padding: 28px 24px;
-            background: var(--tint);
-            border: 3px solid var(--ink);
-            box-shadow: 6px 6px 0 var(--ink);
+        a {
+            color: inherit;
+        }
+
+        :focus-visible {
+            outline: 4px solid var(--line);
+            outline-offset: 4px;
+        }
+
+        .skip {
+            position: absolute;
+            left: 16px;
+            top: -60px;
+            z-index: 20;
+            padding: 8px 14px;
+            background: var(--yellow);
+            color: var(--on-pastel);
+            border: 3px solid var(--on-pastel);
+            font-weight: bold;
+        }
+
+        .skip:focus {
+            top: 12px;
+        }
+
+        /* ---------- HEADER + NAV ---------- */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: var(--bg);
+            border-bottom: 3px solid var(--line);
+        }
+
+        .nav-bar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 14px 0;
+        }
+
+        .logo {
+            font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 18px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav a {
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover {
+            border-bottom-color: currentColor;
+        }
+
+        .theme-btn {
+            padding: 6px 14px;
+            background: var(--yellow);
+            color: var(--on-pastel);
+            border: 3px solid var(--line);
+            box-shadow: 3px 3px 0 var(--line);
+            font: inherit;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* ---------- HERO ---------- */
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 260px;
+            gap: 40px;
+            align-items: center;
+            padding: 64px 0 56px;
+        }
+
+        .hero h1 {
+            margin: 0 0 16px;
+            font-size: clamp(40px, 9vw, 80px);
+            overflow-wrap: anywhere;
+        }
+
+        .hero p {
+            margin: 0 0 24px;
+            max-width: 30em;
             font-size: 18px;
         }
 
-        .panel p {
-            margin: 0;
+        .avatar {
+            width: 100%;
+            max-width: 260px;
+            height: auto;
+            border: 3px solid var(--line);
+            box-shadow: 8px 8px 0 var(--line);
+            transform: rotate(2deg);
         }
 
-        .back {
+        .btn {
             display: inline-block;
-            margin-top: 32px;
-            padding: 10px 18px;
-            color: var(--ink);
-            background: #fff;
-            border: 3px solid var(--ink);
-            box-shadow: 4px 4px 0 var(--ink);
+            padding: 12px 22px;
+            color: var(--on-pastel);
+            background: var(--mint);
+            border: 3px solid var(--line);
+            box-shadow: 5px 5px 0 var(--line);
             font-weight: bold;
             text-decoration: none;
             transition: transform 0.12s, box-shadow 0.12s;
         }
 
-        .back:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0 var(--ink);
+        .btn:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 8px 8px 0 var(--line);
         }
 
-        .back:focus-visible {
-            outline: 4px solid var(--ink);
-            outline-offset: 4px;
+        /* ---------- SECTIONS ---------- */
+
+        section {
+            padding: 24px 0 48px;
         }
 
-        footer {
-            margin-top: 48px;
-            padding: 20px 0 32px;
-            border-top: 3px solid var(--ink);
+        section > h2 {
+            margin: 0 0 22px;
+            font-size: 30px;
+        }
+
+        .box {
+            padding: 24px;
+            background: var(--surface);
+            border: 3px solid var(--line);
+            box-shadow: 6px 6px 0 var(--line);
+        }
+
+        .box p {
+            margin: 0 0 12px;
+        }
+
+        .box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* skills */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .skills li {
+            padding: 8px 16px;
+            color: var(--on-pastel);
+            border: 3px solid var(--line);
+            box-shadow: 4px 4px 0 var(--line);
+            font-weight: bold;
+        }
+
+        .skills li:nth-child(5n+1) { background: var(--lilac); }
+        .skills li:nth-child(5n+2) { background: var(--mint); }
+        .skills li:nth-child(5n+3) { background: var(--pink); }
+        .skills li:nth-child(5n+4) { background: var(--sky); }
+        .skills li:nth-child(5n+5) { background: var(--yellow); }
+
+        /* ---------- PROJECTS + FILTER ---------- */
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 22px;
+        }
+
+        .filters button {
+            padding: 6px 16px;
+            background: var(--surface);
+            color: var(--text);
+            border: 3px solid var(--line);
+            font: inherit;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .filters button[aria-pressed="true"] {
+            background: var(--yellow);
+            color: var(--on-pastel);
+            box-shadow: 3px 3px 0 var(--line);
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .project {
+            display: flex;
+            flex-direction: column;
+            color: var(--on-pastel);
+            border: 3px solid var(--line);
+            box-shadow: 6px 6px 0 var(--line);
+        }
+
+        .project[hidden] {
+            display: none;
+        }
+
+        .project.lilac { background: var(--lilac); }
+        .project.mint { background: var(--mint); }
+        .project.pink { background: var(--pink); }
+        .project.sky { background: var(--sky); }
+        .project.yellow { background: var(--yellow); }
+
+        .project img {
+            display: block;
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            object-position: top;
+            background: #fff;
+            border-bottom: 3px solid var(--on-pastel);
+        }
+
+        .project-body {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .project .kind {
+            margin: 0 0 6px;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .project h3 {
+            margin: 0 0 8px;
+            font-size: 22px;
+        }
+
+        .project p {
+            margin: 0 0 16px;
+        }
+
+        .project a {
+            margin-top: auto;
+            font-weight: bold;
+        }
+
+        .count {
+            margin: 16px 0 0;
             font-size: 14px;
         }
 
+        /* contact */
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .contact-links .btn:nth-child(2) {
+            background: var(--sky);
+        }
+
+        .contact-links .btn:nth-child(3) {
+            background: var(--pink);
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        .site-footer {
+            margin-top: 24px;
+            padding: 20px 0 32px;
+            border-top: 3px solid var(--line);
+            font-size: 14px;
+        }
+
+        .site-footer .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+
         @media (max-width: 760px) {
-            header {
-                padding: 48px 0 32px;
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 40px 0;
+                gap: 32px;
+            }
+
+            .avatar {
+                max-width: 200px;
+            }
+
+            section > h2 {
+                font-size: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                scroll-padding-top: 0;
+            }
+
+            .site-header {
+                position: static;
+            }
+
+            .nav-bar {
+                justify-content: center;
+            }
+
+            nav ul {
+                justify-content: center;
             }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .back {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .btn {
                 transition: none;
             }
 
-            .back:hover {
+            .btn:hover {
                 transform: none;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Week 10-2</h1>
-        </header>
+    <a class="skip" href="#main">Skip to content</a>
 
-        <main>
-            <div class="panel">
-                <p>Assignments for this part will be added here.</p>
+    <header class="site-header">
+        <div class="container nav-bar">
+            <a class="logo" href="#top">Abdulazizbek</a>
+
+            <nav aria-label="Main">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="theme-btn" id="theme-btn" type="button" aria-pressed="false">Dark mode</button>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="container">
+
+            <!-- HERO -->
+            <div class="hero" id="top">
+                <div>
+                    <h1>Hi, I'm Abdulazizbek</h1>
+                    <p>
+                        I'm a Computer Engineering student who builds simple,
+                        accessible websites with HTML, CSS and JavaScript.
+                    </p>
+                    <a class="btn" href="#projects">See my projects</a>
+                </div>
+
+                <svg class="avatar" viewBox="0 0 260 260" role="img" aria-labelledby="avatar-title">
+                    <title id="avatar-title">Illustrated avatar with the initials AB</title>
+                    <rect width="260" height="260" fill="#cdbdff"/>
+                    <circle cx="130" cy="104" r="50" fill="#ffe066" stroke="#14121f" stroke-width="5"/>
+                    <path d="M45 260c6-62 42-92 85-92s79 30 85 92" fill="#b5f0d0" stroke="#14121f" stroke-width="5"/>
+                    <text x="130" y="120" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="40" fill="#14121f">AB</text>
+                </svg>
             </div>
 
-            <a class="back" href="../../main%20container/Week10.html">&larr; Back to Week 10</a>
-        </main>
+            <!-- ABOUT -->
+            <section id="about" aria-labelledby="about-title">
+                <h2 id="about-title">About me</h2>
+                <div class="box">
+                    <p>
+                        I study Computer Engineering (student ID 202537225).
+                        This semester I learned how to build web pages from
+                        scratch, check them with Lighthouse, and publish them
+                        with Git and GitHub Pages.
+                    </p>
+                    <p>
+                        I care about making sites that work for everyone: on
+                        phones, with a keyboard, and with a screen reader.
+                    </p>
+                </div>
+            </section>
 
-        <footer>Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering</footer>
-    </div>
+            <!-- SKILLS -->
+            <section id="skills" aria-labelledby="skills-title">
+                <h2 id="skills-title">Skills</h2>
+                <ul class="skills">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>Git &amp; GitHub</li>
+                    <li>Accessibility</li>
+                    <li>Responsive design</li>
+                </ul>
+            </section>
+
+            <!-- PROJECTS -->
+            <section id="projects" aria-labelledby="projects-title">
+                <h2 id="projects-title">Projects</h2>
+
+                <div class="filters" role="group" aria-label="Filter projects">
+                    <button type="button" data-filter="all" aria-pressed="true">All</button>
+                    <button type="button" data-filter="team" aria-pressed="false">Team</button>
+                    <button type="button" data-filter="web" aria-pressed="false">Web</button>
+                    <button type="button" data-filter="git" aria-pressed="false">Git</button>
+                </div>
+
+                <ul class="projects" id="project-list">
+                    <li class="project lilac" data-category="team">
+                        <div class="project-body">
+                            <p class="kind">Team</p>
+                            <h3>AI Travel Planner</h3>
+                            <p>A website that helps travellers plan trips with AI. Built with my team.</p>
+                            <a href="https://bahriddinoff01.github.io/ai-travel-planner/">Visit the site</a>
+                        </div>
+                    </li>
+
+                    <li class="project mint" data-category="team">
+                        <div class="project-body">
+                            <p class="kind">Team</p>
+                            <h3>Team 19 Proposal</h3>
+                            <p>Our team's project proposal, published as a web page.</p>
+                            <a href="https://bahriddinoff01.github.io/team-19-proposal/">Read the proposal</a>
+                        </div>
+                    </li>
+
+                    <li class="project pink" data-category="web">
+                        <img src="../../week%209/week%209-2/final-audit.png" width="906" height="910"
+                             alt="Lighthouse report showing an accessibility score of 100">
+                        <div class="project-body">
+                            <p class="kind">Web</p>
+                            <h3>Accessibility Audit</h3>
+                            <p>I tested our team site with Lighthouse and fixed its accessibility issues, raising the score from 87 to 100.</p>
+                            <a href="../../week%209/week%209-2/index.html">See the audit</a>
+                        </div>
+                    </li>
+
+                    <li class="project sky" data-category="web">
+                        <div class="project-body">
+                            <p class="kind">Web</p>
+                            <h3>Web Programming Assignments</h3>
+                            <p>All my weekly assignments, from first HTML pages to forms and validation.</p>
+                            <a href="../../main%20container/Main.html">Open the assignments</a>
+                        </div>
+                    </li>
+
+                    <li class="project yellow" data-category="git">
+                        <div class="project-body">
+                            <p class="kind">Git</p>
+                            <h3>Git Basics</h3>
+                            <p>Created a repository, made commits, used a branch and deployed with GitHub Pages.</p>
+                            <a href="https://github.com/bahriddinoff01/webpro-w9/">View the repository</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <p class="count" id="project-count" aria-live="polite">Showing all 5 projects.</p>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact" aria-labelledby="contact-title">
+                <h2 id="contact-title">Contact</h2>
+                <div class="box">
+                    <p>Want to see more of my work? Find me on GitHub.</p>
+                    <div class="contact-links">
+                        <a class="btn" href="https://github.com/bahriddinoff01">GitHub profile</a>
+                        <a class="btn" href="https://bahriddinoff01.github.io/Web-programming/main%20container/Main.html">Assignments site</a>
+                        <a class="btn" href="../../main%20container/Week10.html">Back to Week 10</a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering</p>
+            <p><a href="#top">Back to top &uarr;</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // ---- Dark mode toggle ----
+        const root = document.documentElement;
+        const themeBtn = document.getElementById("theme-btn");
+
+        function isDark() {
+            const set = root.getAttribute("data-theme");
+            if (set) return set === "dark";
+            return window.matchMedia("(prefers-color-scheme: dark)").matches;
+        }
+
+        function updateThemeButton() {
+            const dark = isDark();
+            themeBtn.textContent = dark ? "Light mode" : "Dark mode";
+            themeBtn.setAttribute("aria-pressed", String(dark));
+        }
+
+        themeBtn.addEventListener("click", function () {
+            const next = isDark() ? "light" : "dark";
+            root.setAttribute("data-theme", next);
+            try { localStorage.setItem("theme", next); } catch (e) {}
+            updateThemeButton();
+        });
+
+        updateThemeButton();
+
+        // ---- Project filter ----
+        const filterButtons = document.querySelectorAll("[data-filter]");
+        const projects = document.querySelectorAll(".project");
+        const count = document.getElementById("project-count");
+
+        filterButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                const filter = button.dataset.filter;
+                let shown = 0;
+
+                filterButtons.forEach(function (b) {
+                    b.setAttribute("aria-pressed", String(b === button));
+                });
+
+                projects.forEach(function (project) {
+                    const match = filter === "all" || project.dataset.category === filter;
+                    project.hidden = !match;
+                    if (match) shown++;
+                });
+
+                count.textContent = filter === "all"
+                    ? "Showing all " + shown + " projects."
+                    : "Showing " + shown + " " + button.textContent + " project" + (shown === 1 ? "" : "s") + ".";
+            });
+        });
+    </script>
 </body>
 </html>
