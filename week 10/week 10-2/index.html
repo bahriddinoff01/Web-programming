@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Abdulazizbek, a Computer Engineering student: projects, skills and contact links.">
+    <meta name="description" content="Portfolio of Abdulazizbek, a Computer Engineering student: about me, goals, education, skills and projects.">
     <title>Abdulazizbek | Portfolio</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ffe066'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial Black,Arial' font-size='18' fill='%2314121f'%3EA%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111111'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-weight='bold' font-size='16' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E">
 
     <script>
         // Apply the saved theme before the page draws, so it doesn't flash.
@@ -21,35 +21,32 @@
         /* ---------- COLOURS ---------- */
 
         :root {
-            --text: #14121f;
-            --line: #14121f;
-            --bg: #f3f3fa;
-            --dots: #c9c9de;
-            --surface: #ffffff;
-            --on-pastel: #14121f;
-            --yellow: #ffe066;
-            --lilac: #cdbdff;
-            --mint: #b5f0d0;
-            --pink: #ffb8cd;
-            --sky: #aed6ff;
+            --bg: #ffffff;
+            --text: #111111;
+            --muted: #555555;
+            --line: #e2e2e2;
+            --soft: #f6f6f6;
+            --accent: #1d4ed8;
         }
 
         @media (prefers-color-scheme: dark) {
             :root:not([data-theme="light"]) {
-                --text: #f3f3fa;
-                --line: #f3f3fa;
-                --bg: #14121f;
-                --dots: #2e2b45;
-                --surface: #211e33;
+                --bg: #111111;
+                --text: #eeeeee;
+                --muted: #a8a8a8;
+                --line: #2e2e2e;
+                --soft: #1b1b1b;
+                --accent: #8ab4ff;
             }
         }
 
         :root[data-theme="dark"] {
-            --text: #f3f3fa;
-            --line: #f3f3fa;
-            --bg: #14121f;
-            --dots: #2e2b45;
-            --surface: #211e33;
+            --bg: #111111;
+            --text: #eeeeee;
+            --muted: #a8a8a8;
+            --line: #2e2e2e;
+            --soft: #1b1b1b;
+            --accent: #8ab4ff;
         }
 
         /* ---------- BASE ---------- */
@@ -60,356 +57,476 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 90px;
+            scroll-padding-top: 72px;
         }
 
         body {
             margin: 0;
-            font-family: "Trebuchet MS", Verdana, sans-serif;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            font-size: 17px;
+            line-height: 1.65;
             color: var(--text);
-            background-color: var(--bg);
-            background-image: radial-gradient(var(--dots) 1.5px, transparent 1.5px);
-            background-size: 22px 22px;
-            line-height: 1.6;
+            background: var(--bg);
         }
 
-        .container {
-            max-width: 1000px;
+        .wrap {
+            max-width: 1440px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 clamp(20px, 4vw, 56px);
         }
 
         h1, h2, h3 {
-            font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.1;
+            line-height: 1.2;
+            font-weight: 700;
         }
 
         a {
-            color: inherit;
+            color: var(--accent);
         }
 
         :focus-visible {
-            outline: 4px solid var(--line);
-            outline-offset: 4px;
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
         }
 
         .skip {
             position: absolute;
-            left: 16px;
-            top: -60px;
-            z-index: 20;
-            padding: 8px 14px;
-            background: var(--yellow);
-            color: var(--on-pastel);
-            border: 3px solid var(--on-pastel);
-            font-weight: bold;
+            left: 12px;
+            top: -50px;
+            padding: 8px 12px;
+            background: var(--text);
+            color: var(--bg);
         }
 
         .skip:focus {
             top: 12px;
         }
 
-        /* ---------- HEADER + NAV ---------- */
+        /* ---------- HEADER ---------- */
 
         .site-header {
             position: sticky;
             top: 0;
             z-index: 10;
             background: var(--bg);
-            border-bottom: 3px solid var(--line);
+            border-bottom: 1px solid var(--line);
         }
 
-        .nav-bar {
+        .site-header .wrap {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            gap: 12px;
-            padding: 14px 0;
+            gap: 10px 20px;
+            padding-top: 14px;
+            padding-bottom: 14px;
         }
 
         .logo {
-            font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-            font-size: 20px;
+            color: var(--text);
+            font-weight: 700;
             text-decoration: none;
         }
 
         nav ul {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px 18px;
+            gap: 4px 18px;
             margin: 0;
             padding: 0;
             list-style: none;
         }
 
         nav a {
-            font-weight: bold;
+            color: var(--muted);
+            font-size: 15px;
             text-decoration: none;
-            border-bottom: 3px solid transparent;
         }
 
         nav a:hover {
-            border-bottom-color: currentColor;
+            color: var(--text);
         }
 
         .theme-btn {
-            padding: 6px 14px;
-            background: var(--yellow);
-            color: var(--on-pastel);
-            border: 3px solid var(--line);
-            box-shadow: 3px 3px 0 var(--line);
+            padding: 5px 12px;
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--line);
+            border-radius: 6px;
             font: inherit;
-            font-weight: bold;
+            font-size: 14px;
             cursor: pointer;
+        }
+
+        .theme-btn:hover {
+            border-color: var(--muted);
         }
 
         /* ---------- HERO ---------- */
 
         .hero {
             display: grid;
-            grid-template-columns: 1fr 260px;
-            gap: 40px;
+            grid-template-columns: 1fr minmax(280px, 420px);
+            gap: clamp(40px, 6vw, 96px);
             align-items: center;
-            padding: 64px 0 56px;
+            padding: 80px 0 64px;
+            border-top: 0;
         }
 
         .hero h1 {
-            margin: 0 0 16px;
-            font-size: clamp(40px, 9vw, 80px);
-            overflow-wrap: anywhere;
+            margin: 0 0 18px;
+            font-size: clamp(34px, 5.2vw, 64px);
         }
 
         .hero p {
-            margin: 0 0 24px;
-            max-width: 30em;
-            font-size: 18px;
+            margin: 0 0 26px;
+            max-width: 34em;
+            color: var(--muted);
+            font-size: 19px;
         }
 
-        .avatar {
+        .photo {
+            margin: 0;
+        }
+
+        .photo img,
+        .photo-placeholder {
+            display: block;
             width: 100%;
-            max-width: 260px;
             height: auto;
-            border: 3px solid var(--line);
-            box-shadow: 8px 8px 0 var(--line);
-            transform: rotate(2deg);
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 8px;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 22px;
-            color: var(--on-pastel);
-            background: var(--mint);
-            border: 3px solid var(--line);
-            box-shadow: 5px 5px 0 var(--line);
-            font-weight: bold;
-            text-decoration: none;
-            transition: transform 0.12s, box-shadow 0.12s;
+        .photo-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed var(--muted);
+            background: var(--soft);
+            color: var(--muted);
+            font-size: 14px;
         }
 
-        .btn:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 8px 8px 0 var(--line);
-        }
-
-        /* ---------- SECTIONS ---------- */
-
-        section {
-            padding: 24px 0 48px;
-        }
-
-        section > h2 {
-            margin: 0 0 22px;
-            font-size: 30px;
-        }
-
-        .box {
-            padding: 24px;
-            background: var(--surface);
-            border: 3px solid var(--line);
-            box-shadow: 6px 6px 0 var(--line);
-        }
-
-        .box p {
-            margin: 0 0 12px;
-        }
-
-        .box p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* skills */
-
-        .skills {
+        .links {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
             margin: 0;
             padding: 0;
             list-style: none;
         }
 
-        .skills li {
+        .btn {
+            display: inline-block;
             padding: 8px 16px;
-            color: var(--on-pastel);
-            border: 3px solid var(--line);
-            box-shadow: 4px 4px 0 var(--line);
-            font-weight: bold;
+            border: 1px solid var(--text);
+            border-radius: 6px;
+            color: var(--text);
+            font-size: 15px;
+            text-decoration: none;
         }
 
-        .skills li:nth-child(5n+1) { background: var(--lilac); }
-        .skills li:nth-child(5n+2) { background: var(--mint); }
-        .skills li:nth-child(5n+3) { background: var(--pink); }
-        .skills li:nth-child(5n+4) { background: var(--sky); }
-        .skills li:nth-child(5n+5) { background: var(--yellow); }
+        .btn.primary {
+            background: var(--text);
+            color: var(--bg);
+        }
 
-        /* ---------- PROJECTS + FILTER ---------- */
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        /* ---------- SECTIONS ---------- */
+
+        main > section {
+            padding: 40px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        section h2 {
+            margin: 0 0 18px;
+            font-size: 24px;
+        }
+
+        section h3 {
+            margin: 0 0 4px;
+            font-size: 17px;
+        }
+
+        section p {
+            margin: 0 0 14px;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        /* simple lists with a title + text */
+
+        .plain-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .plain-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .plain-list li:last-child {
+            border-bottom: 0;
+        }
+
+        .plain-list p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        /* facts */
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px 24px;
+            margin: 22px 0 0;
+        }
+
+        .facts dt {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .facts dd {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        blockquote {
+            margin: 0 0 18px;
+            padding-left: 16px;
+            border-left: 3px solid var(--accent);
+            font-size: 19px;
+        }
+
+        /* education timeline */
+
+        .timeline {
+            margin: 18px 0 0;
+            padding: 0;
+            list-style: none;
+            counter-reset: step;
+        }
+
+        .timeline li {
+            position: relative;
+            padding: 0 0 16px 40px;
+            counter-increment: step;
+        }
+
+        .timeline li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 1px;
+            width: 26px;
+            height: 26px;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 24px;
+            text-align: center;
+        }
+
+        .timeline p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        /* skills */
+
+        .skill-groups {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 10px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .tags li {
+            padding: 3px 10px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            font-size: 14px;
+        }
+
+        /* projects */
 
         .filters {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 22px;
+            gap: 8px;
+            margin-bottom: 18px;
         }
 
         .filters button {
-            padding: 6px 16px;
-            background: var(--surface);
+            padding: 4px 12px;
+            background: transparent;
             color: var(--text);
-            border: 3px solid var(--line);
+            border: 1px solid var(--line);
+            border-radius: 999px;
             font: inherit;
-            font-weight: bold;
+            font-size: 14px;
             cursor: pointer;
         }
 
         .filters button[aria-pressed="true"] {
-            background: var(--yellow);
-            color: var(--on-pastel);
-            box-shadow: 3px 3px 0 var(--line);
+            background: var(--text);
+            color: var(--bg);
+            border-color: var(--text);
         }
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+            gap: 20px;
             margin: 0;
             padding: 0;
             list-style: none;
         }
 
         .project {
-            display: flex;
-            flex-direction: column;
-            color: var(--on-pastel);
-            border: 3px solid var(--line);
-            box-shadow: 6px 6px 0 var(--line);
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
         }
 
         .project[hidden] {
             display: none;
         }
 
-        .project.lilac { background: var(--lilac); }
-        .project.mint { background: var(--mint); }
-        .project.pink { background: var(--pink); }
-        .project.sky { background: var(--sky); }
-        .project.yellow { background: var(--yellow); }
+        .project .kind {
+            margin: 0 0 2px;
+            color: var(--muted);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project p {
+            margin: 0 0 6px;
+        }
+
+        .project .tools {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .project figure {
+            margin: 10px 0 10px;
+        }
 
         .project img {
             display: block;
             width: 100%;
-            height: 160px;
+            height: 140px;
             object-fit: cover;
             object-position: top;
-            background: #fff;
-            border-bottom: 3px solid var(--on-pastel);
-        }
-
-        .project-body {
-            display: flex;
-            flex: 1;
-            flex-direction: column;
-            padding: 20px;
-        }
-
-        .project .kind {
-            margin: 0 0 6px;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .project h3 {
-            margin: 0 0 8px;
-            font-size: 22px;
-        }
-
-        .project p {
-            margin: 0 0 16px;
-        }
-
-        .project a {
-            margin-top: auto;
-            font-weight: bold;
+            border: 1px solid var(--line);
+            border-radius: 6px;
         }
 
         .count {
-            margin: 16px 0 0;
+            margin: 12px 0 0;
+            color: var(--muted);
             font-size: 14px;
-        }
-
-        /* contact */
-
-        .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        .contact-links .btn:nth-child(2) {
-            background: var(--sky);
-        }
-
-        .contact-links .btn:nth-child(3) {
-            background: var(--pink);
         }
 
         /* ---------- FOOTER ---------- */
 
         .site-footer {
-            margin-top: 24px;
-            padding: 20px 0 32px;
-            border-top: 3px solid var(--line);
+            padding: 24px 0 40px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
             font-size: 14px;
         }
 
-        .site-footer .container {
+        .site-footer .wrap {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 10px;
+            gap: 8px;
+        }
+
+        .site-footer p {
+            margin: 0;
+        }
+
+        /* ---------- WIDE SCREENS ---------- */
+
+        @media (min-width: 900px) {
+            /* Section title on the left, content on the right */
+            main > section:not(.hero) {
+                display: grid;
+                grid-template-columns: 260px 1fr;
+                column-gap: clamp(40px, 5vw, 80px);
+                padding: 56px 0;
+            }
+
+            main > section:not(.hero) > * {
+                grid-column: 2;
+            }
+
+            main > section:not(.hero) > h2 {
+                grid-column: 1;
+                grid-row: 1 / span 20;
+                align-self: start;
+            }
+
+            section p {
+                max-width: 80ch;
+            }
+
+            /* Lists become rows of cards */
+            .plain-list {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+            }
+
+            .plain-list li,
+            .plain-list li:last-child {
+                padding: 18px;
+                border: 1px solid var(--line);
+                border-radius: 8px;
+            }
+
+            .facts {
+                grid-template-columns: repeat(4, 1fr);
+                padding: 18px 20px;
+                background: var(--soft);
+                border-radius: 8px;
+            }
+
+            .timeline {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4px 32px;
+            }
         }
 
         /* ---------- RESPONSIVE ---------- */
 
-        @media (max-width: 760px) {
-            .hero {
-                grid-template-columns: 1fr;
-                padding: 40px 0;
-                gap: 32px;
-            }
-
-            .avatar {
-                max-width: 200px;
-            }
-
-            section > h2 {
-                font-size: 25px;
-            }
-        }
-
-        @media (max-width: 480px) {
+        @media (max-width: 640px) {
             html {
                 scroll-padding-top: 0;
             }
@@ -418,26 +535,25 @@
                 position: static;
             }
 
-            .nav-bar {
-                justify-content: center;
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                padding: 40px 0 32px;
             }
 
-            nav ul {
-                justify-content: center;
+            .photo {
+                max-width: 180px;
+            }
+
+            .skill-groups,
+            .facts {
+                grid-template-columns: 1fr;
             }
         }
 
         @media (prefers-reduced-motion: reduce) {
             html {
                 scroll-behavior: auto;
-            }
-
-            .btn {
-                transition: none;
-            }
-
-            .btn:hover {
-                transform: none;
             }
         }
     </style>
@@ -446,12 +562,14 @@
     <a class="skip" href="#main">Skip to content</a>
 
     <header class="site-header">
-        <div class="container nav-bar">
+        <div class="wrap">
             <a class="logo" href="#top">Abdulazizbek</a>
 
             <nav aria-label="Main">
                 <ul>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#goals">Goals</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -462,142 +580,260 @@
         </div>
     </header>
 
-    <main id="main">
-        <div class="container">
+    <main id="main" class="wrap">
 
-            <!-- HERO -->
-            <div class="hero" id="top">
-                <div>
-                    <h1>Hi, I'm Abdulazizbek</h1>
-                    <p>
-                        I'm a Computer Engineering student who builds simple,
-                        accessible websites with HTML, CSS and JavaScript.
-                    </p>
-                    <a class="btn" href="#projects">See my projects</a>
-                </div>
-
-                <svg class="avatar" viewBox="0 0 260 260" role="img" aria-labelledby="avatar-title">
-                    <title id="avatar-title">Illustrated avatar with the initials AB</title>
-                    <rect width="260" height="260" fill="#cdbdff"/>
-                    <circle cx="130" cy="104" r="50" fill="#ffe066" stroke="#14121f" stroke-width="5"/>
-                    <path d="M45 260c6-62 42-92 85-92s79 30 85 92" fill="#b5f0d0" stroke="#14121f" stroke-width="5"/>
-                    <text x="130" y="120" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="40" fill="#14121f">AB</text>
-                </svg>
+        <!-- ================= INTRO ================= -->
+        <section class="hero" id="top" aria-labelledby="intro-title">
+            <div>
+                <h1 id="intro-title">Hi, I'm Abdulazizbek.</h1>
+                <p>
+                    I'm a Computer Engineering student who enjoys building
+                    simple, accessible websites. This page shows my story,
+                    what I'm learning and the projects I've made this semester.
+                </p>
+                <ul class="links">
+                    <li><a class="btn primary" href="#projects">See my projects</a></li>
+                    <li><a class="btn" href="#about">About me</a></li>
+                </ul>
             </div>
 
-            <!-- ABOUT -->
-            <section id="about" aria-labelledby="about-title">
-                <h2 id="about-title">About me</h2>
-                <div class="box">
-                    <p>
-                        I study Computer Engineering (student ID 202537225).
-                        This semester I learned how to build web pages from
-                        scratch, check them with Lighthouse, and publish them
-                        with Git and GitHub Pages.
-                    </p>
-                    <p>
-                        I care about making sites that work for everyone: on
-                        phones, with a keyboard, and with a screen reader.
-                    </p>
-                </div>
-            </section>
+            <figure class="photo">
+                <img src="../../main%20container/self%20img.jpg" width="960" height="1280" alt="Abdulazizbek standing in the sea waves at night with his arms spread wide">
+            </figure>
+        </section>
 
-            <!-- SKILLS -->
-            <section id="skills" aria-labelledby="skills-title">
-                <h2 id="skills-title">Skills</h2>
-                <ul class="skills">
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>JavaScript</li>
-                    <li>Git &amp; GitHub</li>
-                    <li>Accessibility</li>
-                    <li>Responsive design</li>
+        <!-- ================= ABOUT ================= -->
+        <section id="about" aria-labelledby="about-title">
+            <h2 id="about-title">About me</h2>
+
+            <p>
+                My name is Abdulazizbek and I study Computer Engineering. I got
+                interested in computers because I wanted to understand how the
+                apps and websites I use every day actually work. Now I'm
+                learning to build them myself.
+            </p>
+            <p>
+                This semester in Web Programming I went from writing my first
+                HTML page to building forms with validation, testing sites with
+                Lighthouse and publishing my work with Git and GitHub Pages. I
+                also built an AI travel planner website with my team.
+            </p>
+            <p>
+                Outside of class I like learning new things, solving problems
+                and spending time with friends.
+            </p>
+
+            <h3>What I enjoy</h3>
+            <ul class="plain-list">
+                <li>
+                    <strong>Building websites</strong>
+                    <p>Turning ideas into pages people can use.</p>
+                </li>
+                <li>
+                    <strong>Solving problems</strong>
+                    <p>Finding out why something breaks, then fixing it.</p>
+                </li>
+                <li>
+                    <strong>Working in a team</strong>
+                    <p>Sharing ideas and building things together.</p>
+                </li>
+            </ul>
+
+            <dl class="facts">
+                <div>
+                    <dt>Studying</dt>
+                    <dd>Computer Engineering</dd>
+                </div>
+                <div>
+                    <dt>Student ID</dt>
+                    <dd>202537225</dd>
+                </div>
+                <div>
+                    <dt>Projects</dt>
+                    <dd>5+ built</dd>
+                </div>
+                <div>
+                    <dt>Favourite tool</dt>
+                    <dd>VS Code</dd>
+                </div>
+            </dl>
+        </section>
+
+        <!-- ================= GOALS ================= -->
+        <section id="goals" aria-labelledby="goals-title">
+            <h2 id="goals-title">Goals</h2>
+
+            <blockquote>
+                <p>I want to become a skilled engineer, build things that help
+                people, and make my family proud.</p>
+            </blockquote>
+
+            <ul class="plain-list">
+                <li>
+                    <strong>This year</strong>
+                    <p>Master HTML, CSS and JavaScript and build more of my own projects.</p>
+                </li>
+                <li>
+                    <strong>Next steps</strong>
+                    <p>Learn a framework like React and work on bigger team projects.</p>
+                </li>
+                <li>
+                    <strong>Long term</strong>
+                    <p>Build a career in software and keep learning every day.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ================= EDUCATION ================= -->
+        <section id="education" aria-labelledby="education-title">
+            <h2 id="education-title">Education</h2>
+
+            <h3>Computer Engineering</h3>
+            <p class="muted">Bachelor's degree &middot; currently studying</p>
+
+            <h3>What I learned in Web Programming</h3>
+            <ol class="timeline">
+                <li>
+                    <strong>HTML &amp; CSS basics</strong>
+                    <p>Page structure, semantic tags, layout and responsive design.</p>
+                </li>
+                <li>
+                    <strong>Forms &amp; validation</strong>
+                    <p>Sign-in and sign-up forms, built-in validation and JavaScript checks.</p>
+                </li>
+                <li>
+                    <strong>Accessibility</strong>
+                    <p>Lighthouse audits, alt text, colour contrast and heading order.</p>
+                </li>
+                <li>
+                    <strong>Git &amp; GitHub Pages</strong>
+                    <p>Repositories, commits, branches and publishing websites.</p>
+                </li>
+                <li>
+                    <strong>Team project</strong>
+                    <p>Planning, proposing and building an AI travel planner with my team.</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ================= SKILLS ================= -->
+        <section id="skills" aria-labelledby="skills-title">
+            <h2 id="skills-title">Skills</h2>
+
+            <div class="skill-groups">
+                <div>
+                    <h3>Technical</h3>
+                    <ul class="tags">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Git &amp; GitHub</li>
+                        <li>Accessibility</li>
+                        <li>Responsive design</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Personal</h3>
+                    <ul class="tags">
+                        <li>Problem solving</li>
+                        <li>Teamwork</li>
+                        <li>Communication</li>
+                        <li>Time management</li>
+                        <li>Willingness to learn</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PROJECTS ================= -->
+        <section id="projects" aria-labelledby="projects-title">
+            <h2 id="projects-title">Projects</h2>
+
+            <div class="filters" role="group" aria-label="Filter projects">
+                <button type="button" data-filter="all" aria-pressed="true">All</button>
+                <button type="button" data-filter="team" aria-pressed="false">Team</button>
+                <button type="button" data-filter="web" aria-pressed="false">Web</button>
+                <button type="button" data-filter="git" aria-pressed="false">Git</button>
+            </div>
+
+            <ul class="projects">
+                <li class="project" data-category="team">
+                    <article aria-labelledby="p1">
+                        <p class="kind">Team</p>
+                        <h3 id="p1">AI Travel Planner</h3>
+                        <p>A website that helps travellers plan their trips with the help of AI, built with my team.</p>
+                        <p class="tools">HTML &middot; CSS &middot; JavaScript</p>
+                        <a href="https://bahriddinoff01.github.io/ai-travel-planner/">Visit the site</a>
+                    </article>
+                </li>
+
+                <li class="project" data-category="team">
+                    <article aria-labelledby="p2">
+                        <p class="kind">Team</p>
+                        <h3 id="p2">Team 19 Proposal</h3>
+                        <p>Our team's project proposal: the idea, the goals and the plan, published as a web page.</p>
+                        <p class="tools">HTML &middot; CSS</p>
+                        <a href="https://bahriddinoff01.github.io/team-19-proposal/">Read the proposal</a>
+                    </article>
+                </li>
+
+                <li class="project" data-category="web">
+                    <article aria-labelledby="p3">
+                        <p class="kind">Web</p>
+                        <h3 id="p3">Accessibility Audit</h3>
+                        <p>I tested our team site with Lighthouse and fixed its accessibility issues, raising the score from 87 to 100.</p>
+                        <figure>
+                            <img src="../../week%209/week%209-2/final-audit.png" width="906" height="910"
+                                 alt="Lighthouse report showing an accessibility score of 100">
+                        </figure>
+                        <p class="tools">Lighthouse &middot; WCAG</p>
+                        <a href="../../week%209/week%209-2/index.html">See the audit</a>
+                    </article>
+                </li>
+
+                <li class="project" data-category="web">
+                    <article aria-labelledby="p4">
+                        <p class="kind">Web</p>
+                        <h3 id="p4">Web Programming Assignments</h3>
+                        <p>All my weekly assignments in one place, from first HTML pages to forms and accessibility.</p>
+                        <p class="tools">HTML &middot; CSS &middot; JavaScript</p>
+                        <a href="../../main%20container/Main.html">Open the assignments</a>
+                    </article>
+                </li>
+
+                <li class="project" data-category="git">
+                    <article aria-labelledby="p5">
+                        <p class="kind">Git</p>
+                        <h3 id="p5">Git Basics</h3>
+                        <p>Created a repository, made commits, worked on a branch and deployed the site with GitHub Pages.</p>
+                        <p class="tools">Git &middot; GitHub Pages</p>
+                        <a href="https://github.com/bahriddinoff01/webpro-w9/">View the repository</a>
+                    </article>
+                </li>
+            </ul>
+
+            <p class="count" id="project-count" aria-live="polite">Showing all 5 projects.</p>
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact</h2>
+            <p>Thank you for visiting! You can find all my coursework and projects on GitHub.</p>
+            <address>
+                <ul class="links">
+                    <li><a class="btn primary" href="https://github.com/bahriddinoff01">GitHub profile</a></li>
+                    <li><a class="btn" href="https://bahriddinoff01.github.io/Web-programming/main%20container/Main.html">Assignments site</a></li>
+                    <li><a class="btn" href="../../main%20container/Week10.html">Back to Week 10</a></li>
                 </ul>
-            </section>
+            </address>
+        </section>
 
-            <!-- PROJECTS -->
-            <section id="projects" aria-labelledby="projects-title">
-                <h2 id="projects-title">Projects</h2>
-
-                <div class="filters" role="group" aria-label="Filter projects">
-                    <button type="button" data-filter="all" aria-pressed="true">All</button>
-                    <button type="button" data-filter="team" aria-pressed="false">Team</button>
-                    <button type="button" data-filter="web" aria-pressed="false">Web</button>
-                    <button type="button" data-filter="git" aria-pressed="false">Git</button>
-                </div>
-
-                <ul class="projects" id="project-list">
-                    <li class="project lilac" data-category="team">
-                        <div class="project-body">
-                            <p class="kind">Team</p>
-                            <h3>AI Travel Planner</h3>
-                            <p>A website that helps travellers plan trips with AI. Built with my team.</p>
-                            <a href="https://bahriddinoff01.github.io/ai-travel-planner/">Visit the site</a>
-                        </div>
-                    </li>
-
-                    <li class="project mint" data-category="team">
-                        <div class="project-body">
-                            <p class="kind">Team</p>
-                            <h3>Team 19 Proposal</h3>
-                            <p>Our team's project proposal, published as a web page.</p>
-                            <a href="https://bahriddinoff01.github.io/team-19-proposal/">Read the proposal</a>
-                        </div>
-                    </li>
-
-                    <li class="project pink" data-category="web">
-                        <img src="../../week%209/week%209-2/final-audit.png" width="906" height="910"
-                             alt="Lighthouse report showing an accessibility score of 100">
-                        <div class="project-body">
-                            <p class="kind">Web</p>
-                            <h3>Accessibility Audit</h3>
-                            <p>I tested our team site with Lighthouse and fixed its accessibility issues, raising the score from 87 to 100.</p>
-                            <a href="../../week%209/week%209-2/index.html">See the audit</a>
-                        </div>
-                    </li>
-
-                    <li class="project sky" data-category="web">
-                        <div class="project-body">
-                            <p class="kind">Web</p>
-                            <h3>Web Programming Assignments</h3>
-                            <p>All my weekly assignments, from first HTML pages to forms and validation.</p>
-                            <a href="../../main%20container/Main.html">Open the assignments</a>
-                        </div>
-                    </li>
-
-                    <li class="project yellow" data-category="git">
-                        <div class="project-body">
-                            <p class="kind">Git</p>
-                            <h3>Git Basics</h3>
-                            <p>Created a repository, made commits, used a branch and deployed with GitHub Pages.</p>
-                            <a href="https://github.com/bahriddinoff01/webpro-w9/">View the repository</a>
-                        </div>
-                    </li>
-                </ul>
-
-                <p class="count" id="project-count" aria-live="polite">Showing all 5 projects.</p>
-            </section>
-
-            <!-- CONTACT -->
-            <section id="contact" aria-labelledby="contact-title">
-                <h2 id="contact-title">Contact</h2>
-                <div class="box">
-                    <p>Want to see more of my work? Find me on GitHub.</p>
-                    <div class="contact-links">
-                        <a class="btn" href="https://github.com/bahriddinoff01">GitHub profile</a>
-                        <a class="btn" href="https://bahriddinoff01.github.io/Web-programming/main%20container/Main.html">Assignments site</a>
-                        <a class="btn" href="../../main%20container/Week10.html">Back to Week 10</a>
-                    </div>
-                </div>
-            </section>
-
-        </div>
     </main>
 
     <footer class="site-footer">
-        <div class="container">
+        <div class="wrap">
             <p>&copy; 2026 Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering</p>
-            <p><a href="#top">Back to top &uarr;</a></p>
+            <p><a href="#top">Back to top</a></p>
         </div>
     </footer>
 
