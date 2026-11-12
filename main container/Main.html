@@ -145,6 +145,122 @@
             outline-offset: 4px;
         }
 
+        /* ---------- PERSONAL PROJECTS ---------- */
+
+        .projects-section {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 3px dashed var(--ink);
+        }
+
+        .section-head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px 14px;
+            margin-bottom: 8px;
+        }
+
+        .section-head h2 {
+            margin: 0;
+        }
+
+        .badge {
+            padding: 2px 10px;
+            background: var(--yellow);
+            border: 3px solid var(--ink);
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transform: rotate(-3deg);
+        }
+
+        .section-intro {
+            margin: 0 0 24px;
+            max-width: 36em;
+        }
+
+        .project-grid {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+            gap: 28px;
+        }
+
+        .project a {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            color: var(--ink);
+            text-decoration: none;
+            background: #fff;
+            border: 3px solid var(--ink);
+            box-shadow: 8px 8px 0 var(--ink);
+            transition: transform 0.12s, box-shadow 0.12s;
+        }
+
+        .project-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            border-bottom: 3px solid var(--ink);
+        }
+
+        .project:nth-child(1) .project-top { background: var(--mint); }
+        .project:nth-child(2) .project-top { background: var(--pink); }
+        .project:nth-child(3) .project-top { background: var(--sky); }
+
+        .project-icon {
+            font-size: 40px;
+            line-height: 1;
+        }
+
+        .project-kind {
+            padding: 2px 10px;
+            background: #fff;
+            border: 2px solid var(--ink);
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .project-body {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .project-body h3 {
+            margin: 0 0 8px;
+            font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+            font-size: 24px;
+            line-height: 1.15;
+        }
+
+        .project-body p {
+            margin: 0 0 18px;
+        }
+
+        .visit {
+            margin-top: auto;
+            font-weight: bold;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .project a:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 11px 11px 0 var(--ink);
+        }
+
+        .project a:focus-visible {
+            outline: 4px solid var(--ink);
+            outline-offset: 4px;
+        }
+
         footer {
             margin-top: 48px;
             padding: 20px 0 32px;
@@ -170,6 +286,14 @@
             }
 
             .card a:hover {
+                transform: none;
+            }
+
+            .project a {
+                transition: none;
+            }
+
+            .project a:hover {
                 transform: none;
             }
         }
@@ -213,6 +337,56 @@
                 <li class="card"><a href="https://bahriddinoff01.github.io/team-19-proposal/"><span class="wk">Team</span> <span class="n n-text">Proposal</span></a></li>
                 <li class="card"><a href="./TeamFiles.html"><span class="wk">Team</span> <span class="n n-text">Files</span></a></li>
             </ul>
+
+            <section class="projects-section" aria-labelledby="projects-title">
+                <div class="section-head">
+                    <h2 id="projects-title">Personal Projects</h2>
+                    <span class="badge">MADE BY ME</span>
+                </div>
+                <p class="section-intro">Bigger projects I built outside the weekly assignments. Each one is live, so click a card to try it.</p>
+
+                <ul class="project-grid">
+                    <li class="project">
+                        <a href="https://bahriddinoff01.github.io/LearnCoding/">
+                            <div class="project-top">
+                                <span class="project-icon" aria-hidden="true">&#128187;</span>
+                                <span class="project-kind">Learning platform</span>
+                            </div>
+                            <div class="project-body">
+                                <h3>LearnCoding</h3>
+                                <p>Learn HTML, CSS, JavaScript, Python and React with lessons, challenges, quizzes and an AI instructor.</p>
+                                <span class="visit">Visit the site &rarr;</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="project">
+                        <a href="https://bahriddinoff01.github.io/mini-games/">
+                            <div class="project-top">
+                                <span class="project-icon" aria-hidden="true">&#127918;</span>
+                                <span class="project-kind">8 games</span>
+                            </div>
+                            <div class="project-body">
+                                <h3>Mini Arcade</h3>
+                                <p>A little arcade of mini games: Tic-Tac-Toe, Memory Match, Typing Speed, Whack-a-Mole and more, plus a to-do list and a leaderboard.</p>
+                                <span class="visit">Play now &rarr;</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="project">
+                        <a href="https://bahriddinoff01.github.io/ai-travel-planner/">
+                            <div class="project-top">
+                                <span class="project-icon" aria-hidden="true">&#9992;&#65039;</span>
+                                <span class="project-kind">AI app</span>
+                            </div>
+                            <div class="project-body">
+                                <h3>TravelAI</h3>
+                                <p>An AI travel planner: pick a destination like Japan, Italy or Greece and it creates a trip plan for you.</p>
+                                <span class="visit">Plan a trip &rarr;</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </section>
         </main>
 
         <footer>Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering</footer>
