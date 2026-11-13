@@ -3,179 +3,390 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 3-1</title>
-
-    <style>
-        :root {
-            --ink: #14121f;
-            --bg: #f3f3fa;
-            --yellow: #ffe066;
-            --lilac: #cdbdff;
-            --mint: #b5f0d0;
-            --pink: #ffb8cd;
-            --sky: #aed6ff;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: "Trebuchet MS", Verdana, sans-serif;
-            color: var(--ink);
-            background-color: var(--bg);
-            background-image: radial-gradient(#c9c9de 1.5px, transparent 1.5px);
-            background-size: 22px 22px;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        header {
-            padding: 72px 0 40px;
-        }
-
-        .title {
-            margin: 0;
-            max-width: 14em;
-            font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-            font-weight: 900;
-            font-size: clamp(32px, 7vw, 60px);
-            line-height: 1.05;
-            overflow-wrap: anywhere;
-        }
-
-        h2 {
-            margin: 0 0 20px;
-            font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-            font-size: 26px;
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        .week-container {
-            list-style: none;
-            margin: 0;
-            padding: 0 0 8px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-            gap: 20px;
-        }
-
-        .card a {
-            display: block;
-            padding: 24px 18px;
-            color: var(--ink);
-            text-decoration: none;
-            font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-            font-size: 20px;
-            line-height: 1.15;
-            border: 3px solid var(--ink);
-            box-shadow: 5px 5px 0 var(--ink);
-            transition: transform 0.12s, box-shadow 0.12s;
-        }
-
-        .card:nth-child(5n+1) a { background: var(--lilac); }
-        .card:nth-child(5n+2) a { background: var(--mint); }
-        .card:nth-child(5n+3) a { background: var(--pink); }
-        .card:nth-child(5n+4) a { background: var(--sky); }
-        .card:nth-child(5n+5) a { background: var(--yellow); }
-
-        .card a:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 8px 8px 0 var(--ink);
-        }
-
-        .card a:focus-visible {
-            outline: 4px solid var(--ink);
-            outline-offset: 4px;
-        }
-
-        footer {
-            margin-top: 24px;
-            padding: 20px 0 32px;
-            border-top: 3px solid var(--ink);
-            font-size: 14px;
-        }
-
-        @media (max-width: 760px) {
-            header {
-                padding: 48px 0 32px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .card a {
-                transition: none;
-            }
-
-            .card a:hover {
-                transform: none;
-            }
-        }
-    </style>
+    <meta name="description" content="Week 3-1 of Web Programming: 25 short topics and 8 exercises covering the basics of CSS: ways to add styles, selectors, colours, fonts, the box model, display and flexbox.">
+    <title>Week 3-1 · CSS Fundamentals | Abdulazizbek</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/site.css">
+    <script src="../assets/site.js" defer></script>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1 class="title">These are assignments for Week 3-1</h1>
+<body class="hub">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <main id="main" class="container">
+        <header class="page-hero">
+            <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="./Main.html">Home</a></li><li><a href="./Week-3.html">Week 3</a></li><li><span aria-current="page">Week 3-1</span></li></ol></nav>
+            <p class="eyebrow">Week 3 · Part 1</p>
+            <h1>CSS Fundamentals</h1>
+            <p class="lead">25 short topics and 8 exercises covering the basics of CSS: ways to add styles, selectors, colours, fonts, the box model, display and flexbox.</p>
+            <ul class="meta"><li><strong>33</strong> items</li><li>CSS</li></ul>
         </header>
 
-        <main>
-            <section>
-                <h2>Topics</h2>
-                <ul class="week-container">
-                    <li class="card"><a href="../week-3/week 3-1/topic-1.html">Topic 1</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/topic-2.html">Topic 2</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/topic-3.html">Topic 3</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/topic-4.html">Topic 4</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/topic-5.html">Topic 5</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Topic-6.html">Topic 6</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Topic-7.html">Topic 7</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Topic-8.html">Topic 8</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Topic-9.html">Topic 9</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Topic-10.html">Topic 10</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Topic-11.html">Topic 11</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Topic-12.html">Topic 12</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Topic-13.html">Topic 13</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Topic-14.html">Topic 14</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Topic-15.html">Topic 15</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Topic-16.html">Topic 16</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Topic-17.html">Topic 17</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/topic-18.html">Topic 18</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Topic-19.html">Topic 19</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/topic-20.html">Topic 20</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/topic-21.html">Topic 21</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/topic-22.html">Topic 22</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/topic-23.html">Topic 23</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/topic-24.html">Topic 24</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/topic-25.html">Topic 25</a></li>
-                </ul>
-            </section>
+        <section class="section" aria-labelledby="topics">
+            <div class="section-head">
+                <div>
+                    <h2 id="topics">Topics</h2>
+                    <p>One idea per page, from the first styled heading to specificity.</p>
+                </div>
+                <span class="muted-count">25 topics</span>
+            </div>
+            <ul class="card-grid task-grid">
+                <li><a class="card task-card" href="../week-3/week%203-1/topic-1.html">
+                    <span class="task-num" aria-hidden="true">01</span>
+                    <div class="task-body">
+                        <h3>Hello, CSS</h3>
+                        <p>My first styled page: font, background and text colour.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/topic-2.html">
+                    <span class="task-num" aria-hidden="true">02</span>
+                    <div class="task-body">
+                        <h3>Three ways to add CSS</h3>
+                        <p>Inline, internal and external styles on one page.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/topic-3.html">
+                    <span class="task-num" aria-hidden="true">03</span>
+                    <div class="task-body">
+                        <h3>External stylesheet</h3>
+                        <p>A page styled entirely from a linked CSS file.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/topic-4.html">
+                    <span class="task-num" aria-hidden="true">04</span>
+                    <div class="task-body">
+                        <h3>Universal and body selectors</h3>
+                        <p>Using * and body selectors from an external file.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/topic-5.html">
+                    <span class="task-num" aria-hidden="true">05</span>
+                    <div class="task-body">
+                        <h3>ID selector</h3>
+                        <p>Styling one heading by id: colour, border and rounded corners.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Topic-6.html">
+                    <span class="task-num" aria-hidden="true">06</span>
+                    <div class="task-body">
+                        <h3>Class selectors</h3>
+                        <p>Cards that combine one, two and three classes.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Topic-7.html">
+                    <span class="task-num" aria-hidden="true">07</span>
+                    <div class="task-body">
+                        <h3>Element selectors</h3>
+                        <p>Styling headings, paragraphs and links by tag name.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Topic-8.html">
+                    <span class="task-num" aria-hidden="true">08</span>
+                    <div class="task-body">
+                        <h3>Colour formats</h3>
+                        <p>The same idea written as named, hex, RGB and HSL colours.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Topic-9.html">
+                    <span class="task-num" aria-hidden="true">09</span>
+                    <div class="task-body">
+                        <h3>Readable colour pairs</h3>
+                        <p>Banners and boxes with good text and background contrast.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Topic-10.html">
+                    <span class="task-num" aria-hidden="true">10</span>
+                    <div class="task-body">
+                        <h3>Hex colours</h3>
+                        <p>Colour swatches with full and shorthand hex codes.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Topic-11.html">
+                    <span class="task-num" aria-hidden="true">11</span>
+                    <div class="task-body">
+                        <h3>RGB colours</h3>
+                        <p>Colour swatches written with rgb() values.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Topic-12.html">
+                    <span class="task-num" aria-hidden="true">12</span>
+                    <div class="task-body">
+                        <h3>Font size</h3>
+                        <p>Paragraphs from extra-small to extra-large.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Topic-13.html">
+                    <span class="task-num" aria-hidden="true">13</span>
+                    <div class="task-body">
+                        <h3>Font weight</h3>
+                        <p>Bolder, bold, normal and lighter text.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Topic-14.html">
+                    <span class="task-num" aria-hidden="true">14</span>
+                    <div class="task-body">
+                        <h3>Font style</h3>
+                        <p>Italic, oblique and the initial value.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Topic-15.html">
+                    <span class="task-num" aria-hidden="true">15</span>
+                    <div class="task-body">
+                        <h3>Text alignment</h3>
+                        <p>Left, right, centred and justified text.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Topic-16.html">
+                    <span class="task-num" aria-hidden="true">16</span>
+                    <div class="task-body">
+                        <h3>Padding</h3>
+                        <p>Padding on every side, and on one side at a time.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/topic-17.html">
+                    <span class="task-num" aria-hidden="true">17</span>
+                    <div class="task-body">
+                        <h3>Margin</h3>
+                        <p>Margin on every side, and on one side at a time.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/topic-18.html">
+                    <span class="task-num" aria-hidden="true">18</span>
+                    <div class="task-body">
+                        <h3>box-sizing</h3>
+                        <p>How content-box and border-box change an element's real width.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/topic-19.html">
+                    <span class="task-num" aria-hidden="true">19</span>
+                    <div class="task-body">
+                        <h3>Display</h3>
+                        <p>Turning inline elements into blocks and building a simple menu.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/topic-20.html">
+                    <span class="task-num" aria-hidden="true">20</span>
+                    <div class="task-body">
+                        <h3>Visibility</h3>
+                        <p>Hiding a box with visibility: hidden, toggled by a button.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/topic-21.html">
+                    <span class="task-num" aria-hidden="true">21</span>
+                    <div class="task-body">
+                        <h3>Flexbox alignment</h3>
+                        <p>Centring content with justify-content and align-items.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/topic-22.html">
+                    <span class="task-num" aria-hidden="true">22</span>
+                    <div class="task-body">
+                        <h3>Styling by id</h3>
+                        <p>Text coloured blue through an id selector.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/topic-23.html">
+                    <span class="task-num" aria-hidden="true">23</span>
+                    <div class="task-body">
+                        <h3>Specificity</h3>
+                        <p>Which rule wins when tag, class and id selectors compete.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/topic-24.html">
+                    <span class="task-num" aria-hidden="true">24</span>
+                    <div class="task-body">
+                        <h3>CSS syntax</h3>
+                        <p>Correct CSS syntax and comments in a linked file.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/topic-25.html">
+                    <span class="task-num" aria-hidden="true">25</span>
+                    <div class="task-body">
+                        <h3>Profile page</h3>
+                        <p>A styled personal profile laid out with flexbox.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+            </ul>
+        </section>
 
-            <section>
-                <h2>Exercises</h2>
-                <ul class="week-container">
-                    <li class="card"><a href="../week-3/week 3-1/Exercise-1.html">Exercise 1</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Exercise-2.html">Exercise 2</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Exercise-3.html">Exercise 3</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Exercise-4.html">Exercise 4</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Exercise-5.html">Exercise 5</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Exercise-6.html">Exercise 6</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Exercise-7.html">Exercise 7</a></li>
-                    <li class="card"><a href="../week-3/week 3-1/Exercise-8.html">Exercise 8</a></li>
-                </ul>
-            </section>
-        </main>
+        <section class="section" aria-labelledby="exercises">
+            <div class="section-head">
+                <div>
+                    <h2 id="exercises">Exercises</h2>
+                    <p>Putting the topics into practice.</p>
+                </div>
+                <span class="muted-count">8 tasks</span>
+            </div>
+            <ul class="card-grid task-grid">
+                <li><a class="card task-card" href="../week-3/week%203-1/Exercise-1.html">
+                    <span class="task-num" aria-hidden="true">01</span>
+                    <div class="task-body">
+                        <h3>Text styling</h3>
+                        <p>A heading and paragraph with colour, size and alignment.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Exercise-2.html">
+                    <span class="task-num" aria-hidden="true">02</span>
+                    <div class="task-body">
+                        <h3>CSS methods</h3>
+                        <p>Inline and internal CSS working on the same page.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Exercise-3.html">
+                    <span class="task-num" aria-hidden="true">03</span>
+                    <div class="task-body">
+                        <h3>Flexbox colour boxes</h3>
+                        <p>Coloured boxes laid out in a column with flexbox.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Exercise-4.html">
+                    <span class="task-num" aria-hidden="true">04</span>
+                    <div class="task-body">
+                        <h3>Box model</h3>
+                        <p>A box with padding, margin and centred content.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Exercise-5.html">
+                    <span class="task-num" aria-hidden="true">05</span>
+                    <div class="task-body">
+                        <h3>Fix me!</h3>
+                        <p>Finding and fixing broken CSS rules.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Exercise-6.html">
+                    <span class="task-num" aria-hidden="true">06</span>
+                    <div class="task-body">
+                        <h3>Flexbox navbar</h3>
+                        <p>A horizontal navigation bar built with flexbox.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Exercise-7.html">
+                    <span class="task-num" aria-hidden="true">07</span>
+                    <div class="task-body">
+                        <h3>Profile card</h3>
+                        <p>A centred card with a photo, shadow and rounded corners.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-3/week%203-1/Exercise-8.html">
+                    <span class="task-num" aria-hidden="true">08</span>
+                    <div class="task-body">
+                        <h3>Developer portfolio</h3>
+                        <p>A complete one-page portfolio with header, sections and footer.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+            </ul>
+        </section>
+        <nav class="pager" aria-label="Back">
+            <a class="prev" href="./Week-3.html"><small>&larr; Back to</small><strong>Week 3 &middot; CSS</strong></a>
+        </nav>
+    </main>
 
-        <footer>Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering</footer>
-    </div>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering, Gachon University</p>
+            <ul>
+                <li><a href="https://github.com/bahriddinoff01">GitHub</a></li>
+                <li><a href="https://github.com/bahriddinoff01/Web-programming">Source code</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>

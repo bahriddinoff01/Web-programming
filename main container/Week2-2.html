@@ -3,135 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 2-2 Tasks</title>
-
-    <style>
-        :root {
-            --ink: #14121f;
-            --bg: #f3f3fa;
-            --yellow: #ffe066;
-            --lilac: #cdbdff;
-            --mint: #b5f0d0;
-            --pink: #ffb8cd;
-            --sky: #aed6ff;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: "Trebuchet MS", Verdana, sans-serif;
-            color: var(--ink);
-            background-color: var(--bg);
-            background-image: radial-gradient(#c9c9de 1.5px, transparent 1.5px);
-            background-size: 22px 22px;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        header {
-            padding: 72px 0 48px;
-        }
-
-        h1 {
-            margin: 0;
-            max-width: 14em;
-            font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-            font-weight: 900;
-            font-size: clamp(32px, 7vw, 60px);
-            line-height: 1.05;
-            overflow-wrap: anywhere;
-        }
-
-        .week-container {
-            list-style: none;
-            margin: 0;
-            padding: 0 0 8px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 22px;
-        }
-
-        .card a {
-            display: block;
-            padding: 30px 22px;
-            color: var(--ink);
-            text-decoration: none;
-            font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-            font-size: 26px;
-            line-height: 1.1;
-            border: 3px solid var(--ink);
-            box-shadow: 6px 6px 0 var(--ink);
-            transition: transform 0.12s, box-shadow 0.12s;
-        }
-
-        .card:nth-child(5n+1) a { background: var(--lilac); }
-        .card:nth-child(5n+2) a { background: var(--mint); }
-        .card:nth-child(5n+3) a { background: var(--pink); }
-        .card:nth-child(5n+4) a { background: var(--sky); }
-        .card:nth-child(5n+5) a { background: var(--yellow); }
-
-        .card a:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 9px 9px 0 var(--ink);
-        }
-
-        .card a:focus-visible {
-            outline: 4px solid var(--ink);
-            outline-offset: 4px;
-        }
-
-        footer {
-            margin-top: 48px;
-            padding: 20px 0 32px;
-            border-top: 3px solid var(--ink);
-            font-size: 14px;
-        }
-
-        @media (max-width: 760px) {
-            header {
-                padding: 48px 0 32px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .card a {
-                transition: none;
-            }
-
-            .card a:hover {
-                transform: none;
-            }
-        }
-    </style>
+    <meta name="description" content="Week 2-2 of Web Programming: Giving pages meaning and structure with semantic tags like header, nav, main, article, aside, figure and details.">
+    <title>Week 2-2 · Semantic HTML | Abdulazizbek</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/site.css">
+    <script src="../assets/site.js" defer></script>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>These are assignments for Week 2-2</h1>
+<body class="hub">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <main id="main" class="container">
+        <header class="page-hero">
+            <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="./Main.html">Home</a></li><li><a href="./Week2.html">Week 2</a></li><li><span aria-current="page">Week 2-2</span></li></ol></nav>
+            <p class="eyebrow">Week 2 · Part 2</p>
+            <h1>Semantic HTML</h1>
+            <p class="lead">Giving pages meaning and structure with semantic tags like header, nav, main, article, aside, figure and details.</p>
+            <ul class="meta"><li><strong>8</strong> items</li><li>HTML</li><li>Semantic HTML</li></ul>
         </header>
 
-        <main>
-            <ul class="week-container">
-                <li class="card"><a href="../week-2/week 2-2/Task-1.html">Task-1</a></li>
-                <li class="card"><a href="../week-2/week 2-2/Task-2.html">Task-2</a></li>
-                <li class="card"><a href="../week-2/week 2-2/Task-3.html">Task-3</a></li>
-                <li class="card"><a href="../week-2/week 2-2/Task-4.html">Task-4</a></li>
-                <li class="card"><a href="../week-2/week 2-2/task-5.html">Task-5</a></li>
-                <li class="card"><a href="../week-2/week 2-2/task-6.html">Task-6</a></li>
-                <li class="card"><a href="../week-2/week 2-2/task-7.html">Task-7</a></li>
-                <li class="card"><a href="../week-2/week 2-2/task-8.html">Task-8</a></li>
+        <section class="section" aria-labelledby="tasks">
+            <div class="section-head">
+                <div>
+                    <h2 id="tasks">Tasks</h2>
+                    
+                </div>
+                <span class="muted-count">8 tasks</span>
+            </div>
+            <ul class="card-grid task-grid">
+                <li><a class="card task-card" href="../week-2/week%202-2/task-1.html">
+                    <span class="task-num" aria-hidden="true">01</span>
+                    <div class="task-body">
+                        <h3>Gachon Blog</h3>
+                        <p>A page layout with header, nav, main, article, aside and footer.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-2/week%202-2/task-2.html">
+                    <span class="task-num" aria-hidden="true">02</span>
+                    <div class="task-body">
+                        <h3>My journey with HTML</h3>
+                        <p>A blog article with its own header, a date in &lt;time&gt; and a footer.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-2/week%202-2/task-3.html">
+                    <span class="task-num" aria-hidden="true">03</span>
+                    <div class="task-body">
+                        <h3>Figure and code</h3>
+                        <p>An image in figure and figcaption, plus a code sample in pre and code.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-2/week%202-2/task-4.html">
+                    <span class="task-num" aria-hidden="true">04</span>
+                    <div class="task-body">
+                        <h3>HTML FAQ</h3>
+                        <p>Questions with answers that open and close using details and summary.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-2/week%202-2/Task-5.html">
+                    <span class="task-num" aria-hidden="true">05</span>
+                    <div class="task-body">
+                        <h3>About me</h3>
+                        <p>A full semantic personal page with sections, figure, article, aside and address.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-2/week%202-2/task-6.html">
+                    <span class="task-num" aria-hidden="true">06</span>
+                    <div class="task-body">
+                        <h3>My blog</h3>
+                        <p>A semantic blog page with a figure and a related-links aside.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-2/week%202-2/task-7.html">
+                    <span class="task-num" aria-hidden="true">07</span>
+                    <div class="task-body">
+                        <h3>Inspirational quotes</h3>
+                        <p>Quotes marked up with q, blockquote, cite and abbr.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-2/week%202-2/task-8.html">
+                    <span class="task-num" aria-hidden="true">08</span>
+                    <div class="task-body">
+                        <h3>Tech News</h3>
+                        <p>A news article using address, time, mark, code, blockquote and aside.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
             </ul>
-        </main>
+        </section>
+        <nav class="pager" aria-label="Back">
+            <a class="prev" href="./Week2.html"><small>&larr; Back to</small><strong>Week 2 &middot; HTML Basics</strong></a>
+        </nav>
+    </main>
 
-        <footer>Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering</footer>
-    </div>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering, Gachon University</p>
+            <ul>
+                <li><a href="https://github.com/bahriddinoff01">GitHub</a></li>
+                <li><a href="https://github.com/bahriddinoff01/Web-programming">Source code</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>

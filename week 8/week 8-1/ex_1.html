@@ -26,4 +26,5 @@ pw.addEventListener('keyup',e=>{$('caps').textContent=e.getModifierState&&e.getM
 $('f').addEventListener('submit',e=>{e.preventDefault();
   try{$('remember').checked?localStorage.setItem('email',email.value):localStorage.removeItem('email')}catch(x){}
   const o=$('ok');o.textContent='Signed in as '+email.value+' (demo only).';o.hidden=false});
-</script></body></html>
+</script><script src="../../assets/site.js" defer></script>
+</body></html>

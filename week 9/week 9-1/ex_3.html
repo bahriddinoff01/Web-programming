@@ -34,4 +34,5 @@ $('fix').onclick=()=>{const end=lum(bg.value)>0.18?[0,0,0]:[255,255,255],c=rgb(f
  for(let i=0;i<=50;i++){const m=c.map((v,k)=>v+(end[k]-v)*i/50);if(ratio(hex(m),bg.value)>=4.5){fg.value=hex(m);break}}
  update();$('msg').textContent='Text colour changed to '+fg.value+', ratio '+ratio(fg.value,bg.value).toFixed(2)+' to 1.'};
 update();
-</script></body></html>
+</script><script src="../../assets/site.js" defer></script>
+</body></html>

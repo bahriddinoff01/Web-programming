@@ -1,51 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Week 9 - Access Lab</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <a class="skip" href="#main">Skip to main content</a>
-    <main class="wrap" id="main" tabindex="-1">
-      <h1>Access Lab</h1>
-      <p class="lead">
-        Week 9: web accessibility. Each page lets you try something and see the
-        result.
-      </p>
-      <nav aria-label="Exercises">
-        <ol class="links">
-          <li>
-            <a href="ex_1.html">Keyboard playground</a
-            ><span>Switch, disclosure and a live log of keys and focus.</span>
-          </li>
-          <li>
-            <a href="ex_2.html">Alt text workshop</a
-            ><span>Write your own alt text and get it rated.</span>
-          </li>
-          <li>
-            <a href="ex_3.html">Contrast fixer</a
-            ><span>Measure a colour pair and fix it to meet WCAG AA.</span>
-          </li>
-          <li>
-            <a href="../week 8/student-registration.html"
-              >Student sign-up (Week 8 homework)</a
-            ><span
-              >Adjust this path if your Week 8 folder has a different
-              name.</span
-            >
-          </li>
-          <li>
-            <a href="./AccessiblityAudit.html"
-              >Accessibility Audit</a
-            ><span
-              >Here I checked Accessibility Audit and made changes</span
-            >
-          </li>
-        </ol>
-      </nav>
-      <footer>Abdulazizbek &middot; ID 202537225</footer>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Week 9-1 of Web Programming: Hands-on accessibility: using a page with only the keyboard, writing alt text and fixing colour contrast, plus a Lighthouse audit.">
+    <title>Week 9-1 · Access Lab | Abdulazizbek</title>
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../assets/site.css">
+    <script src="../../assets/site.js" defer></script>
+</head>
+<body class="hub">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <main id="main" class="container">
+        <header class="page-hero">
+            <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../../main%20container/Main.html">Home</a></li><li><a href="../../main%20container/Week9.html">Week 9</a></li><li><span aria-current="page">Week 9-1</span></li></ol></nav>
+            <p class="eyebrow">Week 9 · Part 1</p>
+            <h1>Access Lab</h1>
+            <p class="lead">Hands-on accessibility: using a page with only the keyboard, writing alt text and fixing colour contrast, plus a Lighthouse audit.</p>
+            <ul class="meta"><li><strong>4</strong> items</li><li>Accessibility</li></ul>
+        </header>
+
+        <section class="section" aria-labelledby="exercises">
+            <div class="section-head">
+                <div>
+                    <h2 id="exercises">Exercises</h2>
+                    
+                </div>
+                <span class="muted-count">4 tasks</span>
+            </div>
+            <ul class="card-grid task-grid">
+                <li><a class="card task-card" href="./ex_1.html">
+                    <span class="task-num" aria-hidden="true">01</span>
+                    <div class="task-body">
+                        <h3>Keyboard playground</h3>
+                        <p>A switch, a disclosure and a live log of keys and focus.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="./ex_2.html">
+                    <span class="task-num" aria-hidden="true">02</span>
+                    <div class="task-body">
+                        <h3>Alt text workshop</h3>
+                        <p>Write alt text for images and preview what a screen reader says.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="./ex_3.html">
+                    <span class="task-num" aria-hidden="true">03</span>
+                    <div class="task-body">
+                        <h3>Contrast fixer</h3>
+                        <p>Measure a colour pair and adjust it until it meets WCAG AA.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="./AccessiblityAudit.html">
+                    <span class="task-num" aria-hidden="true">04</span>
+                    <div class="task-body">
+                        <h3>Accessibility audit</h3>
+                        <p>Lighthouse found two issues; adding lang and alt text raised the score from 65 to 100.</p>
+                        
+                        <ul class="tags"><li class="tag tag-a11y">Lighthouse</li></ul>
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+            </ul>
+        </section>
+        <nav class="pager" aria-label="Back">
+            <a class="prev" href="../../main%20container/Week9.html"><small>&larr; Back to</small><strong>Week 9 &middot; Accessibility</strong></a>
+        </nav>
     </main>
-  </body>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering, Gachon University</p>
+            <ul>
+                <li><a href="https://github.com/bahriddinoff01">GitHub</a></li>
+                <li><a href="https://github.com/bahriddinoff01/Web-programming">Source code</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
 </html>

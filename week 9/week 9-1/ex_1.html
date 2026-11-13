@@ -26,4 +26,5 @@ sw.onclick=()=>{const on=sw.getAttribute('aria-checked')!=='true';sw.setAttribut
 function setOpen(o){dh.setAttribute('aria-expanded',o);dp.hidden=!o}
 dh.onclick=()=>setOpen(dh.getAttribute('aria-expanded')!=='true');
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!dp.hidden){setOpen(false);dh.focus()}});
-</script></body></html>
+</script><script src="../../assets/site.js" defer></script>
+</body></html>

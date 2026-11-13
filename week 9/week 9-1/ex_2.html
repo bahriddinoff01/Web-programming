@@ -42,4 +42,5 @@ imgs.forEach((d,i)=>{const s=document.createElement('section');s.className='pane
  s.append(h,fig,l,t,l2,pv,fb);cards.appendChild(s);upd()});
 document.getElementById('check').onclick=()=>{const n=[...cards.children].filter(s=>s._ok).length;
  document.getElementById('summary').textContent=n+' of '+imgs.length+' images have good alt text.'+(n===imgs.length?' Nice work.':' Fix the marked ones.')};
-</script></body></html>
+</script><script src="../../assets/site.js" defer></script>
+</body></html>

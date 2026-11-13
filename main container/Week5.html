@@ -3,129 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 5</title>
-
-    <style>
-        :root {
-            --ink: #14121f;
-            --bg: #f3f3fa;
-            --yellow: #ffe066;
-            --lilac: #cdbdff;
-            --mint: #b5f0d0;
-            --pink: #ffb8cd;
-            --sky: #aed6ff;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: "Trebuchet MS", Verdana, sans-serif;
-            color: var(--ink);
-            background-color: var(--bg);
-            background-image: radial-gradient(#c9c9de 1.5px, transparent 1.5px);
-            background-size: 22px 22px;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        header {
-            padding: 72px 0 48px;
-        }
-
-        h1 {
-            margin: 0;
-            max-width: 14em;
-            font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-            font-weight: 900;
-            font-size: clamp(32px, 7vw, 60px);
-            line-height: 1.05;
-            overflow-wrap: anywhere;
-        }
-
-        .week-container {
-            list-style: none;
-            margin: 0;
-            padding: 0 0 8px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 22px;
-        }
-
-        .card a {
-            display: block;
-            padding: 34px 24px;
-            color: var(--ink);
-            text-decoration: none;
-            font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-            font-size: 28px;
-            line-height: 1.1;
-            border: 3px solid var(--ink);
-            box-shadow: 6px 6px 0 var(--ink);
-            transition: transform 0.12s, box-shadow 0.12s;
-        }
-
-        .card:nth-child(5n+1) a { background: var(--lilac); }
-        .card:nth-child(5n+2) a { background: var(--mint); }
-        .card:nth-child(5n+3) a { background: var(--pink); }
-        .card:nth-child(5n+4) a { background: var(--sky); }
-        .card:nth-child(5n+5) a { background: var(--yellow); }
-
-        .card a:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 9px 9px 0 var(--ink);
-        }
-
-        .card a:focus-visible {
-            outline: 4px solid var(--ink);
-            outline-offset: 4px;
-        }
-
-        footer {
-            margin-top: 48px;
-            padding: 20px 0 32px;
-            border-top: 3px solid var(--ink);
-            font-size: 14px;
-        }
-
-        @media (max-width: 760px) {
-            header {
-                padding: 48px 0 32px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .card a {
-                transition: none;
-            }
-
-            .card a:hover {
-                transform: none;
-            }
-        }
-    </style>
+    <meta name="description" content="Week 5 of Web Programming: Core JavaScript: variables, showing output, changing HTML, events and reading user input.">
+    <title>Week 5 · JavaScript Basics | Abdulazizbek</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/site.css">
+    <script src="../assets/site.js" defer></script>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>These are assignments for Week 5</h1>
+<body class="hub">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <main id="main" class="container">
+        <header class="page-hero">
+            <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="./Main.html">Home</a></li><li><span aria-current="page">Week 5</span></li></ol></nav>
+            <p class="eyebrow">Week 5</p>
+            <h1>JavaScript Basics</h1>
+            <p class="lead">Core JavaScript: variables, showing output, changing HTML, events and reading user input.</p>
+            <ul class="meta"><li><strong>2</strong> items</li><li>JavaScript</li></ul>
         </header>
 
-        <main>
-            <ul class="week-container">
-                <li class="card"><a href="../week-5/task1.html">Exercise 1</a></li>
-                <li class="card"><a href="../week-5/task2.html">Exercise 2</a></li>
+        <section class="section" aria-labelledby="exercises">
+            <div class="section-head">
+                <div>
+                    <h2 id="exercises">Exercises</h2>
+                    
+                </div>
+                <span class="muted-count">2 tasks</span>
+            </div>
+            <ul class="card-grid task-grid">
+                <li><a class="card task-card" href="../week-5/task1.html">
+                    <span class="task-num" aria-hidden="true">01</span>
+                    <div class="task-body">
+                        <h3>Counter</h3>
+                        <p>Increase, decrease and reset a number with buttons.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
+                <li><a class="card task-card" href="../week-5/task2.html">
+                    <span class="task-num" aria-hidden="true">02</span>
+                    <div class="task-body">
+                        <h3>JavaScript basics</h3>
+                        <p>Variables, output, changing HTML, events and inputs in small demos.</p>
+                        
+                        
+                    </div>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </a></li>
             </ul>
-        </main>
+        </section>
+        <nav class="pager" aria-label="Weeks">
+            <a class="prev" href="./Week-4.html"><small>&larr; Previous</small><strong>Week 4 &middot; JavaScript &amp; the DOM</strong></a>
+            <a class="next" href="./Week6.html"><small>Next &rarr;</small><strong>Week 6 &middot; Fetch &amp; APIs</strong></a>
+        </nav>
+    </main>
 
-        <footer>Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering</footer>
-    </div>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering, Gachon University</p>
+            <ul>
+                <li><a href="https://github.com/bahriddinoff01">GitHub</a></li>
+                <li><a href="https://github.com/bahriddinoff01/Web-programming">Source code</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>

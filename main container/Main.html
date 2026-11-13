@@ -3,394 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdulazizbek's Portfolio</title>
-
-    <style>
-        :root {
-            --ink: #14121f;
-            --bg: #f3f3fa;
-            --yellow: #ffe066;
-            --lilac: #cdbdff;
-            --mint: #b5f0d0;
-            --pink: #ffb8cd;
-            --sky: #aed6ff;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: "Trebuchet MS", Verdana, sans-serif;
-            color: var(--ink);
-            background-color: var(--bg);
-            background-image: radial-gradient(#c9c9de 1.5px, transparent 1.5px);
-            background-size: 22px 22px;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        header {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 40px;
-            align-items: center;
-            padding: 72px 0 56px;
-        }
-
-        .title {
-            margin: 0 0 16px;
-            font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-            font-weight: 900;
-            font-size: clamp(40px, 9vw, 84px);
-            line-height: 1;
-            overflow-wrap: anywhere;
-        }
-
-        .description {
-            margin: 0;
-            max-width: 30em;
-            font-size: 18px;
-        }
-
-        .id-card {
-            margin: 0;
-            padding: 20px 22px;
-            background: var(--yellow);
-            border: 3px solid var(--ink);
-            box-shadow: 6px 6px 0 var(--ink);
-            transform: rotate(-2deg);
-        }
-
-        .id-card div + div {
-            margin-top: 14px;
-        }
-
-        .id-card dt {
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .id-card dd {
-            margin: 0;
-            font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-            font-size: 22px;
-            line-height: 1.25;
-        }
-
-        h2 {
-            margin: 0 0 20px;
-            font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-            font-size: 26px;
-        }
-
-        .week-container {
-            list-style: none;
-            margin: 0;
-            padding: 0 0 8px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-            gap: 22px;
-        }
-
-        .card a {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            align-content: center;
-            height: 100%;
-            gap: 0 10px;
-            padding: 26px 22px;
-            color: var(--ink);
-            text-decoration: none;
-            border: 3px solid var(--ink);
-            box-shadow: 6px 6px 0 var(--ink);
-            transition: transform 0.12s, box-shadow 0.12s;
-        }
-
-        .card:nth-child(5n+1) a { background: var(--lilac); }
-        .card:nth-child(5n+2) a { background: var(--mint); }
-        .card:nth-child(5n+3) a { background: var(--pink); }
-        .card:nth-child(5n+4) a { background: var(--sky); }
-        .card:nth-child(5n+5) a { background: var(--yellow); }
-
-        .wk {
-            font-size: 17px;
-            font-weight: bold;
-        }
-
-        .n {
-            font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-            font-size: 48px;
-            line-height: 1;
-        }
-
-        .n-text {
-            font-size: 30px;
-        }
-
-        .card a:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 9px 9px 0 var(--ink);
-        }
-
-        .card a:focus-visible {
-            outline: 4px solid var(--ink);
-            outline-offset: 4px;
-        }
-
-        /* ---------- PERSONAL PROJECTS ---------- */
-
-        .projects-section {
-            margin-top: 64px;
-            padding-top: 40px;
-            border-top: 3px dashed var(--ink);
-        }
-
-        .section-head {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 10px 14px;
-            margin-bottom: 8px;
-        }
-
-        .section-head h2 {
-            margin: 0;
-        }
-
-        .badge {
-            padding: 2px 10px;
-            background: var(--yellow);
-            border: 3px solid var(--ink);
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            transform: rotate(-3deg);
-        }
-
-        .section-intro {
-            margin: 0 0 24px;
-            max-width: 36em;
-        }
-
-        .project-grid {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-            gap: 28px;
-        }
-
-        .project a {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            color: var(--ink);
-            text-decoration: none;
-            background: #fff;
-            border: 3px solid var(--ink);
-            box-shadow: 8px 8px 0 var(--ink);
-            transition: transform 0.12s, box-shadow 0.12s;
-        }
-
-        .project-top {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 18px 20px;
-            border-bottom: 3px solid var(--ink);
-        }
-
-        .project:nth-child(1) .project-top { background: var(--mint); }
-        .project:nth-child(2) .project-top { background: var(--pink); }
-        .project:nth-child(3) .project-top { background: var(--sky); }
-
-        .project-icon {
-            font-size: 40px;
-            line-height: 1;
-        }
-
-        .project-kind {
-            padding: 2px 10px;
-            background: #fff;
-            border: 2px solid var(--ink);
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .project-body {
-            display: flex;
-            flex: 1;
-            flex-direction: column;
-            padding: 20px;
-        }
-
-        .project-body h3 {
-            margin: 0 0 8px;
-            font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-            font-size: 24px;
-            line-height: 1.15;
-        }
-
-        .project-body p {
-            margin: 0 0 18px;
-        }
-
-        .visit {
-            margin-top: auto;
-            font-weight: bold;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-
-        .project a:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 11px 11px 0 var(--ink);
-        }
-
-        .project a:focus-visible {
-            outline: 4px solid var(--ink);
-            outline-offset: 4px;
-        }
-
-        footer {
-            margin-top: 48px;
-            padding: 20px 0 32px;
-            border-top: 3px solid var(--ink);
-            font-size: 14px;
-        }
-
-        @media (max-width: 760px) {
-            header {
-                grid-template-columns: 1fr;
-                padding: 48px 0 40px;
-                gap: 32px;
-            }
-
-            .id-card {
-                max-width: 320px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .card a {
-                transition: none;
-            }
-
-            .card a:hover {
-                transform: none;
-            }
-
-            .project a {
-                transition: none;
-            }
-
-            .project a:hover {
-                transform: none;
-            }
-        }
-    </style>
+    <meta name="description" content="Abdulazizbek's Web Programming coursework: weekly assignments, a team project and personal projects.">
+    <title>Abdulazizbek · Web Programming Portfolio</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/site.css">
+    <script src="../assets/site.js" defer></script>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <div>
-                <h1 class="title">Abdulazizbek</h1>
-                <p class="description">
-                    Hi, I'm a Computer Engineering student. This page collects my
-                    weekly Web Programming assignments, so pick a week to see what I built.
-                </p>
+<body class="hub">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <main id="main">
+        <section class="home-hero" aria-labelledby="intro">
+            <div class="container hero-grid">
+                <div>
+                    <p class="eyebrow">Web Programming &middot; Coursework portfolio</p>
+                    <h1 id="intro">Hi, I'm <span class="accent">Abdulazizbek</span>.</h1>
+                    <p class="lead">
+                        I'm a Computer Engineering student at Gachon University. This site
+                        collects my weekly Web Programming assignments, our team project
+                        and the personal projects I've built along the way.
+                    </p>
+                    <div class="btn-row">
+                        <a class="btn btn-primary" href="#weeks">Browse the weeks</a>
+                        <a class="btn" href="../week%2010/week%2010-2/index.html">View my portfolio</a>
+                    </div>
+                    <ul class="stats">
+                        <li><strong>10</strong><span>weeks</span></li>
+                        <li><strong>92+</strong><span>tasks and exercises</span></li>
+                        <li><strong>3</strong><span>personal projects</span></li>
+                    </ul>
+                </div>
+                <aside class="profile-panel" aria-label="About me">
+                    <img class="photo" src="./self%20img.jpg" width="960" height="1280"
+                         alt="Abdulazizbek standing in the sea waves at night with his arms spread wide">
+                    <dl>
+                        <div><dt>Student ID</dt><dd>202537225</dd></div>
+                        <div><dt>Major</dt><dd>Computer Engineering</dd></div>
+                        <div class="wide"><dt>University</dt><dd>Gachon University</dd></div>
+                    </dl>
+                </aside>
             </div>
-            <dl class="id-card">
-                <div>
-                    <dt>Student ID</dt>
-                    <dd>202537225</dd>
-                </div>
-                <div>
-                    <dt>Major</dt>
-                    <dd>Computer Engineering</dd>
-                </div>
-            </dl>
-        </header>
+        </section>
 
-        <main>
-            <h2>Assignments</h2>
-            <ul class="week-container">
-                <li class="card"><a href="./Week2.html"><span class="wk">Week</span> <span class="n">2</span></a></li>
-                <li class="card"><a href="./Week-3.html"><span class="wk">Week</span> <span class="n">3</span></a></li>
-                <li class="card"><a href="./Week-4.html"><span class="wk">Week</span> <span class="n">4</span></a></li>
-                <li class="card"><a href="./Week5.html"><span class="wk">Week</span> <span class="n">5</span></a></li>
-                <li class="card"><a href="./Week6.html"><span class="wk">Week</span> <span class="n">6</span></a></li>
-                <li class="card"><a href="../week  7/index.html"><span class="wk">Week</span> <span class="n">7</span></a></li>
-                <li class="card"><a href="./Week8.html"><span class="wk">Week</span> <span class="n">8</span></a></li>
-                <li class="card"><a href="./Week9.html"><span class="wk">Week</span> <span class="n">9</span></a></li>
-                <li class="card"><a href="./Week10.html"><span class="wk">Week</span> <span class="n">10</span></a></li>
-                <li class="card"><a href="./Week11.html"><span class="wk">Week</span> <span class="n">11</span></a></li>
-                <li class="card"><a href="https://bahriddinoff01.github.io/ai-travel-planner/"><span class="wk">Team</span> <span class="n n-text">Project</span></a></li>
-                <li class="card"><a href="https://bahriddinoff01.github.io/team-19-proposal/"><span class="wk">Team</span> <span class="n n-text">Proposal</span></a></li>
-                <li class="card"><a href="./TeamFiles.html"><span class="wk">Team</span> <span class="n n-text">Files</span></a></li>
-            </ul>
-
-            <section class="projects-section" aria-labelledby="projects-title">
+        <div class="container">
+            <section class="section" id="weeks" aria-labelledby="weeks-title">
                 <div class="section-head">
-                    <h2 id="projects-title">Personal Projects</h2>
-                    <span class="badge">MADE BY ME</span>
+                    <div>
+                        <h2 id="weeks-title">Weekly assignments</h2>
+                        <p>Every week of the course, from my first HTML page to React. Open a week to see its parts and tasks.</p>
+                    </div>
                 </div>
-                <p class="section-intro">Bigger projects I built outside the weekly assignments. Each one is live, so click a card to try it.</p>
-
-                <ul class="project-grid">
-                    <li class="project">
-                        <a href="https://bahriddinoff01.github.io/LearnCoding/">
-                            <div class="project-top">
-                                <span class="project-icon" aria-hidden="true">&#128187;</span>
-                                <span class="project-kind">Learning platform</span>
-                            </div>
-                            <div class="project-body">
-                                <h3>LearnCoding</h3>
-                                <p>Learn HTML, CSS, JavaScript, Python and React with lessons, challenges, quizzes and an AI instructor.</p>
-                                <span class="visit">Visit the site &rarr;</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="project">
-                        <a href="https://bahriddinoff01.github.io/mini-games/">
-                            <div class="project-top">
-                                <span class="project-icon" aria-hidden="true">&#127918;</span>
-                                <span class="project-kind">Multiple games</span>
-                            </div>
-                            <div class="project-body">
-                                <h3>Mini Arcade</h3>
-                                <p>A little arcade of mini games: Tic-Tac-Toe, Memory Match, Typing Speed, Whack-a-Mole and more, plus a to-do list and a leaderboard.</p>
-                                <span class="visit">Play now &rarr;</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="project">
-                        <a href="https://bahriddinoff01.github.io/ai-travel-planner/">
-                            <div class="project-top">
-                                <span class="project-icon" aria-hidden="true">&#9992;&#65039;</span>
-                                <span class="project-kind">AI app</span>
-                            </div>
-                            <div class="project-body">
-                                <h3>TravelAI</h3>
-                                <p>An AI travel planner: pick a destination like Japan, Italy or Greece and it creates a trip plan for you.</p>
-                                <span class="visit">Plan a trip &rarr;</span>
-                            </div>
-                        </a>
-                    </li>
+                <ul class="card-grid">
+                <li><a class="card week-card" href="./Week2.html">
+                    <div class="week-top">
+                        <span class="week-num" aria-hidden="true">2</span>
+                        <span class="week-label">Week 2</span>
+                    </div>
+                    <h3>HTML Basics</h3>
+                    <p>My first web pages, then structuring them properly with semantic HTML.</p>
+                    <ul class="tags"><li class="tag tag-html">HTML</li><li class="tag tag-html">Semantic HTML</li></ul>
+                    <span class="card-foot"><span>16 tasks</span><span class="go">Open &rarr;</span></span>
+                </a></li>
+                <li><a class="card week-card" href="./Week-3.html">
+                    <div class="week-top">
+                        <span class="week-num" aria-hidden="true">3</span>
+                        <span class="week-label">Week 3</span>
+                    </div>
+                    <h3>CSS</h3>
+                    <p>Selectors, colours, fonts, the box model and flexbox, then transitions, animations and variables.</p>
+                    <ul class="tags"><li class="tag tag-css">CSS</li><li class="tag tag-css">Flexbox</li><li class="tag tag-css">Animations</li></ul>
+                    <span class="card-foot"><span>40 tasks</span><span class="go">Open &rarr;</span></span>
+                </a></li>
+                <li><a class="card week-card" href="./Week-4.html">
+                    <div class="week-top">
+                        <span class="week-num" aria-hidden="true">4</span>
+                        <span class="week-label">Week 4</span>
+                    </div>
+                    <h3>JavaScript &amp; the DOM</h3>
+                    <p>Making pages interactive: click events, a to-do list and live search.</p>
+                    <ul class="tags"><li class="tag tag-js">JavaScript</li><li class="tag tag-js">DOM</li></ul>
+                    <span class="card-foot"><span>4 tasks</span><span class="go">Open &rarr;</span></span>
+                </a></li>
+                <li><a class="card week-card" href="./Week5.html">
+                    <div class="week-top">
+                        <span class="week-num" aria-hidden="true">5</span>
+                        <span class="week-label">Week 5</span>
+                    </div>
+                    <h3>JavaScript Basics</h3>
+                    <p>Variables, output, events and user input, plus a counter app.</p>
+                    <ul class="tags"><li class="tag tag-js">JavaScript</li></ul>
+                    <span class="card-foot"><span>2 tasks</span><span class="go">Open &rarr;</span></span>
+                </a></li>
+                <li><a class="card week-card" href="./Week6.html">
+                    <div class="week-top">
+                        <span class="week-num" aria-hidden="true">6</span>
+                        <span class="week-label">Week 6</span>
+                    </div>
+                    <h3>Fetch &amp; APIs</h3>
+                    <p>Loading live data from public APIs: jokes, posts, weather, users, Pokémon and countries.</p>
+                    <ul class="tags"><li class="tag tag-js">JavaScript</li><li class="tag tag-api">Fetch API</li><li class="tag tag-api">APIs</li></ul>
+                    <span class="card-foot"><span>6 tasks</span><span class="go">Open &rarr;</span></span>
+                </a></li>
+                <li><a class="card week-card" href="../week%20%207/index.html">
+                    <div class="week-top">
+                        <span class="week-num" aria-hidden="true">7</span>
+                        <span class="week-label">Week 7</span>
+                    </div>
+                    <h3>Shelf Finder</h3>
+                    <p>A book search app on the Open Library API with live search, filters and a reading list.</p>
+                    <ul class="tags"><li class="tag tag-js">JavaScript</li><li class="tag tag-api">Fetch API</li></ul>
+                    <span class="card-foot"><span>1 app</span><span class="go">Open &rarr;</span></span>
+                </a></li>
+                <li><a class="card week-card" href="./Week8.html">
+                    <div class="week-top">
+                        <span class="week-num" aria-hidden="true">8</span>
+                        <span class="week-label">Week 8</span>
+                    </div>
+                    <h3>Forms &amp; Validation</h3>
+                    <p>Forms with built-in validation and CSS feedback, then a sign-up form checked with JavaScript.</p>
+                    <ul class="tags"><li class="tag tag-html">Forms</li><li class="tag tag-js">Validation</li></ul>
+                    <span class="card-foot"><span>4 tasks</span><span class="go">Open &rarr;</span></span>
+                </a></li>
+                <li><a class="card week-card" href="./Week9.html">
+                    <div class="week-top">
+                        <span class="week-num" aria-hidden="true">9</span>
+                        <span class="week-label">Week 9</span>
+                    </div>
+                    <h3>Accessibility</h3>
+                    <p>Keyboard access, alt text and colour contrast, plus Lighthouse audits.</p>
+                    <ul class="tags"><li class="tag tag-a11y">Accessibility</li><li class="tag tag-a11y">Lighthouse</li></ul>
+                    <span class="card-foot"><span>5 tasks</span><span class="go">Open &rarr;</span></span>
+                </a></li>
+                <li><a class="card week-card" href="./Week10.html">
+                    <div class="week-top">
+                        <span class="week-num" aria-hidden="true">10</span>
+                        <span class="week-label">Week 10</span>
+                    </div>
+                    <h3>Git, GitHub &amp; Deployment</h3>
+                    <p>Version control with Git, publishing with GitHub Pages, a custom 404 page and my portfolio.</p>
+                    <ul class="tags"><li class="tag tag-git">Git</li><li class="tag tag-git">GitHub Pages</li></ul>
+                    <span class="card-foot"><span>2 homework · 8 exercises</span><span class="go">Open &rarr;</span></span>
+                </a></li>
+                <li><a class="card week-card" href="./Week11.html">
+                    <div class="week-top">
+                        <span class="week-num" aria-hidden="true">11</span>
+                        <span class="week-label">Week 11</span>
+                    </div>
+                    <h3>React</h3>
+                    <p>React components and props: a profile card, a notification list, layouts and a student directory.</p>
+                    <ul class="tags"><li class="tag tag-react">React</li><li class="tag tag-react">JSX</li></ul>
+                    <span class="card-foot"><span>4 tasks</span><span class="go">Open &rarr;</span></span>
+                </a></li>
                 </ul>
             </section>
-        </main>
 
-        <footer>Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering</footer>
-    </div>
+            <section class="section" id="team" aria-labelledby="team-title">
+                <div class="section-head">
+                    <div>
+                        <h2 id="team-title">Team project</h2>
+                        <p>TravelAI, an AI travel planner built by Team 19.</p>
+                    </div>
+                </div>
+                <ul class="card-grid">
+                <li><a class="card project-card" href="https://bahriddinoff01.github.io/ai-travel-planner/">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#9992;&#65039;</span><ul class="tags"><li class="tag tag-team">Team</li></ul></div>
+                    <div class="card-inner">
+                        <h3>TravelAI live site</h3>
+                        <p>Pick a destination like Japan, Italy or Greece and the AI creates a trip plan for you.</p>
+                        <ul class="tags"><li class="tag tag-html">HTML</li><li class="tag tag-css">CSS</li><li class="tag tag-js">JavaScript</li></ul>
+                        <span class="card-foot"><span></span><span class="go">Visit the site ↗</span></span>
+                    </div>
+                </a></li>
+                <li><a class="card project-card" href="https://bahriddinoff01.github.io/team-19-proposal/">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#128221;</span><ul class="tags"><li class="tag tag-team">Team</li></ul></div>
+                    <div class="card-inner">
+                        <h3>Team 19 proposal</h3>
+                        <p>Our project proposal published as a web page: the idea, the goals and the plan.</p>
+                        
+                        <span class="card-foot"><span></span><span class="go">Read the proposal ↗</span></span>
+                    </div>
+                </a></li>
+                <li><a class="card project-card" href="./TeamFiles.html">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#128193;</span><ul class="tags"><li class="tag tag-team">Team</li></ul></div>
+                    <div class="card-inner">
+                        <h3>Team files</h3>
+                        <p>The proposal PDF and the presentation slides from our class presentation.</p>
+                        <ul class="tags"><li class="tag tag-team">PDF</li><li class="tag tag-team">PPTX</li></ul>
+                        <span class="card-foot"><span></span><span class="go">Open the files →</span></span>
+                    </div>
+                </a></li>
+                </ul>
+            </section>
+
+            <section class="section" id="projects" aria-labelledby="projects-title">
+                <div class="section-head">
+                    <div>
+                        <h2 id="projects-title">Personal projects</h2>
+                        <p>Bigger projects I built outside the weekly assignments. Each one is live.</p>
+                    </div>
+                </div>
+                <ul class="card-grid">
+                <li><a class="card project-card" href="https://bahriddinoff01.github.io/LearnCoding/">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#128187;</span><ul class="tags"><li class="tag">Learning platform</li></ul></div>
+                    <div class="card-inner">
+                        <h3>LearnCoding</h3>
+                        <p>Learn HTML, CSS, JavaScript, Python and React with lessons, challenges, quizzes and an AI instructor.</p>
+                        <ul class="tags"><li class="tag tag-html">HTML</li><li class="tag tag-css">CSS</li><li class="tag tag-js">JavaScript</li></ul>
+                        <span class="card-foot"><span></span><span class="go">Visit the site ↗</span></span>
+                    </div>
+                </a></li>
+                <li><a class="card project-card" href="https://bahriddinoff01.github.io/mini-games/">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#127918;</span><ul class="tags"><li class="tag">8 games</li></ul></div>
+                    <div class="card-inner">
+                        <h3>Mini Arcade</h3>
+                        <p>Eight mini games like Tic-Tac-Toe, Memory Match and Typing Speed, plus a to-do list and a leaderboard.</p>
+                        <ul class="tags"><li class="tag tag-js">JavaScript</li></ul>
+                        <span class="card-foot"><span></span><span class="go">Play now ↗</span></span>
+                    </div>
+                </a></li>
+                <li><a class="card project-card" href="https://bahriddinoff01.github.io/ai-travel-planner/">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#129517;</span><ul class="tags"><li class="tag">AI app</li></ul></div>
+                    <div class="card-inner">
+                        <h3>TravelAI</h3>
+                        <p>An AI travel planner: choose a country and it creates a trip plan for you.</p>
+                        <ul class="tags"><li class="tag tag-js">JavaScript</li></ul>
+                        <span class="card-foot"><span></span><span class="go">Plan a trip ↗</span></span>
+                    </div>
+                </a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering, Gachon University</p>
+            <ul>
+                <li><a href="https://github.com/bahriddinoff01">GitHub</a></li>
+                <li><a href="https://github.com/bahriddinoff01/Web-programming">Source code</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>

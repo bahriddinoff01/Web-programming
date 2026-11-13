@@ -66,4 +66,5 @@ form.addEventListener('submit',e=>{e.preventDefault();matchCheck();$('review').h
   [['Name',$('name').value],['Student ID',$('sid').value],['Email',$('email').value],['Major',$('major').value],['Graduation year',$('year').value],['About you',$('bio').value||'(empty)']].forEach(([k,v])=>{
     const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=k;dd.textContent=v;dl.append(dt,dd)});
   $('review').hidden=false;$('review').focus()});
-</script></body></html>
+</script><script src="../../assets/site.js" defer></script>
+</body></html>

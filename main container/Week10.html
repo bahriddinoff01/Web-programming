@@ -4,434 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Week 10 of Web Programming: Git, GitHub and GitHub Pages homework and practice exercises by Abdulazizbek.">
-    <title>Week 10 | Git, GitHub &amp; Deployment</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111111'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-weight='bold' font-size='14' fill='%23ffffff'%3E10%3C/text%3E%3C/svg%3E">
-
-    <style>
-        :root {
-            --bg: #ffffff;
-            --text: #111111;
-            --muted: #555555;
-            --line: #e2e2e2;
-            --soft: #f6f6f6;
-            --accent: #1d4ed8;
-            --code-bg: #111111;
-            --code-text: #eeeeee;
-            --prompt: #7ee2a8;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #111111;
-                --text: #eeeeee;
-                --muted: #a8a8a8;
-                --line: #2e2e2e;
-                --soft: #1b1b1b;
-                --accent: #8ab4ff;
-                --code-bg: #000000;
-            }
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 72px;
-        }
-
-        body {
-            margin: 0;
-            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-            font-size: 17px;
-            line-height: 1.65;
-            color: var(--text);
-            background: var(--bg);
-        }
-
-        .wrap {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 clamp(20px, 4vw, 48px);
-        }
-
-        h1, h2, h3 {
-            line-height: 1.2;
-        }
-
-        a {
-            color: var(--accent);
-        }
-
-        :focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 3px;
-        }
-
-        .skip {
-            position: absolute;
-            left: 12px;
-            top: -50px;
-            padding: 8px 12px;
-            background: var(--text);
-            color: var(--bg);
-        }
-
-        .skip:focus {
-            top: 12px;
-        }
-
-        /* ---------- HEADER ---------- */
-
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            background: var(--bg);
-            border-bottom: 1px solid var(--line);
-        }
-
-        .site-header .wrap {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 8px 20px;
-            padding-top: 14px;
-            padding-bottom: 14px;
-        }
-
-        .logo {
-            color: var(--text);
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        nav ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 4px 18px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        nav a {
-            color: var(--muted);
-            font-size: 15px;
-            text-decoration: none;
-        }
-
-        nav a:hover {
-            color: var(--text);
-        }
-
-        /* ---------- INTRO ---------- */
-
-        .intro {
-            padding: 64px 0 40px;
-        }
-
-        .label {
-            margin: 0 0 10px;
-            color: var(--muted);
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        .intro h1 {
-            margin: 0 0 16px;
-            font-size: clamp(32px, 5vw, 52px);
-        }
-
-        .intro p {
-            margin: 0;
-            max-width: 46em;
-            color: var(--muted);
-            font-size: 18px;
-        }
-
-        /* ---------- SECTIONS ---------- */
-
-        main > section {
-            padding: 48px 0;
-            border-top: 1px solid var(--line);
-        }
-
-        section > h2 {
-            margin: 0 0 8px;
-            font-size: 28px;
-        }
-
-        .section-note {
-            margin: 0 0 28px;
-            color: var(--muted);
-        }
-
-        /* homework cards */
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
-            gap: 20px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .card {
-            padding: 22px;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-        }
-
-        .card h3 {
-            margin: 0 0 8px;
-            font-size: 20px;
-        }
-
-        .card p {
-            margin: 0 0 14px;
-            color: var(--muted);
-        }
-
-        .link-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .link-row a {
-            display: inline-block;
-            padding: 5px 12px;
-            border: 1px solid var(--line);
-            border-radius: 6px;
-            font-size: 14px;
-            text-decoration: none;
-        }
-
-        .link-row a:hover {
-            border-color: var(--accent);
-        }
-
-        /* exercises */
-
-        .exercise {
-            display: grid;
-            grid-template-columns: 64px minmax(0, 1fr);
-            gap: 0 20px;
-            padding: 28px 0;
-            border-top: 1px solid var(--line);
-        }
-
-        .exercise:first-of-type {
-            border-top: 0;
-            padding-top: 4px;
-        }
-
-        .ex-num {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 52px;
-            height: 52px;
-            border: 1px solid var(--text);
-            border-radius: 8px;
-            font-weight: 700;
-        }
-
-        .exercise h3 {
-            margin: 0 0 2px;
-            font-size: 21px;
-        }
-
-        .repo {
-            margin: 0 0 12px;
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .exercise p {
-            margin: 0 0 12px;
-            max-width: 75ch;
-        }
-
-        .exercise strong {
-            font-weight: 600;
-        }
-
-        pre {
-            margin: 0 0 16px;
-            padding: 16px 18px;
-            overflow-x: auto;
-            background: var(--code-bg);
-            color: var(--code-text);
-            border-radius: 8px;
-            font-family: Consolas, Monaco, monospace;
-            font-size: 14.5px;
-            line-height: 1.7;
-        }
-
-        .prompt {
-            color: var(--prompt);
-            user-select: none;
-        }
-
-        .comment {
-            color: #9a9a9a;
-        }
-
-        figure {
-            margin: 0 0 16px;
-        }
-
-        figure img {
-            display: block;
-            width: 100%;
-            max-width: 760px;
-            height: auto;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-        }
-
-        figcaption {
-            margin-top: 8px;
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .result {
-            padding: 12px 16px;
-            background: var(--soft);
-            border-left: 3px solid var(--accent);
-            border-radius: 0 6px 6px 0;
-        }
-
-        p code,
-        li code,
-        td code {
-            padding: 1px 6px;
-            background: var(--soft);
-            border: 1px solid var(--line);
-            border-radius: 4px;
-            font-family: Consolas, Monaco, monospace;
-            font-size: 0.9em;
-        }
-
-        /* commit table */
-
-        .table-wrap {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 15px;
-        }
-
-        th, td {
-            padding: 10px 12px;
-            border-bottom: 1px solid var(--line);
-            text-align: left;
-        }
-
-        th {
-            color: var(--muted);
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* footer */
-
-        .site-footer {
-            padding: 24px 0 40px;
-            border-top: 1px solid var(--line);
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .site-footer .wrap {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 8px;
-        }
-
-        .site-footer p {
-            margin: 0;
-        }
-
-        @media (max-width: 640px) {
-            html {
-                scroll-padding-top: 0;
-            }
-
-            .site-header {
-                position: static;
-            }
-
-            .exercise {
-                grid-template-columns: minmax(0, 1fr);
-            }
-
-            .ex-num {
-                margin-bottom: 12px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-        }
-    </style>
+    <title>Week 10 · Git, GitHub &amp; Deployment | Abdulazizbek</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/site.css">
+    <script src="../assets/site.js" defer></script>
 </head>
-<body>
-    <a class="skip" href="#main">Skip to content</a>
+<body class="hub">
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
-        <div class="wrap">
-            <a class="logo" href="./Main.html">Web Programming</a>
-            <nav aria-label="Week 10">
-                <ul>
-                    <li><a href="#homework">Homework</a></li>
-                    <li><a href="#monday">Monday: Git</a></li>
-                    <li><a href="#friday">Friday: Pages</a></li>
-                    <li><a href="#commits">Commits</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <main id="main" class="wrap">
+    <main id="main" class="container">
 
         <!-- ================= INTRO ================= -->
-        <div class="intro">
-            <p class="label">202537225 &middot; Week 10 &middot; Git, GitHub and Pages</p>
+        <header class="page-hero">
+            <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="./Main.html">Home</a></li><li><span aria-current="page">Week 10</span></li></ol></nav>
+            <p class="eyebrow">Week 10</p>
             <h1>Git, GitHub &amp; Deployment</h1>
-            <p>
+            <p class="lead">
                 The homework and the practice exercises from class. I did the
                 Git and GitHub Pages work on November 9, 2026, so the commit
                 dates are from that day. Every repository, commit and live site
                 below is linked, so you can check each one.
             </p>
-        </div>
+            <ul class="meta">
+                <li><a href="#homework">Homework</a></li>
+                <li><a href="#monday">Monday: Git</a></li>
+                <li><a href="#friday">Friday: Pages</a></li>
+                <li><a href="#commits">Commit history</a></li>
+            </ul>
+        </header>
 
         <!-- ================= HOMEWORK ================= -->
-        <section id="homework" aria-labelledby="homework-title">
+        <section class="doc-section" id="homework" aria-labelledby="homework-title">
             <h2 id="homework-title">Homework</h2>
             <p class="section-note">The two pieces of homework for this week, both deployed with GitHub Pages.</p>
 
-            <ul class="cards">
+            <ul class="card-grid">
                 <li class="card">
                     <article aria-labelledby="hw1">
                         <h3 id="hw1">Personal portfolio</h3>
@@ -471,7 +79,7 @@
         </section>
 
         <!-- ================= MONDAY ================= -->
-        <section id="monday" aria-labelledby="monday-title">
+        <section class="doc-section" id="monday" aria-labelledby="monday-title">
             <h2 id="monday-title">Monday practice: Git</h2>
             <p class="section-note">
                 The Git exercises from Monday's class, done in order in the
@@ -546,7 +154,7 @@
         </section>
 
         <!-- ================= FRIDAY ================= -->
-        <section id="friday" aria-labelledby="friday-title">
+        <section class="doc-section" id="friday" aria-labelledby="friday-title">
             <h2 id="friday-title">Friday practice: GitHub Pages</h2>
             <p class="section-note">The GitHub Pages exercises from Friday's class, done in the <code>webpro-w9</code> repository.</p>
 
@@ -635,7 +243,7 @@ Settings &rarr; Pages &rarr; Deploy from a branch &rarr; main &rarr; / (root) &r
         </section>
 
         <!-- ================= COMMITS ================= -->
-        <section id="commits" aria-labelledby="commits-title">
+        <section class="doc-section" id="commits" aria-labelledby="commits-title">
             <h2 id="commits-title">Commit history: webpro-w9</h2>
             <p class="section-note">All four commits in the repository, oldest first.</p>
 
@@ -674,12 +282,19 @@ Settings &rarr; Pages &rarr; Deploy from a branch &rarr; main &rarr; / (root) &r
             </div>
         </section>
 
+        <nav class="pager" aria-label="Weeks">
+            <a class="prev" href="./Week9.html"><small>&larr; Previous</small><strong>Week 9 &middot; Accessibility</strong></a>
+            <a class="next" href="./Week11.html"><small>Next &rarr;</small><strong>Week 11 &middot; React</strong></a>
+        </nav>
     </main>
 
     <footer class="site-footer">
-        <div class="wrap">
-            <p>Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering</p>
-            <p><a href="./Main.html">&larr; Back to all weeks</a></p>
+        <div class="container">
+            <p>&copy; 2026 Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering, Gachon University</p>
+            <ul>
+                <li><a href="https://github.com/bahriddinoff01">GitHub</a></li>
+                <li><a href="https://github.com/bahriddinoff01/Web-programming">Source code</a></li>
+            </ul>
         </div>
     </footer>
 </body>
