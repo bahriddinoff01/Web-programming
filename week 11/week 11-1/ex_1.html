@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Week 11-1 Exercise 1: a React ProfileCard component with props and a default avatar.">
+    <title>Exercise 1 - ProfileCard | Week 11-1</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- React, ReactDOM and Babel (turns JSX into JavaScript in the browser) -->
+    <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js" crossorigin></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <p class="tag">WEEK 11-1 &middot; EXERCISE 1</p>
+            <h1>Build a ProfileCard component</h1>
+            <p class="lead">
+                <strong>Task:</strong> create a <code>ProfileCard</code> component that
+                accepts <code>name</code>, <code>role</code>, <code>email</code> and an
+                optional <code>avatarUrl</code>. Show all four fields, and use a
+                default prop for <code>avatarUrl</code>.
+            </p>
+        </header>
+
+        <main>
+            <section class="block" aria-labelledby="result-title">
+                <h2 id="result-title">Live result</h2>
+                <div class="demo" id="root">Loading React&hellip;</div>
+            </section>
+
+            <section class="block" aria-labelledby="how-title">
+                <h2 id="how-title">How it works</h2>
+                <ul class="notes-list">
+                    <li>The props are destructured in the function's parameters: <code>{ name, role, email, avatarUrl }</code>.</li>
+                    <li><code>avatarUrl = PLACEHOLDER</code> is a default value. The second card doesn't pass an <code>avatarUrl</code>, so it gets the placeholder picture.</li>
+                    <li>The email becomes a <code>mailto:</code> link using a template string.</li>
+                </ul>
+            </section>
+
+            <section class="block" aria-labelledby="code-title">
+                <h2 id="code-title">Code</h2>
+                <div class="code-box">
+                    <div class="code-bar">ProfileCard.jsx</div>
+                    <pre><code id="code"></code></pre>
+                </div>
+            </section>
+
+            <p><a class="back" href="index.html">&larr; Back to Week 11-1</a></p>
+        </main>
+
+        <footer>Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering</footer>
+    </div>
+
+    <script type="text/babel" id="app">
+// Default picture, used when no avatarUrl is passed
+const PLACEHOLDER =
+  "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'>" +
+  "<rect width='80' height='80' fill='%23ffe066'/><circle cx='40' cy='31' r='14' fill='%2314121f'/>" +
+  "<path d='M14 74c3-16 13-24 26-24s23 8 26 24' fill='%2314121f'/></svg>";
+
+function ProfileCard({ name, role, email, avatarUrl = PLACEHOLDER }) {
+  const isDefault = avatarUrl === PLACEHOLDER;
+
+  return (
+    <article className="profile-card">
+      <img
+        src={avatarUrl}
+        alt={isDefault ? "Default profile picture" : `Photo of ${name}`}
+        width="80"
+        height="80"
+      />
+      <h3>{name}</h3>
+      <p>{role}</p>
+      <a href={`mailto:${email}`}>{email}</a>
+    </article>
+  );
+}
+
+function App() {
+  return (
+    <div className="row">
+      {/* avatarUrl is passed, so my photo is used */}
+      <ProfileCard
+        name="Abdulazizbek"
+        role="Computer Engineering student"
+        email="abdulazizbek@example.com"
+        avatarUrl="../../main%20container/self%20img.jpg"
+      />
+
+      {/* no avatarUrl, so the default picture is used */}
+      <ProfileCard
+        name="Web Programming TA"
+        role="Teaching assistant"
+        email="ta@example.com"
+      />
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+
+    <script>
+        // Show the exact code that runs on this page
+        document.getElementById("code").textContent =
+            document.getElementById("app").textContent.trim();
+    </script>
+</body>
+</html>

@@ -1,0 +1,358 @@
+/* Week 11-1 shared styles (same look as the rest of the site) */
+
+:root {
+    --ink: #14121f;
+    --bg: #f3f3fa;
+    --yellow: #ffe066;
+    --lilac: #cdbdff;
+    --mint: #b5f0d0;
+    --pink: #ffb8cd;
+    --sky: #aed6ff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    color: var(--ink);
+    background-color: var(--bg);
+    background-image: radial-gradient(#c9c9de 1.5px, transparent 1.5px);
+    background-size: 22px 22px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+header {
+    padding: 64px 0 40px;
+}
+
+.tag {
+    display: inline-block;
+    margin: 0 0 16px;
+    padding: 3px 12px;
+    background: var(--yellow);
+    border: 3px solid var(--ink);
+    box-shadow: 3px 3px 0 var(--ink);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin: 0 0 12px;
+    font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 900;
+    font-size: clamp(32px, 7vw, 56px);
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+}
+
+h2 {
+    margin: 0 0 16px;
+    font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+    font-size: 24px;
+}
+
+.lead {
+    margin: 0;
+    max-width: 38em;
+    font-size: 18px;
+}
+
+a {
+    color: var(--ink);
+}
+
+:focus-visible {
+    outline: 4px solid var(--ink);
+    outline-offset: 4px;
+}
+
+code {
+    font-family: Consolas, Monaco, monospace;
+}
+
+p code,
+li code {
+    padding: 1px 6px;
+    background: #fff;
+    border: 2px solid var(--ink);
+    font-size: 0.9em;
+}
+
+/* ---------- EXERCISE CARDS (index page) ---------- */
+
+.week-container {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+    gap: 22px;
+}
+
+.card a {
+    display: block;
+    height: 100%;
+    padding: 28px 22px;
+    color: var(--ink);
+    text-decoration: none;
+    border: 3px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--ink);
+    transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.card:nth-child(4n+1) a { background: var(--lilac); }
+.card:nth-child(4n+2) a { background: var(--mint); }
+.card:nth-child(4n+3) a { background: var(--pink); }
+.card:nth-child(4n+4) a { background: var(--sky); }
+
+.card .ex {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.card .title {
+    display: block;
+    margin-bottom: 8px;
+    font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+    font-size: 24px;
+    line-height: 1.15;
+}
+
+.card .desc {
+    display: block;
+    font-size: 15px;
+}
+
+.card .url {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 3px 8px;
+    background: #fff;
+    border: 2px solid var(--ink);
+    font-family: Consolas, Monaco, monospace;
+    font-size: 14px;
+}
+
+.card a:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 var(--ink);
+}
+
+/* ---------- EXERCISE PAGES ---------- */
+
+.block {
+    margin-bottom: 40px;
+}
+
+.demo {
+    padding: 26px;
+    background: #fff;
+    border: 3px solid var(--ink);
+    box-shadow: 8px 8px 0 var(--ink);
+}
+
+.code-box {
+    overflow: hidden;
+    border: 3px solid var(--ink);
+    background: var(--ink);
+}
+
+.code-bar {
+    padding: 8px 14px;
+    background: #2a2740;
+    color: #f3f3fa;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+pre {
+    margin: 0;
+    padding: 18px;
+    overflow-x: auto;
+    color: #f3f3fa;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.notes-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.notes-list li {
+    margin-bottom: 6px;
+}
+
+/* Exercise 1: profile cards */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.profile-card {
+    flex: 1 1 240px;
+    max-width: 300px;
+    padding: 20px;
+    background: var(--lilac);
+    border: 3px solid var(--ink);
+    box-shadow: 5px 5px 0 var(--ink);
+    text-align: center;
+}
+
+.profile-card:nth-child(2) {
+    background: var(--mint);
+}
+
+.profile-card img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 10px;
+    object-fit: cover;
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+    background: #fff;
+}
+
+.profile-card h3 {
+    margin: 0 0 2px;
+    font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+    font-size: 20px;
+}
+
+.profile-card p {
+    margin: 0 0 8px;
+}
+
+.profile-card a {
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+/* Exercise 2: notifications */
+
+.notes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.note {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border: 3px solid var(--ink);
+    box-shadow: 4px 4px 0 var(--ink);
+}
+
+.note-success { background: var(--mint); }
+.note-warning { background: var(--yellow); }
+.note-info    { background: var(--sky); }
+
+.note .icon {
+    font-size: 22px;
+    line-height: 1;
+}
+
+/* Exercise 3: card with children */
+
+.box-card {
+    margin-bottom: 18px;
+    padding: 16px 20px;
+    background: #fff;
+    border: 3px solid var(--ink);
+    box-shadow: 5px 5px 0 var(--ink);
+}
+
+.box-card:last-child {
+    margin-bottom: 0;
+}
+
+.box-card h3 {
+    margin: 0 0 10px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--ink);
+    font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+    font-size: 20px;
+}
+
+.box-card ul,
+.box-card p {
+    margin: 0;
+}
+
+/* ---------- BACK LINK + FOOTER ---------- */
+
+.back {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 10px 18px;
+    color: var(--ink);
+    background: #fff;
+    border: 3px solid var(--ink);
+    box-shadow: 4px 4px 0 var(--ink);
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.back:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--ink);
+}
+
+footer {
+    margin-top: 48px;
+    padding: 20px 0 32px;
+    border-top: 3px solid var(--ink);
+    font-size: 14px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+    header {
+        padding: 44px 0 28px;
+    }
+
+    .demo {
+        padding: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card a,
+    .back {
+        transition: none;
+    }
+
+    .card a:hover,
+    .back:hover {
+        transform: none;
+    }
+}

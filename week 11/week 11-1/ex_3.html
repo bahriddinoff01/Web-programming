@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Week 11-1 Exercise 3: a reusable React Card component using props.children.">
+    <title>Exercise 3 - Card Layout | Week 11-1</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- React, ReactDOM and Babel (turns JSX into JavaScript in the browser) -->
+    <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js" crossorigin></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <p class="tag">WEEK 11-1 &middot; EXERCISE 3</p>
+            <h1>Layout with props.children</h1>
+            <p class="lead">
+                <strong>Task:</strong> create a reusable <code>Card</code> component
+                that accepts a <code>title</code> prop and renders any children
+                inside a styled box. Use it to wrap two different content sections.
+            </p>
+        </header>
+
+        <main>
+            <section class="block" aria-labelledby="result-title">
+                <h2 id="result-title">Live result</h2>
+                <div class="demo" id="root">Loading React&hellip;</div>
+            </section>
+
+            <section class="block" aria-labelledby="how-title">
+                <h2 id="how-title">How it works</h2>
+                <ul class="notes-list">
+                    <li><code>Card</code> receives <code>title</code> and <code>children</code> as props.</li>
+                    <li>Whatever is written between <code>&lt;Card&gt;</code> and <code>&lt;/Card&gt;</code> becomes <code>children</code>.</li>
+                    <li>The same component wraps a list in the first card and a paragraph in the second, without changing the Card code.</li>
+                </ul>
+            </section>
+
+            <section class="block" aria-labelledby="code-title">
+                <h2 id="code-title">Code</h2>
+                <div class="code-box">
+                    <div class="code-bar">Card.jsx</div>
+                    <pre><code id="code"></code></pre>
+                </div>
+            </section>
+
+            <p><a class="back" href="index.html">&larr; Back to Week 11-1</a></p>
+        </main>
+
+        <footer>Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering</footer>
+    </div>
+
+    <script type="text/babel" id="app">
+// A reusable box: the title is a prop, the content is children
+function Card({ title, children }) {
+  return (
+    <section className="box-card">
+      <h3>{title}</h3>
+      {children}
+    </section>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <Card title="Lecture Topics">
+        <ul>
+          <li>Components</li>
+          <li>Props</li>
+          <li>Lists and keys</li>
+          <li>Conditional rendering</li>
+        </ul>
+      </Card>
+
+      <Card title="Homework">
+        <p>Build a student portfolio component using what we learned in class.</p>
+      </Card>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+
+    <script>
+        // Show the exact code that runs on this page
+        document.getElementById("code").textContent =
+            document.getElementById("app").textContent.trim();
+    </script>
+</body>
+</html>
