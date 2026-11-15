@@ -91,9 +91,9 @@
                         '<li><a href="' + homeUrl + '"' + (isHome ? ' aria-current="page"' : '') + '>Home</a></li>' +
                         '<li><details class="dropdown"><summary>Weeks ' + chevron + '</summary>' +
                             '<div class="dropdown-panel"><ul>' + weekLinks() + '</ul></div></details></li>' +
-                        '<li><a href="' + homeUrl + '#team">Team project</a></li>' +
                         '<li><a href="' + homeUrl + '#projects">Projects</a></li>' +
-                        '<li><a href="' + url("week 10/week 10-2/index.html") + '">Portfolio</a></li>' +
+                        '<li><a href="' + homeUrl + '#about">About</a></li>' +
+                        '<li><a href="' + homeUrl + '#contact">Contact</a></li>' +
                     '</ul>' +
                 '</nav>' +
             '</div>';

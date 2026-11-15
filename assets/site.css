@@ -836,6 +836,216 @@ a.task-card:hover .arrow {
     padding: 20px 22px 22px;
 }
 
+/* ---------- Portfolio: about ---------- */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 18px;
+}
+
+.about-text p + p {
+    margin-top: 14px;
+}
+
+.about-text p {
+    color: var(--text);
+    font-size: 16.5px;
+}
+
+.facts {
+    display: grid;
+    gap: 14px;
+    margin: 0;
+}
+
+.facts div {
+    display: grid;
+    gap: 2px;
+}
+
+.facts dt {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.facts dd {
+    margin: 0;
+    font-weight: 650;
+}
+
+/* ---------- Portfolio: skills ---------- */
+
+.skill-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 17px;
+}
+
+.skill-card h3 .ico {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: var(--accent-soft);
+    font-size: 16px;
+}
+
+.skill-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.skill-list li {
+    padding: 6px 0;
+    border-top: 1px dashed var(--line);
+    font-size: 15px;
+}
+
+.skill-list li:first-child {
+    border-top: 0;
+}
+
+.used-in {
+    margin-top: auto;
+    padding-top: 14px;
+    color: var(--muted);
+    font-size: 13.5px;
+}
+
+/* ---------- Portfolio: featured projects ---------- */
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.filter-bar button {
+    padding: 7px 14px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--muted);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filter-bar button:hover {
+    border-color: var(--accent);
+    color: var(--text);
+}
+
+.filter-bar button[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+}
+
+.feat-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.feat-card[hidden] {
+    display: none;
+}
+
+.feat-card .banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(135deg, var(--accent-soft), var(--surface));
+}
+
+.feat-card .banner .emoji {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.from-week {
+    padding: 3px 10px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: 12.5px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.feat-card .card-inner {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 18px 20px 20px;
+}
+
+.feat-card .learned {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.feat-card .learned strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.feat-card .link-row {
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+.result-count {
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ---------- Portfolio: contact ---------- */
+
+.contact-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 24px;
+    align-items: center;
+    padding: clamp(24px, 4vw, 40px);
+    background: linear-gradient(135deg, var(--accent-soft), var(--surface));
+    border: 1px solid var(--line);
+    border-radius: 20px;
+}
+
+.contact-card h2 {
+    margin-bottom: 8px;
+    font-size: clamp(24px, 3.4vw, 32px);
+}
+
+.contact-card p {
+    color: var(--muted);
+}
+
+.contact-card .btn-row {
+    margin-top: 0;
+}
+
+@media (max-width: 760px) {
+    .about-grid,
+    .contact-card {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ---------- Notice ---------- */
 
 .notice {

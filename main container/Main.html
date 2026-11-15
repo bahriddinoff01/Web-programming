@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Abdulazizbek's Web Programming coursework: weekly assignments, a team project and personal projects.">
-    <title>Abdulazizbek · Web Programming Portfolio</title>
+    <meta name="description" content="Portfolio of Abdulazizbek, a Computer Engineering student at Gachon University: projects in HTML, CSS, JavaScript and React, skills and coursework.">
+    <title>Abdulazizbek · Computer Engineering Student &amp; Web Developer</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../assets/site.css">
     <script src="../assets/site.js" defer></script>
@@ -16,24 +16,24 @@
         <section class="home-hero" aria-labelledby="intro">
             <div class="container hero-grid">
                 <div>
-                    <p class="eyebrow">Web Programming &middot; Coursework portfolio</p>
+                    <p class="eyebrow">Computer Engineering student &middot; Web developer</p>
                     <h1 id="intro">Hi, I'm <span class="accent">Abdulazizbek</span>.</h1>
                     <p class="lead">
-                        I'm a Computer Engineering student at Gachon University. This site
-                        collects my weekly Web Programming assignments, our team project
-                        and the personal projects I've built along the way.
+                        I build accessible, responsive websites with HTML, CSS, JavaScript
+                        and React. This is my portfolio: the projects I'm proud of, the
+                        skills behind them, and all my Web Programming coursework.
                     </p>
                     <div class="btn-row">
-                        <a class="btn btn-primary" href="#weeks">Browse the weeks</a>
-                        <a class="btn" href="../week%2010/week%2010-2/index.html">View my portfolio</a>
+                        <a class="btn btn-primary" href="#projects">See my projects</a>
+                        <a class="btn" href="#contact">Get in touch</a>
                     </div>
                     <ul class="stats">
-                        <li><strong>10</strong><span>weeks</span></li>
-                        <li><strong>92+</strong><span>tasks and exercises</span></li>
-                        <li><strong>3</strong><span>personal projects</span></li>
+                        <li><strong>11</strong><span>projects</span></li>
+                        <li><strong>92+</strong><span>exercises completed</span></li>
+                        <li><strong>10</strong><span>weeks of coursework</span></li>
                     </ul>
                 </div>
-                <aside class="profile-panel" aria-label="About me">
+                <aside class="profile-panel" aria-label="Profile">
                     <img class="photo" src="./self%20img.jpg" width="960" height="1280"
                          alt="Abdulazizbek standing in the sea waves at night with his arms spread wide">
                     <dl>
@@ -46,11 +46,280 @@
         </section>
 
         <div class="container">
+
+            <!-- ABOUT -->
+            <section class="section" id="about" aria-labelledby="about-title">
+                <div class="section-head"><div><h2 id="about-title">About me</h2></div></div>
+                <div class="about-grid">
+                    <div class="card about-text">
+                        <p>
+                            I'm a Computer Engineering student at Gachon University. I got into
+                            web development because I wanted to understand how the sites and apps
+                            I use every day actually work, and now I build them myself.
+                        </p>
+                        <p>
+                            This semester I went from my first HTML page to apps that load live
+                            data from APIs, forms with full validation, accessibility audits and
+                            React components. I also worked in a team on TravelAI, an AI travel
+                            planner.
+                        </p>
+                        <p>
+                            I care about clean code and about sites that work for everyone: on
+                            phones, with a keyboard, and with a screen reader.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <dl class="facts">
+                            <div><dt>Studying</dt><dd>B.S. Computer Engineering, Gachon University</dd></div>
+                            <div><dt>Course</dt><dd>Web Programming, 2026</dd></div>
+                            <div><dt>Focus</dt><dd>Front-end development &amp; accessibility</dd></div>
+                            <div><dt>Currently learning</dt><dd>React</dd></div>
+                        </dl>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SKILLS -->
+            <section class="section" id="skills" aria-labelledby="skills-title">
+                <div class="section-head">
+                    <div>
+                        <h2 id="skills-title">Skills</h2>
+                        <p>What I can do, and where I practised it.</p>
+                    </div>
+                </div>
+                <ul class="card-grid">
+                <li class="card skill-card">
+                    <h3><span class="ico" aria-hidden="true">&#129521;</span>HTML &amp; CSS</h3>
+                    <ul class="skill-list"><li>Semantic HTML5</li><li>Flexbox and Grid layouts</li><li>Transitions, animations and CSS variables</li><li>Responsive, mobile-first design</li></ul>
+                    <p class="used-in">Used in: Weeks 2, 3 and every project</p>
+                </li>
+                <li class="card skill-card">
+                    <h3><span class="ico" aria-hidden="true">&#9889;</span>JavaScript</h3>
+                    <ul class="skill-list"><li>DOM and events</li><li>Fetch API and JSON</li><li>Form validation</li><li>localStorage</li></ul>
+                    <p class="used-in">Used in: Weeks 4 to 8</p>
+                </li>
+                <li class="card skill-card">
+                    <h3><span class="ico" aria-hidden="true">&#9883;&#65039;</span>React</h3>
+                    <ul class="skill-list"><li>Components and props</li><li>Lists, keys and conditional rendering</li><li>props.children layouts</li><li>Vite projects</li></ul>
+                    <p class="used-in">Used in: Week 11</p>
+                </li>
+                <li class="card skill-card">
+                    <h3><span class="ico" aria-hidden="true">&#128736;&#65039;</span>Tools &amp; practices</h3>
+                    <ul class="skill-list"><li>Git and GitHub</li><li>GitHub Pages deployment</li><li>Accessibility (WCAG)</li><li>Lighthouse audits</li></ul>
+                    <p class="used-in">Used in: Weeks 9 and 10</p>
+                </li>
+                </ul>
+            </section>
+
+            <!-- FEATURED PROJECTS -->
+            <section class="section" id="projects" aria-labelledby="projects-title">
+                <div class="section-head">
+                    <div>
+                        <h2 id="projects-title">Featured projects</h2>
+                        <p>The best work from my homework, each with a live demo and its source code.</p>
+                    </div>
+                </div>
+                <div class="filter-bar" role="group" aria-label="Filter projects">
+                    <button type="button" data-filter="all" aria-pressed="true">All</button>
+                    <button type="button" data-filter="js" aria-pressed="false">JavaScript</button>
+                    <button type="button" data-filter="api" aria-pressed="false">APIs</button>
+                    <button type="button" data-filter="react" aria-pressed="false">React</button>
+                    <button type="button" data-filter="a11y" aria-pressed="false">Accessibility</button>
+                    <button type="button" data-filter="git" aria-pressed="false">Git</button>
+                </div>
+                <ul class="card-grid" id="featured">
+                <li class="card feat-card" data-cats="js api">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#128218;</span><span class="from-week">From Week 7</span></div>
+                    <div class="card-inner">
+                        <h3>Shelf Finder</h3>
+                        <p>A book search app on the Open Library API. Results appear as you type, can be sorted and filtered by language, and books can be saved to a reading list.</p>
+                        <p class="learned"><strong>What I learned:</strong> Fetch API, debounced live search, sorting and filtering, saving data with localStorage.</p>
+                        <ul class="tags"><li class="tag tag-js">JavaScript</li><li class="tag tag-api">Fetch API</li></ul>
+                        <ul class="link-row">
+                            <li><a href="../week%20%207/index.html">Live demo<span class="visually-hidden"> of Shelf Finder</span></a></li>
+                            <li><a href="https://github.com/bahriddinoff01/Web-programming/blob/Main/week%20%207/book-search.html">Code ↗<span class="visually-hidden"> for Shelf Finder</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="card feat-card" data-cats="js a11y">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#128221;</span><span class="from-week">From Week 8</span></div>
+                    <div class="card-inner">
+                        <h3>Student sign-up form</h3>
+                        <p>A sign-up form checked with JavaScript: errors appear as you type, with a password strength meter, an error summary that links to each problem, and a review card.</p>
+                        <p class="learned"><strong>What I learned:</strong> The Constraint Validation API, custom error messages, accessible error handling with ARIA.</p>
+                        <ul class="tags"><li class="tag tag-html">Forms</li><li class="tag tag-js">Validation</li><li class="tag tag-a11y">Accessibility</li></ul>
+                        <ul class="link-row">
+                            <li><a href="../week%208/week%208-2/index.html">Live demo<span class="visually-hidden"> of Student sign-up form</span></a></li>
+                            <li><a href="https://github.com/bahriddinoff01/Web-programming/blob/Main/week%208/week%208-2/index.html">Code ↗<span class="visually-hidden"> for Student sign-up form</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="card feat-card" data-cats="a11y">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#9855;</span><span class="from-week">From Week 9</span></div>
+                    <div class="card-inner">
+                        <h3>Accessibility audit: TravelAI</h3>
+                        <p>I audited our team's website with Lighthouse, found three issues (an unnamed button, low colour contrast and skipped headings) and fixed them. Score: 87 → 100.</p>
+                        <p class="learned"><strong>What I learned:</strong> Running audits, WCAG contrast rules, ARIA labels and heading structure.</p>
+                        <ul class="tags"><li class="tag tag-a11y">Accessibility</li><li class="tag tag-a11y">Lighthouse</li></ul>
+                        <ul class="link-row">
+                            <li><a href="../week%209/week%209-2/index.html">Live demo<span class="visually-hidden"> of Accessibility audit: TravelAI</span></a></li>
+                            <li><a href="https://github.com/bahriddinoff01/Web-programming/blob/Main/week%209/week%209-2/index.html">Code ↗<span class="visually-hidden"> for Accessibility audit: TravelAI</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="card feat-card" data-cats="js api">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#128269;</span><span class="from-week">From Week 6</span></div>
+                    <div class="card-inner">
+                        <h3>Pokédex</h3>
+                        <p>Search PokéAPI by name or number, or get a random Pokémon, and see its picture, types, height, weight and abilities.</p>
+                        <p class="learned"><strong>What I learned:</strong> Working with a REST API, handling loading and errors, building the page from JSON.</p>
+                        <ul class="tags"><li class="tag tag-js">JavaScript</li><li class="tag tag-api">APIs</li></ul>
+                        <ul class="link-row">
+                            <li><a href="../week-6/exercise_05.html">Live demo<span class="visually-hidden"> of Pokédex</span></a></li>
+                            <li><a href="https://github.com/bahriddinoff01/Web-programming/blob/Main/week-6/exercise_05.html">Code ↗<span class="visually-hidden"> for Pokédex</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="card feat-card" data-cats="js api">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#127758;</span><span class="from-week">From Week 6</span></div>
+                    <div class="card-inner">
+                        <h3>Country table</h3>
+                        <p>Data for every country with flags, capitals and population, in a table you can search, filter by region and sort.</p>
+                        <p class="learned"><strong>What I learned:</strong> Loading a large dataset, filtering and sorting arrays, rendering tables.</p>
+                        <ul class="tags"><li class="tag tag-js">JavaScript</li><li class="tag tag-api">APIs</li></ul>
+                        <ul class="link-row">
+                            <li><a href="../week-6/exercise_06.html">Live demo<span class="visually-hidden"> of Country table</span></a></li>
+                            <li><a href="https://github.com/bahriddinoff01/Web-programming/blob/Main/week-6/exercise_06.html">Code ↗<span class="visually-hidden"> for Country table</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="card feat-card" data-cats="react">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#9883;&#65039;</span><span class="from-week">From Week 11</span></div>
+                    <div class="card-inner">
+                        <h3>React components</h3>
+                        <p>Reusable React components: a profile card with a default avatar, a notification list built with .map(), and a layout card that wraps any content.</p>
+                        <p class="learned"><strong>What I learned:</strong> Components, props and default props, keys, conditional rendering, props.children.</p>
+                        <ul class="tags"><li class="tag tag-react">React</li><li class="tag tag-react">JSX</li></ul>
+                        <ul class="link-row">
+                            <li><a href="../week%2011/week%2011-1/index.html">Live demo<span class="visually-hidden"> of React components</span></a></li>
+                            <li><a href="https://github.com/bahriddinoff01/Web-programming/tree/Main/week%2011/week%2011-1">Code ↗<span class="visually-hidden"> for React components</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="card feat-card" data-cats="react">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#127891;</span><span class="from-week">From Week 11</span></div>
+                    <div class="card-inner">
+                        <h3>Student directory</h3>
+                        <p>A React app built with Vite: a student directory made from a reusable StudentProfileCard component and deployed to GitHub Pages.</p>
+                        <p class="learned"><strong>What I learned:</strong> Setting up a React project with Vite, splitting UI into components, deploying a build.</p>
+                        <ul class="tags"><li class="tag tag-react">React</li></ul>
+                        <ul class="link-row">
+                            <li><a href="https://bahriddinoff01.github.io/task11/">Live demo ↗<span class="visually-hidden"> of Student directory</span></a></li>
+                            <li><a href="https://github.com/bahriddinoff01/task11">Code ↗<span class="visually-hidden"> for Student directory</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="card feat-card" data-cats="git">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#128640;</span><span class="from-week">From Week 10</span></div>
+                    <div class="card-inner">
+                        <h3>Git &amp; GitHub Pages</h3>
+                        <p>A repository built step by step with Git (init, commits, a feature branch, push), published with GitHub Pages, plus a custom 404 page for this site.</p>
+                        <p class="learned"><strong>What I learned:</strong> Version control, branching, deploying static sites, custom error pages.</p>
+                        <ul class="tags"><li class="tag tag-git">Git</li><li class="tag tag-git">GitHub Pages</li></ul>
+                        <ul class="link-row">
+                            <li><a href="./Week10.html">Live demo<span class="visually-hidden"> of Git &amp; GitHub Pages</span></a></li>
+                            <li><a href="https://github.com/bahriddinoff01/webpro-w9">Code ↗<span class="visually-hidden"> for Git &amp; GitHub Pages</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+                </ul>
+                <p class="result-count" id="result-count" aria-live="polite">Showing all 8 projects.</p>
+            </section>
+
+            <!-- PERSONAL PROJECTS -->
+            <section class="section" id="personal" aria-labelledby="personal-title">
+                <div class="section-head">
+                    <div>
+                        <h2 id="personal-title">Personal projects</h2>
+                        <p>Bigger projects I built on my own, outside the weekly homework.</p>
+                    </div>
+                </div>
+                <ul class="card-grid">
+                <li><a class="card project-card" href="https://bahriddinoff01.github.io/LearnCoding/">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#128187;</span><ul class="tags"><li class="tag">Learning platform</li></ul></div>
+                    <div class="card-inner">
+                        <h3>LearnCoding</h3>
+                        <p>Learn HTML, CSS, JavaScript, Python and React with lessons, challenges, quizzes and an AI instructor.</p>
+                        <ul class="tags"><li class="tag tag-html">HTML</li><li class="tag tag-css">CSS</li><li class="tag tag-js">JavaScript</li></ul>
+                        <span class="card-foot"><span></span><span class="go">Visit the site ↗</span></span>
+                    </div>
+                </a></li>
+                <li><a class="card project-card" href="https://bahriddinoff01.github.io/mini-games/">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#127918;</span><ul class="tags"><li class="tag">8 games</li></ul></div>
+                    <div class="card-inner">
+                        <h3>Mini Arcade</h3>
+                        <p>Eight mini games like Tic-Tac-Toe, Memory Match and Typing Speed, plus a to-do list and a leaderboard.</p>
+                        <ul class="tags"><li class="tag tag-js">JavaScript</li></ul>
+                        <span class="card-foot"><span></span><span class="go">Play now ↗</span></span>
+                    </div>
+                </a></li>
+                <li><a class="card project-card" href="https://bahriddinoff01.github.io/ai-travel-planner/">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#129517;</span><ul class="tags"><li class="tag">AI app</li></ul></div>
+                    <div class="card-inner">
+                        <h3>TravelAI</h3>
+                        <p>An AI travel planner: choose a country and it creates a trip plan for you.</p>
+                        <ul class="tags"><li class="tag tag-js">JavaScript</li></ul>
+                        <span class="card-foot"><span></span><span class="go">Plan a trip ↗</span></span>
+                    </div>
+                </a></li>
+                </ul>
+            </section>
+
+            <!-- TEAM PROJECT -->
+            <section class="section" id="team" aria-labelledby="team-title">
+                <div class="section-head">
+                    <div>
+                        <h2 id="team-title">Team project</h2>
+                        <p>TravelAI, an AI travel planner built by Team 19.</p>
+                    </div>
+                </div>
+                <ul class="card-grid">
+                <li><a class="card project-card" href="https://bahriddinoff01.github.io/ai-travel-planner/">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#9992;&#65039;</span><ul class="tags"><li class="tag">Team</li></ul></div>
+                    <div class="card-inner">
+                        <h3>TravelAI live site</h3>
+                        <p>Pick a destination like Japan, Italy or Greece and the AI creates a trip plan for you.</p>
+                        <ul class="tags"><li class="tag tag-html">HTML</li><li class="tag tag-css">CSS</li><li class="tag tag-js">JavaScript</li></ul>
+                        <span class="card-foot"><span></span><span class="go">Visit the site ↗</span></span>
+                    </div>
+                </a></li>
+                <li><a class="card project-card" href="https://bahriddinoff01.github.io/team-19-proposal/">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#128221;</span><ul class="tags"><li class="tag">Team</li></ul></div>
+                    <div class="card-inner">
+                        <h3>Team 19 proposal</h3>
+                        <p>Our project proposal published as a web page: the idea, the goals and the plan.</p>
+                        
+                        <span class="card-foot"><span></span><span class="go">Read the proposal ↗</span></span>
+                    </div>
+                </a></li>
+                <li><a class="card project-card" href="./TeamFiles.html">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#128193;</span><ul class="tags"><li class="tag">Team</li></ul></div>
+                    <div class="card-inner">
+                        <h3>Team files</h3>
+                        <p>The proposal PDF and the presentation slides from our class presentation.</p>
+                        <ul class="tags"><li class="tag tag-team">PDF</li><li class="tag tag-team">PPTX</li></ul>
+                        <span class="card-foot"><span></span><span class="go">Open the files →</span></span>
+                    </div>
+                </a></li>
+                </ul>
+            </section>
+
+            <!-- COURSEWORK -->
             <section class="section" id="weeks" aria-labelledby="weeks-title">
                 <div class="section-head">
                     <div>
-                        <h2 id="weeks-title">Weekly assignments</h2>
-                        <p>Every week of the course, from my first HTML page to React. Open a week to see its parts and tasks.</p>
+                        <h2 id="weeks-title">Coursework</h2>
+                        <p>Every week of Web Programming, from my first HTML page to React. Open a week to see all its tasks.</p>
                     </div>
                 </div>
                 <ul class="card-grid">
@@ -157,83 +426,44 @@
                 </ul>
             </section>
 
-            <section class="section" id="team" aria-labelledby="team-title">
-                <div class="section-head">
+            <!-- CONTACT -->
+            <section class="section" id="contact" aria-labelledby="contact-title">
+                <div class="contact-card">
                     <div>
-                        <h2 id="team-title">Team project</h2>
-                        <p>TravelAI, an AI travel planner built by Team 19.</p>
+                        <h2 id="contact-title">Let's connect</h2>
+                        <p>Thanks for visiting! You can reach me by email or find all my code on GitHub.</p>
                     </div>
+                    <address class="btn-row">
+                        <a class="btn btn-primary" href="mailto:202537225@gachon.ac.kr">Email me</a>
+                        <a class="btn" href="https://github.com/bahriddinoff01">GitHub profile ↗</a>
+                    </address>
                 </div>
-                <ul class="card-grid">
-                <li><a class="card project-card" href="https://bahriddinoff01.github.io/ai-travel-planner/">
-                    <div class="banner"><span class="emoji" aria-hidden="true">&#9992;&#65039;</span><ul class="tags"><li class="tag tag-team">Team</li></ul></div>
-                    <div class="card-inner">
-                        <h3>TravelAI live site</h3>
-                        <p>Pick a destination like Japan, Italy or Greece and the AI creates a trip plan for you.</p>
-                        <ul class="tags"><li class="tag tag-html">HTML</li><li class="tag tag-css">CSS</li><li class="tag tag-js">JavaScript</li></ul>
-                        <span class="card-foot"><span></span><span class="go">Visit the site ↗</span></span>
-                    </div>
-                </a></li>
-                <li><a class="card project-card" href="https://bahriddinoff01.github.io/team-19-proposal/">
-                    <div class="banner"><span class="emoji" aria-hidden="true">&#128221;</span><ul class="tags"><li class="tag tag-team">Team</li></ul></div>
-                    <div class="card-inner">
-                        <h3>Team 19 proposal</h3>
-                        <p>Our project proposal published as a web page: the idea, the goals and the plan.</p>
-                        
-                        <span class="card-foot"><span></span><span class="go">Read the proposal ↗</span></span>
-                    </div>
-                </a></li>
-                <li><a class="card project-card" href="./TeamFiles.html">
-                    <div class="banner"><span class="emoji" aria-hidden="true">&#128193;</span><ul class="tags"><li class="tag tag-team">Team</li></ul></div>
-                    <div class="card-inner">
-                        <h3>Team files</h3>
-                        <p>The proposal PDF and the presentation slides from our class presentation.</p>
-                        <ul class="tags"><li class="tag tag-team">PDF</li><li class="tag tag-team">PPTX</li></ul>
-                        <span class="card-foot"><span></span><span class="go">Open the files →</span></span>
-                    </div>
-                </a></li>
-                </ul>
-            </section>
-
-            <section class="section" id="projects" aria-labelledby="projects-title">
-                <div class="section-head">
-                    <div>
-                        <h2 id="projects-title">Personal projects</h2>
-                        <p>Bigger projects I built outside the weekly assignments. Each one is live.</p>
-                    </div>
-                </div>
-                <ul class="card-grid">
-                <li><a class="card project-card" href="https://bahriddinoff01.github.io/LearnCoding/">
-                    <div class="banner"><span class="emoji" aria-hidden="true">&#128187;</span><ul class="tags"><li class="tag">Learning platform</li></ul></div>
-                    <div class="card-inner">
-                        <h3>LearnCoding</h3>
-                        <p>Learn HTML, CSS, JavaScript, Python and React with lessons, challenges, quizzes and an AI instructor.</p>
-                        <ul class="tags"><li class="tag tag-html">HTML</li><li class="tag tag-css">CSS</li><li class="tag tag-js">JavaScript</li></ul>
-                        <span class="card-foot"><span></span><span class="go">Visit the site ↗</span></span>
-                    </div>
-                </a></li>
-                <li><a class="card project-card" href="https://bahriddinoff01.github.io/mini-games/">
-                    <div class="banner"><span class="emoji" aria-hidden="true">&#127918;</span><ul class="tags"><li class="tag">8 games</li></ul></div>
-                    <div class="card-inner">
-                        <h3>Mini Arcade</h3>
-                        <p>Eight mini games like Tic-Tac-Toe, Memory Match and Typing Speed, plus a to-do list and a leaderboard.</p>
-                        <ul class="tags"><li class="tag tag-js">JavaScript</li></ul>
-                        <span class="card-foot"><span></span><span class="go">Play now ↗</span></span>
-                    </div>
-                </a></li>
-                <li><a class="card project-card" href="https://bahriddinoff01.github.io/ai-travel-planner/">
-                    <div class="banner"><span class="emoji" aria-hidden="true">&#129517;</span><ul class="tags"><li class="tag">AI app</li></ul></div>
-                    <div class="card-inner">
-                        <h3>TravelAI</h3>
-                        <p>An AI travel planner: choose a country and it creates a trip plan for you.</p>
-                        <ul class="tags"><li class="tag tag-js">JavaScript</li></ul>
-                        <span class="card-foot"><span></span><span class="go">Plan a trip ↗</span></span>
-                    </div>
-                </a></li>
-                </ul>
             </section>
         </div>
     </main>
+
+    <script>
+        // Featured project filter
+        (function () {
+            var buttons = document.querySelectorAll("[data-filter]");
+            var cards = document.querySelectorAll("#featured .feat-card");
+            var count = document.getElementById("result-count");
+            buttons.forEach(function (btn) {
+                btn.addEventListener("click", function () {
+                    var f = btn.getAttribute("data-filter"), shown = 0;
+                    buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b === btn)); });
+                    cards.forEach(function (card) {
+                        var match = f === "all" || card.getAttribute("data-cats").split(" ").indexOf(f) !== -1;
+                        card.hidden = !match;
+                        if (match) shown++;
+                    });
+                    count.textContent = f === "all"
+                        ? "Showing all " + shown + " projects."
+                        : "Showing " + shown + " " + btn.textContent + " project" + (shown === 1 ? "" : "s") + ".";
+                });
+            });
+        })();
+    </script>
 
     <footer class="site-footer">
         <div class="container">
