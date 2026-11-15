@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Week 11-1 Exercise 3: a reusable React Card component using props.children.">
     <title>Exercise 3 - Card Layout | Week 11-1</title>
-    <link rel="stylesheet" href="style.css">
-
-    <!-- React, ReactDOM and Babel (turns JSX into JavaScript in the browser) -->
-    <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js" crossorigin></script>
+  <script type="module" crossorigin src="./assets/ex_3-CeeEoLHp.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/mount-KE_vqTTO.js">
+  <link rel="stylesheet" crossorigin href="./assets/mount-C_KmUcdg.css">
 </head>
 <body>
     <div class="container">
@@ -52,45 +49,6 @@
 
         <footer>Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering</footer>
     </div>
-
-    <script type="text/babel" id="app">
-// A reusable box: the title is a prop, the content is children
-function Card({ title, children }) {
-  return (
-    <section className="box-card">
-      <h3>{title}</h3>
-      {children}
-    </section>
-  );
-}
-
-function App() {
-  return (
-    <>
-      <Card title="Lecture Topics">
-        <ul>
-          <li>Components</li>
-          <li>Props</li>
-          <li>Lists and keys</li>
-          <li>Conditional rendering</li>
-        </ul>
-      </Card>
-
-      <Card title="Homework">
-        <p>Build a student portfolio component using what we learned in class.</p>
-      </Card>
-    </>
-  );
-}
-
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-    </script>
-
-    <script>
-        // Show the exact code that runs on this page
-        document.getElementById("code").textContent =
-            document.getElementById("app").textContent.trim();
-    </script>
-<script src="../../assets/site.js" defer></script>
+    <script src="../../assets/site.js" defer></script>
 </body>
 </html>

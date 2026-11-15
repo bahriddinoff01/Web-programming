@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Week 11-1 Exercise 2: rendering a list of notifications in React with map and conditional rendering.">
     <title>Exercise 2 - Notifications | Week 11-1</title>
-    <link rel="stylesheet" href="style.css">
-
-    <!-- React, ReactDOM and Babel (turns JSX into JavaScript in the browser) -->
-    <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js" crossorigin></script>
+  <script type="module" crossorigin src="./assets/ex_2-33zJAk2G.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/mount-KE_vqTTO.js">
+  <link rel="stylesheet" crossorigin href="./assets/mount-C_KmUcdg.css">
 </head>
 <body>
     <div class="container">
@@ -54,52 +51,6 @@
 
         <footer>Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering</footer>
     </div>
-
-    <script type="text/babel" id="app">
-const notifications = [
-  { id: 1, type: "success", message: "Profile updated successfully" },
-  { id: 2, type: "warning", message: "Password expires in 3 days" },
-  { id: 3, type: "info", message: "New lecture materials available" },
-  { id: 4, type: "success", message: "Week 11 homework submitted" },
-];
-
-function NotificationItem({ type, message }) {
-  // Conditional rendering with a ternary
-  const icon = type === "success" ? "✅" : type === "warning" ? "⚠️" : "ℹ️";
-  const label = type === "success" ? "Success" : type === "warning" ? "Warning" : "Info";
-
-  return (
-    <li className={`note note-${type}`}>
-      <span className="icon" aria-hidden="true">{icon}</span>
-      <span>
-        <strong>{label}:</strong> {message}
-      </span>
-    </li>
-  );
-}
-
-function NotificationList({ items }) {
-  return (
-    <ul className="notes">
-      {items.map((n) => (
-        <NotificationItem key={n.id} type={n.type} message={n.message} />
-      ))}
-    </ul>
-  );
-}
-
-function App() {
-  return <NotificationList items={notifications} />;
-}
-
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-    </script>
-
-    <script>
-        // Show the exact code that runs on this page
-        document.getElementById("code").textContent =
-            document.getElementById("app").textContent.trim();
-    </script>
-<script src="../../assets/site.js" defer></script>
+    <script src="../../assets/site.js" defer></script>
 </body>
 </html>
