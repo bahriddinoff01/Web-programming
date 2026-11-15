@@ -1,13 +1,40 @@
-/* Week 11-1 shared styles (same look as the rest of the site) */
+/* Week 11-1 exercise pages — same look as the homepage */
 
 :root {
-    --ink: #14121f;
-    --bg: #f3f3fa;
-    --yellow: #ffe066;
-    --lilac: #cdbdff;
-    --mint: #b5f0d0;
-    --pink: #ffb8cd;
-    --sky: #aed6ff;
+    --bg: #f7f7fb;
+    --surface: #ffffff;
+    --surface-2: #f1f1f7;
+    --text: #17161f;
+    --muted: #5d5c6b;
+    --line: #e4e3ee;
+    --accent: #4f46e5;
+    --accent-soft: #eef0ff;
+    --shadow-sm: 0 1px 2px rgba(23, 22, 31, 0.05);
+    --shadow-md: 0 10px 30px -12px rgba(23, 22, 31, 0.18);
+    --radius: 14px;
+
+    --ok-bg: #e9f8ec;   --ok: #1f6b33;
+    --warn-bg: #fff7d6; --warn: #7a5800;
+    --info-bg: #e9f2ff; --info: #1d4f9c;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #111117;
+        --surface: #1a1a22;
+        --surface-2: #22222c;
+        --text: #ececf3;
+        --muted: #a5a4b4;
+        --line: #2d2c39;
+        --accent: #a5b4fc;
+        --accent-soft: #252545;
+        --shadow-sm: none;
+        --shadow-md: 0 12px 30px -14px rgba(0, 0, 0, 0.7);
+
+        --ok-bg: #173320;   --ok: #9be3ae;
+        --warn-bg: #3a3214; --warn: #ffe28a;
+        --info-bg: #1b2a44; --info: #a9cbff;
+    }
 }
 
 * {
@@ -16,175 +43,116 @@
 
 body {
     margin: 0;
-    font-family: "Trebuchet MS", Verdana, sans-serif;
-    color: var(--ink);
-    background-color: var(--bg);
-    background-image: radial-gradient(#c9c9de 1.5px, transparent 1.5px);
-    background-size: 22px 22px;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 16.5px;
     line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
 }
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 clamp(18px, 4vw, 40px);
 }
 
 header {
-    padding: 64px 0 40px;
+    padding: 48px 0 32px;
 }
 
 .tag {
     display: inline-block;
-    margin: 0 0 16px;
-    padding: 3px 12px;
-    background: var(--yellow);
-    border: 3px solid var(--ink);
-    box-shadow: 3px 3px 0 var(--ink);
+    margin: 0 0 12px;
+    color: var(--accent);
     font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 h1 {
     margin: 0 0 12px;
-    font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-    font-weight: 900;
-    font-size: clamp(32px, 7vw, 56px);
-    line-height: 1.05;
-    overflow-wrap: anywhere;
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
 }
 
 h2 {
-    margin: 0 0 16px;
-    font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-    font-size: 24px;
+    margin: 0 0 14px;
+    font-size: 22px;
+    letter-spacing: -0.01em;
 }
 
 .lead {
     margin: 0;
-    max-width: 38em;
-    font-size: 18px;
+    max-width: 44em;
+    color: var(--muted);
+    font-size: 17.5px;
+}
+
+.lead strong {
+    color: var(--text);
 }
 
 a {
-    color: var(--ink);
+    color: var(--accent);
 }
 
 :focus-visible {
-    outline: 4px solid var(--ink);
-    outline-offset: 4px;
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
 }
 
 code {
-    font-family: Consolas, Monaco, monospace;
+    font-family: "JetBrains Mono", Consolas, Monaco, monospace;
+    font-size: 0.9em;
 }
 
 p code,
 li code {
     padding: 1px 6px;
-    background: #fff;
-    border: 2px solid var(--ink);
-    font-size: 0.9em;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 5px;
 }
 
-/* ---------- EXERCISE CARDS (index page) ---------- */
-
-.week-container {
-    list-style: none;
-    margin: 0;
-    padding: 0 0 8px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
-    gap: 22px;
-}
-
-.card a {
-    display: block;
-    height: 100%;
-    padding: 28px 22px;
-    color: var(--ink);
-    text-decoration: none;
-    border: 3px solid var(--ink);
-    box-shadow: 6px 6px 0 var(--ink);
-    transition: transform 0.12s, box-shadow 0.12s;
-}
-
-.card:nth-child(4n+1) a { background: var(--lilac); }
-.card:nth-child(4n+2) a { background: var(--mint); }
-.card:nth-child(4n+3) a { background: var(--pink); }
-.card:nth-child(4n+4) a { background: var(--sky); }
-
-.card .ex {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.card .title {
-    display: block;
-    margin-bottom: 8px;
-    font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-    font-size: 24px;
-    line-height: 1.15;
-}
-
-.card .desc {
-    display: block;
-    font-size: 15px;
-}
-
-.card .url {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 3px 8px;
-    background: #fff;
-    border: 2px solid var(--ink);
-    font-family: Consolas, Monaco, monospace;
-    font-size: 14px;
-}
-
-.card a:hover {
-    transform: translate(-3px, -3px);
-    box-shadow: 9px 9px 0 var(--ink);
-}
-
-/* ---------- EXERCISE PAGES ---------- */
+/* ---------- Sections ---------- */
 
 .block {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
 }
 
 .demo {
-    padding: 26px;
-    background: #fff;
-    border: 3px solid var(--ink);
-    box-shadow: 8px 8px 0 var(--ink);
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
 }
 
 .code-box {
     overflow: hidden;
-    border: 3px solid var(--ink);
-    background: var(--ink);
+    border-radius: var(--radius);
+    background: #15141c;
 }
 
 .code-bar {
-    padding: 8px 14px;
-    background: #2a2740;
-    color: #f3f3fa;
-    font-size: 14px;
-    font-weight: bold;
+    padding: 10px 16px;
+    background: #22212c;
+    color: #c9c8d6;
+    font-size: 13px;
+    font-weight: 600;
 }
 
 pre {
     margin: 0;
     padding: 18px;
     overflow-x: auto;
-    color: #f3f3fa;
-    font-family: Consolas, Monaco, monospace;
+    color: #ececf3;
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
 .notes-list {
@@ -196,62 +164,59 @@ pre {
     margin-bottom: 6px;
 }
 
-/* Exercise 1: profile cards */
+/* ---------- Exercise 1: profile cards ---------- */
 
 .row {
     display: flex;
     flex-wrap: wrap;
-    gap: 22px;
+    gap: 18px;
 }
 
 .profile-card {
     flex: 1 1 240px;
     max-width: 300px;
-    padding: 20px;
-    background: var(--lilac);
-    border: 3px solid var(--ink);
-    box-shadow: 5px 5px 0 var(--ink);
+    padding: 22px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
     text-align: center;
-}
-
-.profile-card:nth-child(2) {
-    background: var(--mint);
 }
 
 .profile-card img {
     display: block;
     width: 80px;
     height: 80px;
-    margin: 0 auto 10px;
+    margin: 0 auto 12px;
     object-fit: cover;
-    border: 3px solid var(--ink);
+    border: 3px solid var(--accent-soft);
     border-radius: 50%;
-    background: #fff;
+    background: var(--surface-2);
 }
 
 .profile-card h3 {
     margin: 0 0 2px;
-    font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-    font-size: 20px;
+    font-size: 19px;
 }
 
 .profile-card p {
     margin: 0 0 8px;
+    color: var(--muted);
 }
 
 .profile-card a {
-    font-weight: bold;
+    font-weight: 600;
     overflow-wrap: anywhere;
 }
 
-/* Exercise 2: notifications */
+/* ---------- Exercise 2: notifications ---------- */
 
 .notes {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    gap: 12px;
+    gap: 10px;
 }
 
 .note {
@@ -259,27 +224,29 @@ pre {
     align-items: center;
     gap: 12px;
     padding: 12px 16px;
-    border: 3px solid var(--ink);
-    box-shadow: 4px 4px 0 var(--ink);
+    border: 1px solid var(--line);
+    border-left-width: 4px;
+    border-radius: 10px;
 }
 
-.note-success { background: var(--mint); }
-.note-warning { background: var(--yellow); }
-.note-info    { background: var(--sky); }
+.note-success { background: var(--ok-bg);   border-left-color: var(--ok);   color: var(--ok); }
+.note-warning { background: var(--warn-bg); border-left-color: var(--warn); color: var(--warn); }
+.note-info    { background: var(--info-bg); border-left-color: var(--info); color: var(--info); }
 
 .note .icon {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1;
 }
 
-/* Exercise 3: card with children */
+/* ---------- Exercise 3: card with children ---------- */
 
 .box-card {
-    margin-bottom: 18px;
-    padding: 16px 20px;
-    background: #fff;
-    border: 3px solid var(--ink);
-    box-shadow: 5px 5px 0 var(--ink);
+    margin-bottom: 16px;
+    padding: 18px 20px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
 }
 
 .box-card:last-child {
@@ -288,10 +255,9 @@ pre {
 
 .box-card h3 {
     margin: 0 0 10px;
-    padding-bottom: 8px;
-    border-bottom: 3px solid var(--ink);
-    font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-    font-size: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+    font-size: 18px;
 }
 
 .box-card ul,
@@ -299,30 +265,32 @@ pre {
     margin: 0;
 }
 
-/* ---------- BACK LINK + FOOTER ---------- */
+/* ---------- Back link + footer ---------- */
 
 .back {
-    display: inline-block;
-    margin-top: 8px;
-    padding: 10px 18px;
-    color: var(--ink);
-    background: #fff;
-    border: 3px solid var(--ink);
-    box-shadow: 4px 4px 0 var(--ink);
-    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    color: var(--text);
+    font-weight: 600;
     text-decoration: none;
-    transition: transform 0.12s, box-shadow 0.12s;
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.15s;
 }
 
 .back:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 var(--ink);
+    border-color: var(--accent);
 }
 
 footer {
-    margin-top: 48px;
-    padding: 20px 0 32px;
-    border-top: 3px solid var(--ink);
+    margin-top: 40px;
+    padding: 24px 0 36px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
     font-size: 14px;
 }
 
@@ -335,9 +303,9 @@ footer {
     white-space: nowrap;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 600px) {
     header {
-        padding: 44px 0 28px;
+        padding: 32px 0 24px;
     }
 
     .demo {
@@ -346,13 +314,7 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .card a,
-    .back {
-        transition: none;
-    }
-
-    .card a:hover,
-    .back:hover {
-        transform: none;
+    * {
+        transition: none !important;
     }
 }

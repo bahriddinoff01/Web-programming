@@ -6,105 +6,143 @@
     <title>Random Joke Fetcher</title>
     <style>
       :root {
-        --bg: #cdbdff;
-        --ink: #1a1233;
-        --pink: #ff6fb1;
-        --yel: #ffe14d;
-        --mint: #7be0b5;
+        --bg: #f7f7fb;
+        --surface: #ffffff;
+        --surface-2: #f1f1f7;
+        --ink: #17161f;
+        --muted: #5d5c6b;
+        --line: #e4e3ee;
+        --accent: #4f46e5;
+        --accent-strong: #3f37c9;
+        --accent-soft: #eef0ff;
+        --shadow: 0 10px 30px -12px rgba(23, 22, 31, 0.18);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #111117;
+          --surface: #1a1a22;
+          --surface-2: #22222c;
+          --ink: #ececf3;
+          --muted: #a5a4b4;
+          --line: #2d2c39;
+          --accent: #a5b4fc;
+          --accent-strong: #c7d0ff;
+          --accent-soft: #252545;
+          --shadow: 0 12px 30px -14px rgba(0, 0, 0, 0.7);
+        }
       }
       * {
         box-sizing: border-box;
       }
       body {
         margin: 0;
-        padding: 32px 16px;
+        padding: 48px 18px;
         background: var(--bg);
         color: var(--ink);
-        font:
-          17px/1.5 "Trebuchet MS",
-          system-ui,
-          sans-serif;
+        font: 16.5px/1.6 "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       }
       main {
         max-width: 640px;
         margin: 0 auto;
       }
       h1 {
-        font-size: 2.5rem;
-        line-height: 1.1;
-        margin: 0 0 6px;
-        text-shadow: 3px 3px 0 var(--yel);
+        font-size: clamp(30px, 6vw, 40px);
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin: 0 0 8px;
+      }
+      main > p {
+        color: var(--muted);
+        margin: 0 0 24px;
       }
       h2 {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
+        letter-spacing: -0.01em;
         margin: 36px 0 12px;
       }
       .box {
-        background: #fff;
-        border: 3px solid var(--ink);
-        border-radius: 8px;
-        box-shadow: 6px 6px 0 var(--ink);
-        padding: 22px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        box-shadow: var(--shadow);
+        padding: 24px;
       }
       #setup {
-        font-size: 1.35rem;
+        font-size: 1.3rem;
         font-weight: 700;
         margin: 0 0 10px;
       }
       #punch {
         margin: 0;
-        font-size: 1.2rem;
-        background: var(--yel);
+        font-size: 1.15rem;
+        background: var(--accent-soft);
+        color: var(--ink);
+        border-radius: 8px;
         display: inline-block;
-        padding: 2px 8px;
+        padding: 4px 10px;
+      }
+      #punch:empty {
+        display: none;
       }
       #status {
         margin: 0;
+        color: var(--muted);
       }
       .row {
         display: flex;
-        gap: 12px;
+        gap: 10px;
         flex-wrap: wrap;
-        margin-top: 18px;
+        margin-top: 20px;
       }
       button {
         font: inherit;
-        font-weight: 700;
-        color: var(--ink);
-        background: var(--pink);
-        border: 3px solid var(--ink);
-        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+        background: var(--accent);
+        border: 1px solid var(--accent);
+        border-radius: 9px;
         padding: 10px 18px;
-        box-shadow: 4px 4px 0 var(--ink);
         cursor: pointer;
+        transition: background 0.15s, border-color 0.15s;
+      }
+      button:hover:not(:disabled) {
+        background: var(--accent-strong);
+        border-color: var(--accent-strong);
       }
       button.alt {
-        background: var(--mint);
+        background: var(--surface);
+        color: var(--ink);
+        border-color: var(--line);
       }
-      button:active:not(:disabled) {
-        transform: translate(3px, 3px);
-        box-shadow: 1px 1px 0 var(--ink);
+      button.alt:hover:not(:disabled) {
+        background: var(--surface-2);
+        border-color: var(--accent);
       }
       button:disabled {
         opacity: 0.5;
         cursor: not-allowed;
       }
       button:focus-visible {
-        outline: 3px solid var(--ink);
+        outline: 2px solid var(--accent);
         outline-offset: 3px;
+      }
+      @media (prefers-color-scheme: dark) {
+        button { color: #14141c; }
       }
       ul {
         list-style: none;
         padding: 0;
         margin: 0;
         display: grid;
-        gap: 12px;
+        gap: 10px;
       }
       li {
-        background: #fff;
-        border: 3px solid var(--ink);
-        border-radius: 8px;
-        padding: 12px 14px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 14px 16px;
         display: flex;
         gap: 12px;
         justify-content: space-between;
@@ -113,15 +151,24 @@
       li small {
         display: block;
         margin-top: 2px;
+        color: var(--muted);
       }
       li button {
         padding: 4px 10px;
-        box-shadow: 2px 2px 0 var(--ink);
         font-size: 0.85rem;
-        background: #fff;
+        background: var(--surface);
+        color: var(--ink);
+        border-color: var(--line);
+      }
+      li button:hover:not(:disabled) {
+        background: var(--surface-2);
+        border-color: var(--accent);
+      }
+      #none {
+        color: var(--muted);
       }
       .err {
-        color: #b00020;
+        color: #c0262d;
         font-weight: 700;
       }
     </style>
