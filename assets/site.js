@@ -29,7 +29,8 @@
         { n: 8,  title: "Forms & Validation",     path: "main container/Week8.html" },
         { n: 9,  title: "Accessibility",          path: "main container/Week9.html" },
         { n: 10, title: "Git, GitHub & Pages",    path: "main container/Week10.html" },
-        { n: 11, title: "React",                  path: "main container/Week11.html" }
+        { n: 11, title: "React",                  path: "main container/Week11.html" },
+        { n: 12, title: "Coming soon",            path: "main container/Week12.html" }
     ];
 
     // Where the "back" link on an exercise page should go.
