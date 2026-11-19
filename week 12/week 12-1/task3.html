@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Week 12-1 Task 3: a React scoreboard where the parent owns both scores and shows the total." />
+    <title>Task 3 · Scoreboard: lifting state up | Week 12-1</title>
+    <script type="module" crossorigin src="./assets/task3-C3p2FG-h.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/page-Ddfm8VX7.js">
+    <link rel="stylesheet" crossorigin href="./assets/page-BQF7Tyd6.css">
+  </head>
+  <body class="bg-[#f7f7fb] text-[#17161f] antialiased dark:bg-[#111117] dark:text-[#ececf3]">
+    <div class="mx-auto max-w-4xl px-5 sm:px-8">
+      <header class="pb-8 pt-10">
+        <nav aria-label="Breadcrumb" class="mb-6 text-sm text-gray-600 dark:text-gray-400">
+          <ol class="flex flex-wrap gap-2">
+            <li><a class="hover:text-indigo-700 dark:hover:text-indigo-300" href="../../main%20container/Main.html">Home</a> /</li>
+            <li><a class="hover:text-indigo-700 dark:hover:text-indigo-300" href="../../main%20container/Week12.html">Week 12</a> /</li>
+            <li><a class="hover:text-indigo-700 dark:hover:text-indigo-300" href="./index.html">Week 12-1</a> /</li>
+            <li><span aria-current="page" class="font-medium text-[#17161f] dark:text-[#ececf3]">Task 3</span></li>
+          </ol>
+        </nav>
+        <p class="mb-3 text-xs font-bold uppercase tracking-[0.08em] text-indigo-700 dark:text-indigo-300">Week 12-1 · Task 3</p>
+        <h1 class="mb-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Scoreboard: lifting state up</h1>
+        <p class="max-w-3xl text-lg text-gray-600 dark:text-gray-400"><strong class="text-[#17161f] dark:text-[#ececf3]">Task:</strong> A parent ScoreBoard with two PlayerScore children. Each player has + and − buttons, and the parent shows the total of both scores.</p>
+      </header>
+
+      <main class="space-y-10 pb-10">
+        <section aria-labelledby="result-title">
+          <h2 id="result-title" class="mb-3 text-xl font-bold">Live result</h2>
+          <div id="root" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6 dark:border-gray-800 dark:bg-[#1a1a22]">Loading…</div>
+        </section>
+
+        <section aria-labelledby="how-title">
+          <h2 id="how-title" class="mb-3 text-xl font-bold">How it works</h2>
+          <ul class="list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300">
+            <li>Both scores live in the parent <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">ScoreBoard</code>, because it needs both to show the total.</li>
+            <li>The total is calculated each render (<code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">firstScore + secondScore</code>), not stored as separate state.</li>
+            <li>One reusable <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">PlayerScore</code> component is used twice, getting <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">name</code>, <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">score</code>, <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">onIncrement</code> and <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">onDecrement</code> as props.</li>
+            <li>The buttons call the functions they were given, which update the parent's state: data flows down, events flow up.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="code-title">
+          <h2 id="code-title" class="mb-3 text-xl font-bold">Code</h2>
+          <div id="code"></div>
+        </section>
+
+        <nav aria-label="Tasks" class="grid gap-3 border-t border-gray-200 pt-6 sm:grid-cols-2 dark:border-gray-800">
+          <a class="rounded-xl border border-gray-200 bg-white p-4 hover:border-indigo-500 dark:border-gray-800 dark:bg-[#1a1a22]" href="./task2.html"><small class="block text-gray-600 dark:text-gray-400">&larr; Previous</small><strong>Task 2 · Add &amp; remove tasks</strong></a>
+          <a class="rounded-xl border border-gray-200 bg-white p-4 text-right hover:border-indigo-500 sm:col-start-2 dark:border-gray-800 dark:bg-[#1a1a22]" href="./task4.html"><small class="block text-gray-600 dark:text-gray-400">Next &rarr;</small><strong>Additional tasks · Interactive shopping cart</strong></a>
+        </nav>
+      </main>
+
+      <footer class="border-t border-gray-200 py-8 text-sm text-gray-600 dark:border-gray-800 dark:text-gray-400">
+        &copy; 2026 Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering, Gachon University
+      </footer>
+    </div>
+    <script src="../../assets/site.js" defer></script>
+  </body>
+</html>

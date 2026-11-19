@@ -1,0 +1,4 @@
+/* Tailwind CSS for any page in this folder.
+   Import it once in a page's entry file:  import "../src/tailwind.css";
+   (Week 11-1 does not import it, so its design stays the same.) */
+@import "tailwindcss";

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Week 12-1 homework: an interactive React shopping cart with a product list, quantity controls and a cart total." />
+    <title>Additional tasks · Interactive shopping cart | Week 12-1</title>
+    <script type="module" crossorigin src="./assets/task4-C0Hy-1FN.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/page-Ddfm8VX7.js">
+    <link rel="stylesheet" crossorigin href="./assets/page-BQF7Tyd6.css">
+  </head>
+  <body class="bg-[#f7f7fb] text-[#17161f] antialiased dark:bg-[#111117] dark:text-[#ececf3]">
+    <div class="mx-auto max-w-6xl px-5 sm:px-8">
+      <header class="pb-8 pt-10">
+        <nav aria-label="Breadcrumb" class="mb-6 text-sm text-gray-600 dark:text-gray-400">
+          <ol class="flex flex-wrap gap-2">
+            <li><a class="hover:text-indigo-700 dark:hover:text-indigo-300" href="../../main%20container/Main.html">Home</a> /</li>
+            <li><a class="hover:text-indigo-700 dark:hover:text-indigo-300" href="../../main%20container/Week12.html">Week 12</a> /</li>
+            <li><a class="hover:text-indigo-700 dark:hover:text-indigo-300" href="./index.html">Week 12-1</a> /</li>
+            <li><span aria-current="page" class="font-medium text-[#17161f] dark:text-[#ececf3]">Additional tasks</span></li>
+          </ol>
+        </nav>
+        <p class="mb-3 text-xs font-bold uppercase tracking-[0.08em] text-indigo-700 dark:text-indigo-300">Week 12-1 · Additional tasks</p>
+        <h1 class="mb-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Interactive shopping cart</h1>
+        <p class="max-w-3xl text-lg text-gray-600 dark:text-gray-400"><strong class="text-[#17161f] dark:text-[#ececf3]">Task:</strong> Homework: a product list of at least 5 items (name, price, image URL), Add / Remove buttons, a cart sidebar with the total computed from state, + and − quantity controls per item, all inside a ShoppingCart component.</p>
+      </header>
+
+      <main class="space-y-10 pb-10">
+        <section aria-labelledby="result-title">
+          <h2 id="result-title" class="mb-3 text-xl font-bold">Live result</h2>
+          <div id="root" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6 dark:border-gray-800 dark:bg-[#1a1a22]">Loading…</div>
+        </section>
+
+        <section aria-labelledby="how-title">
+          <h2 id="how-title" class="mb-3 text-xl font-bold">How it works</h2>
+          <ul class="list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300">
+            <li><code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">ShoppingCart</code> is the parent: it owns the cart state (an array of items) and passes data and functions down to <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">ProductList</code> and <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">CartPanel</code>.</li>
+            <li>Adding a product that is already in the cart raises its quantity with <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">.map()</code> and the spread; a new product is added with <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">[...prev, …]</code>.</li>
+            <li>Remove uses <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">.filter()</code>; − lowers the quantity and an item that reaches 0 leaves the cart.</li>
+            <li>The total and the item count are computed from state with <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">.reduce()</code> every render, never stored separately.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="code-title">
+          <h2 id="code-title" class="mb-3 text-xl font-bold">Code</h2>
+          <div id="code"></div>
+        </section>
+
+        <nav aria-label="Tasks" class="grid gap-3 border-t border-gray-200 pt-6 sm:grid-cols-2 dark:border-gray-800">
+          <a class="rounded-xl border border-gray-200 bg-white p-4 hover:border-indigo-500 dark:border-gray-800 dark:bg-[#1a1a22]" href="./task3.html"><small class="block text-gray-600 dark:text-gray-400">&larr; Previous</small><strong>Task 3 · Scoreboard: lifting state up</strong></a>
+          <a class="rounded-xl border border-gray-200 bg-white p-4 text-right hover:border-indigo-500 sm:col-start-2 dark:border-gray-800 dark:bg-[#1a1a22]" href="./index.html"><small class="block text-gray-600 dark:text-gray-400">Back to</small><strong>Week 12-1 &rarr;</strong></a>
+        </nav>
+      </main>
+
+      <footer class="border-t border-gray-200 py-8 text-sm text-gray-600 dark:border-gray-800 dark:text-gray-400">
+        &copy; 2026 Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering, Gachon University
+      </footer>
+    </div>
+    <script src="../../assets/site.js" defer></script>
+  </body>
+</html>

@@ -1,12 +1,15 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath } from 'node:url'
 
 const page = (name) => fileURLToPath(new URL(name, import.meta.url))
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  // Tailwind only applies to files that import src/tailwind.css,
+  // so the Week 11-1 pages are not affected.
+  plugins: [react(), tailwindcss()],
   // Relative paths, so the pages work inside the site on GitHub Pages
   base: './',
   build: {
