@@ -1,4 +1,4 @@
-// Shared helper for the Week 12-1 pages:
+// Shared helper for the Week 11-2 pages:
 // renders a task into #root and its source files into #code.
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";

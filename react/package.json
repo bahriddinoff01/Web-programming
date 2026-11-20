@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vite build --config vite.week12.config.js",
+    "build": "vite build && vite build --config vite.week11-2.config.js",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:week11": "vite build",
-    "build:week12": "vite build --config vite.week12.config.js"
+    "build:week11-1": "vite build",
+    "build:week11-2": "vite build --config vite.week11-2.config.js"
   },
   "dependencies": {
     "react": "^19.1.0",
