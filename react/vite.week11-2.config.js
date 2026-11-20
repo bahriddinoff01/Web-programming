@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 
 const page = (name) => fileURLToPath(new URL(name, import.meta.url))
 
-// Builds the Week 11-2 task pages (react/week-12/task1-4.html)
+// Builds the Week 11-2 task pages (react/week-12/task1-5.html)
 // into ../week 11/week 11-2/ — run with: npm run build
 export default defineConfig({
   plugins: [react(), tailwindcss()],
@@ -13,7 +13,7 @@ export default defineConfig({
   base: './',
   build: {
     outDir: page('../week 11/week 11-2'),
-    // Only replace task1-4.html and assets/; keep index.html (the Week 11-2 hub)
+    // Only replace task1-5.html and assets/; keep index.html (the Week 11-2 hub)
     emptyOutDir: false,
     rollupOptions: {
       input: {
@@ -21,6 +21,7 @@ export default defineConfig({
         task2: page('./week-12/task2.html'),
         task3: page('./week-12/task3.html'),
         task4: page('./week-12/task4.html'),
+        task5: page('./week-12/task5.html'),
       },
     },
   },

@@ -6,6 +6,7 @@ import "../src/tailwind.css";
 import Task1 from "./Task1";
 import Task2 from "./Task2";
 import ScoreBoard from "./ScoreBoard";
+import HistoryArray from "./HistoryArray";
 // import Task2 from "./Task2";
 // import Task3 from "./Task3";
 
@@ -14,5 +15,6 @@ createRoot(document.getElementById("root")).render(
     <Task1 />
     <Task2 />
     <ScoreBoard />
+    <HistoryArray />
   </StrictMode>,
 );
