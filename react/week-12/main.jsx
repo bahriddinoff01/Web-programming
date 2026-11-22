@@ -7,14 +7,18 @@ import Task1 from "./Task1";
 import Task2 from "./Task2";
 import ScoreBoard from "./ScoreBoard";
 import HistoryArray from "./HistoryArray";
+import RedoTask from "./RedoTask";
+import AdvancedToDo from "./AdvancedToDo";
 // import Task2 from "./Task2";
 // import Task3 from "./Task3";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Task1 />
+    {/* <Task1 />
     <Task2 />
-    <ScoreBoard />
-    <HistoryArray />
+    <ScoreBoard /> */}
+    {/* <HistoryArray /> */}
+    {/* <RedoTask /> */}
+    <AdvancedToDo />
   </StrictMode>,
 );
