@@ -28,9 +28,9 @@
                         <a class="btn" href="#contact">Get in touch</a>
                     </div>
                     <ul class="stats">
-                        <li><strong>13</strong><span>projects</span></li>
-                        <li><strong>112+</strong><span>exercises completed</span></li>
-                        <li><strong>11</strong><span>weeks of coursework</span></li>
+                        <li><strong>14</strong><span>projects</span></li>
+                        <li><strong>118+</strong><span>exercises completed</span></li>
+                        <li><strong>12</strong><span>weeks of coursework</span></li>
                     </ul>
                 </div>
                 <aside class="profile-panel" aria-label="Profile">
@@ -100,8 +100,8 @@
                 </li>
                 <li class="card skill-card">
                     <h3><span class="ico" aria-hidden="true">&#9883;&#65039;</span>React</h3>
-                    <ul class="skill-list"><li>Components and props</li><li>Lists, keys and conditional rendering</li><li>useState and lifting state up</li><li>useEffect, cleanup and fetching data</li><li>Vite projects</li></ul>
-                    <p class="used-in">Used in: Weeks 11 and 12</p>
+                    <ul class="skill-list"><li>Components and props</li><li>Lists, keys and conditional rendering</li><li>useState and lifting state up</li><li>useEffect, cleanup and fetching data</li><li>Controlled forms and validation</li><li>Vite projects</li></ul>
+                    <p class="used-in">Used in: Weeks 11 to 13</p>
                 </li>
                 <li class="card skill-card">
                     <h3><span class="ico" aria-hidden="true">&#128736;&#65039;</span>Tools &amp; practices</h3>
@@ -245,6 +245,19 @@
                         </ul>
                     </div>
                 </li>
+                <li class="card feat-card" data-cats="react">
+                    <div class="banner"><span class="emoji" aria-hidden="true">&#129706;</span><span class="from-week">From Week 13</span></div>
+                    <div class="card-inner">
+                        <h3>Student profile editor</h3>
+                        <p>A full React form: a 10-digit ID check, a major dropdown, year radio buttons, a live bio counter, a photo preview and skill tags, ending in a profile card.</p>
+                        <p class="learned"><strong>What I learned:</strong> Controlled inputs of every kind, one handler for many fields, validation messages, file previews with useEffect cleanup.</p>
+                        <ul class="tags"><li class="tag tag-react">React</li><li class="tag tag-html">Forms</li><li class="tag tag-js">Validation</li></ul>
+                        <ul class="link-row">
+                            <li><a href="../week%2013/week%2013-1/homework.html">Live demo<span class="visually-hidden"> of Student profile editor</span></a></li>
+                            <li><a href="https://github.com/bahriddinoff01/Web-programming/tree/Main/react/week-13/profile">Code ↗<span class="visually-hidden"> for Student profile editor</span></a></li>
+                        </ul>
+                    </div>
+                </li>
                 <li class="card feat-card" data-cats="git">
                     <div class="banner"><span class="emoji" aria-hidden="true">&#128640;</span><span class="from-week">From Week 10</span></div>
                     <div class="card-inner">
@@ -259,7 +272,7 @@
                     </div>
                 </li>
                 </ul>
-                <p class="result-count" id="result-count" aria-live="polite">Showing all 10 projects.</p>
+                <p class="result-count" id="result-count" aria-live="polite">Showing all 11 projects.</p>
             </section>
 
             <!-- PERSONAL PROJECTS -->
@@ -459,25 +472,41 @@
                     <ul class="tags"><li class="tag tag-react">React</li><li class="tag tag-api">Fetch API</li></ul>
                     <span class="card-foot"><span>14 tasks</span><span class="go">Open &rarr;</span></span>
                 </a></li>
+                <li><a class="card week-card" href="./Week13.html">
+                    <div class="week-top">
+                        <span class="week-num" aria-hidden="true">13</span>
+                        <span class="week-label">Week 13</span>
+                    </div>
+                    <h3>React Forms</h3>
+                    <p>Controlled forms in React: a contact form, a feedback form, a 3-step registration wizard and a student profile editor.</p>
+                    <ul class="tags"><li class="tag tag-react">React</li><li class="tag tag-html">Forms</li><li class="tag tag-js">Validation</li></ul>
+                    <span class="card-foot"><span>6 tasks</span><span class="go">Open &rarr;</span></span>
+                </a></li>
                 </ul>
             </section>
 
             <!-- CONTACT -->
             <section class="section" id="contact" aria-labelledby="contact-title">
-                <div class="contact-card">
+                <div class="contact-card contact-card-form">
                     <div>
                         <h2 id="contact-title">Let's connect</h2>
-                        <p>Thanks for visiting! You can reach me by email or find all my code on GitHub.</p>
+                        <p>Thanks for visiting! Send me a message with the form, email me directly, or find all my code on GitHub.</p>
+                        <address class="btn-row">
+                            <a class="btn btn-primary" href="mailto:202537225@gachon.ac.kr">Email me</a>
+                            <a class="btn" href="https://github.com/bahriddinoff01">GitHub profile ↗</a>
+                        </address>
+                        <p class="hc-note">This form is a React component from Week 13: controlled inputs in one state object, validation with a message under each field, and a live character count. <a href="https://github.com/bahriddinoff01/Web-programming/blob/Main/react/home-contact/HomeContactForm.jsx">View its code ↗</a></p>
                     </div>
-                    <address class="btn-row">
-                        <a class="btn btn-primary" href="mailto:202537225@gachon.ac.kr">Email me</a>
-                        <a class="btn" href="https://github.com/bahriddinoff01">GitHub profile ↗</a>
-                    </address>
+                    <div id="contact-form-root" class="hc-root">
+                        <noscript><p>The contact form needs JavaScript. You can still <a href="mailto:202537225@gachon.ac.kr">email me</a>.</p></noscript>
+                    </div>
                 </div>
             </section>
         </div>
     </main>
 
+    <!-- React contact form (built from react/home-contact) -->
+    <script type="module" src="../assets/react/contact-form.js"></script>
     <script>
         // Featured project filter
         (function () {

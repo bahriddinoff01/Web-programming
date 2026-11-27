@@ -1046,6 +1046,141 @@ a.task-card:hover .arrow {
     }
 }
 
+/* ---------- Portfolio: React contact form (Week 13) ---------- */
+
+.contact-card-form {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+    align-items: start;
+}
+
+.contact-card address {
+    font-style: normal;
+}
+
+.contact-card-form .btn-row {
+    margin-top: 20px;
+}
+
+.hc-note {
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.hc-root {
+    padding: clamp(18px, 3vw, 26px);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.hc-form {
+    display: grid;
+    gap: 6px;
+}
+
+.hc-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 14px;
+}
+
+.hc-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.hc-field input,
+.hc-field select,
+.hc-field textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: var(--bg);
+    color: var(--text);
+    font: inherit;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.hc-field textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.hc-field input:focus,
+.hc-field select:focus,
+.hc-field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.hc-field [aria-invalid="true"] {
+    border-color: #dc2626;
+}
+
+.hc-root .hc-error {
+    min-height: 1.4em;
+    margin-top: 3px;
+    color: #b91c1c;
+    font-size: 13px;
+}
+
+.hc-count {
+    margin-top: 4px;
+    color: var(--muted) !important;
+    font-size: 13px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.hc-count-low {
+    color: #b91c1c !important;
+    font-weight: 600;
+}
+
+.hc-form .btn {
+    justify-self: start;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.hc-done {
+    display: grid;
+    gap: 8px;
+    justify-items: start;
+}
+
+.hc-done-title {
+    color: var(--text) !important;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.hc-small {
+    font-size: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .hc-field [aria-invalid="true"] { border-color: #f87171; }
+    .hc-root .hc-error, .hc-count-low { color: #fca5a5 !important; }
+}
+
+@media (max-width: 760px) {
+    .contact-card-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hc-row {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ---------- Notice ---------- */
 
 .notice {
