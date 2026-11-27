@@ -1,5 +1,5 @@
-import { mountTask } from "./page.jsx";
-import HistoryArray from "./HistoryArray";
-import historyArray from "./HistoryArray.jsx?raw";
+import { mountTask } from "../src/page.jsx";
+import ShoppingCounter from "./ShoppingCounter";
+import shoppingCounter from "./ShoppingCounter.jsx?raw";
 
-mountTask(HistoryArray, [{ name: "HistoryArray.jsx", code: historyArray }]);
+mountTask(ShoppingCounter, [{ name: "ShoppingCounter.jsx", code: shoppingCounter }]);

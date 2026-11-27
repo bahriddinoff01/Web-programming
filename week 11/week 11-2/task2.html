@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Week 11-2 Task 2: a React task list that adds and removes items stored in an array in state." />
-    <title>Task 2 · Add &amp; remove tasks | Week 11-2</title>
-    <script type="module" crossorigin src="./assets/task2-CS4yCCMW.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/page-CtLDEyqN.js">
-    <link rel="stylesheet" crossorigin href="./assets/page-BSeQdBjy.css">
+    <meta name="description" content="Week 11-2 Task 2: a StudentCard component that gets name, id and major through props." />
+    <title>Task 2 · StudentCard: fill in the blanks | Week 11-2</title>
+    <link rel="icon" href="./assets/favicon-BKeWLYPp.svg" type="image/svg+xml" />
+    <script type="module" crossorigin src="./assets/task2-BhnbWeO7.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/page-iZ2EYeiW.js">
+    <link rel="stylesheet" crossorigin href="./assets/page-Bi4E37oX.css">
   </head>
   <body class="bg-[#f7f7fb] text-[#17161f] antialiased dark:bg-[#111117] dark:text-[#ececf3]">
     <div class="mx-auto max-w-4xl px-5 sm:px-8">
@@ -21,8 +22,8 @@
           </ol>
         </nav>
         <p class="mb-3 text-xs font-bold uppercase tracking-[0.08em] text-indigo-700 dark:text-indigo-300">Week 11-2 · Task 2</p>
-        <h1 class="mb-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Add &amp; remove tasks</h1>
-        <p class="max-w-3xl text-lg text-gray-600 dark:text-gray-400"><strong class="text-[#17161f] dark:text-[#ececf3]">Task:</strong> A text input and an Add button. Typed items are added to a list stored in state, and each item has a button that removes it.</p>
+        <h1 class="mb-3 text-3xl font-extrabold tracking-tight sm:text-4xl">StudentCard: fill in the blanks</h1>
+        <p class="max-w-3xl text-lg text-gray-600 dark:text-gray-400"><strong class="text-[#17161f] dark:text-[#ececf3]">Task:</strong> Complete the StudentCard so it works as &lt;StudentCard name=&quot;Alice&quot; id=&quot;20231234&quot; major=&quot;CS&quot; /&gt;, then add a second card with my own details.</p>
       </header>
 
       <main class="space-y-10 pb-10">
@@ -34,10 +35,9 @@
         <section aria-labelledby="how-title">
           <h2 id="how-title" class="mb-3 text-xl font-bold">How it works</h2>
           <ul class="list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300">
-            <li>Two pieces of state: <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">value</code> holds the text in the input, and <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">tasks</code> holds the list.</li>
-            <li>The input is controlled: <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">value={value}</code> and <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">onChange</code> saves every keystroke with <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">setValue</code>.</li>
-            <li><code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">addTasks</code> ignores empty input (<code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">.trim()</code>), adds a new <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">{ id, text }</code> object with the spread <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">[...prev, …]</code>, then clears the input.</li>
-            <li><code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">.map()</code> shows each task with <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">key={task.id}</code>; remove uses <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">.filter()</code> to keep every task except the clicked one.</li>
+            <li>The blanks are the props: the parameter <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">{ name, id, major }</code> unpacks them from the props object (destructuring).</li>
+            <li>Inside the JSX, <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">{name}</code>, <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">{id}</code> and <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">{major}</code> show each value.</li>
+            <li><code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">StudentCardApp</code> uses the same component twice with different props, so one function gives two different cards.</li>
           </ul>
         </section>
 
@@ -47,8 +47,8 @@
         </section>
 
         <nav aria-label="Tasks" class="grid gap-3 border-t border-gray-200 pt-6 sm:grid-cols-2 dark:border-gray-800">
-          <a class="rounded-xl border border-gray-200 bg-white p-4 hover:border-indigo-500 dark:border-gray-800 dark:bg-[#1a1a22]" href="./task1.html"><small class="block text-gray-600 dark:text-gray-400">&larr; Previous</small><strong>Task 1 · Toggle visibility</strong></a>
-          <a class="rounded-xl border border-gray-200 bg-white p-4 text-right hover:border-indigo-500 sm:col-start-2 dark:border-gray-800 dark:bg-[#1a1a22]" href="./task3.html"><small class="block text-gray-600 dark:text-gray-400">Next &rarr;</small><strong>Task 3 · Scoreboard: lifting state up</strong></a>
+          <a class="rounded-xl border border-gray-200 bg-white p-4 hover:border-indigo-500 dark:border-gray-800 dark:bg-[#1a1a22]" href="./task1.html"><small class="block text-gray-600 dark:text-gray-400">&larr; Previous</small><strong>Task 1 · Your first component</strong></a>
+          <a class="rounded-xl border border-gray-200 bg-white p-4 hover:border-indigo-500 dark:border-gray-800 dark:bg-[#1a1a22] text-right sm:col-start-2" href="./task3.html"><small class="block text-gray-600 dark:text-gray-400">Next &rarr;</small><strong>Task 3 · ProductCard code challenge</strong></a>
         </nav>
       </main>
 

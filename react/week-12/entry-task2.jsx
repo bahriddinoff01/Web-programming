@@ -1,4 +1,4 @@
-import { mountTask } from "./page.jsx";
+import { mountTask } from "../src/page.jsx";
 import Task2 from "./Task2";
 import task2 from "./Task2.jsx?raw";
 

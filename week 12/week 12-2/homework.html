@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Week 12-2 homework: a React weather dashboard using the Open-Meteo API, with city or coordinate search and Use my location." />
+    <title>Homework · Weather dashboard | Week 12-2</title>
+    <link rel="icon" href="./assets/favicon-BKeWLYPp.svg" type="image/svg+xml" />
+    <script type="module" crossorigin src="./assets/homework-DcI9uS5h.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/page-CGXkMM0X.js">
+    <link rel="stylesheet" crossorigin href="./assets/page-diWN6QSC.css">
+  </head>
+  <body class="bg-[#f7f7fb] text-[#17161f] antialiased dark:bg-[#111117] dark:text-[#ececf3]">
+    <div class="mx-auto max-w-6xl px-5 sm:px-8">
+      <header class="pb-8 pt-10">
+        <nav aria-label="Breadcrumb" class="mb-6 text-sm text-gray-600 dark:text-gray-400">
+          <ol class="flex flex-wrap gap-2">
+            <li><a class="hover:text-indigo-700 dark:hover:text-indigo-300" href="../../main%20container/Main.html">Home</a> /</li>
+            <li><a class="hover:text-indigo-700 dark:hover:text-indigo-300" href="../../main%20container/Week12.html">Week 12</a> /</li>
+            <li><a class="hover:text-indigo-700 dark:hover:text-indigo-300" href="./index.html">Week 12-2</a> /</li>
+            <li><span aria-current="page" class="font-medium text-[#17161f] dark:text-[#ececf3]">Homework</span></li>
+          </ol>
+        </nav>
+        <p class="mb-3 text-xs font-bold uppercase tracking-[0.08em] text-indigo-700 dark:text-indigo-300">Week 12-2 · Homework</p>
+        <h1 class="mb-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Weather dashboard</h1>
+        <p class="max-w-3xl text-lg text-gray-600 dark:text-gray-400"><strong class="text-[#17161f] dark:text-[#ececf3]">Task:</strong> Show the current temperature, wind speed and weather description from the Open-Meteo API. Search by city name or by coordinates, fetch with useEffect whenever the search changes, and show loading and error states. Bonus: a “Use my location” button.</p>
+      </header>
+
+      <main class="space-y-10 pb-10">
+        <section aria-labelledby="result-title">
+          <h2 id="result-title" class="mb-3 text-xl font-bold">Live result</h2>
+          <div id="root" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6 dark:border-gray-800 dark:bg-[#1a1a22]">Loading…</div>
+        </section>
+
+        <section aria-labelledby="how-title">
+          <h2 id="how-title" class="mb-3 text-xl font-bold">How it works</h2>
+          <ul class="list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300">
+            <li><code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">WeatherDashboard</code> keeps one <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">query</code> state (a city, or coordinates). The effect depends on <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">[query]</code>, so every new search fetches again, and it starts with Seoul.</li>
+            <li>A city name is first turned into coordinates with the Open-Meteo geocoding API, then the forecast API returns the current weather; no API key is needed.</li>
+            <li>Errors each get a clear message: city not found, coordinates out of range (checked before fetching), too many requests, and no connection.</li>
+            <li>The cleanup aborts an unfinished request, so a slow old answer can't replace a newer search.</li>
+            <li>Bonus: “Use my location” asks the browser for its position with <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">navigator.geolocation</code> and handles a blocked permission.</li>
+            <li><code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">SearchForm</code> and <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">CurrentWeather</code> only receive props; the weather codes are turned into words and emoji in <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">weatherApi.js</code>.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="code-title">
+          <h2 id="code-title" class="mb-3 text-xl font-bold">Code</h2>
+          <div id="code"></div>
+        </section>
+
+        <nav aria-label="Tasks" class="grid gap-3 border-t border-gray-200 pt-6 sm:grid-cols-2 dark:border-gray-800">
+          <a class="rounded-xl border border-gray-200 bg-white p-4 hover:border-indigo-500 dark:border-gray-800 dark:bg-[#1a1a22]" href="./task6.html"><small class="block text-gray-600 dark:text-gray-400">&larr; Previous</small><strong>Task 6 · Character count with useEffect</strong></a>
+          <a class="rounded-xl border border-gray-200 bg-white p-4 hover:border-indigo-500 dark:border-gray-800 dark:bg-[#1a1a22] text-right sm:col-start-2" href="./index.html"><small class="block text-gray-600 dark:text-gray-400">Back to</small><strong>Week 12-2 &rarr;</strong></a>
+        </nav>
+      </main>
+
+      <footer class="border-t border-gray-200 py-8 text-sm text-gray-600 dark:border-gray-800 dark:text-gray-400">
+        &copy; 2026 Abdulazizbek &middot; ID 202537225 &middot; Computer Engineering, Gachon University
+      </footer>
+    </div>
+    <script src="../../assets/site.js" defer></script>
+  </body>
+</html>

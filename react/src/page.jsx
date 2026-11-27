@@ -1,8 +1,8 @@
-// Shared helper for the Week 11-2 pages:
+// Shared helper for the React task pages (Week 11-2, 12-1, 12-2):
 // renders a task into #root and its source files into #code.
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "../src/tailwind.css";
+import "./tailwind.css";
 
 function CodeBlocks({ files }) {
   return (

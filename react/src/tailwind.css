@@ -2,3 +2,6 @@
    Import it once in a page's entry file:  import "../src/tailwind.css";
    (Week 11-1 does not import it, so its design stays the same.) */
 @import "tailwindcss";
+
+/* The shared task-page helper lives outside each part's folder, so scan it too */
+@source "./page.jsx";

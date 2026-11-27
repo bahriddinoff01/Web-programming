@@ -1,4 +1,4 @@
-import { mountTask } from "./page.jsx";
+import { mountTask } from "../src/page.jsx";
 import ScoreBoard from "./ScoreBoard";
 import scoreBoard from "./ScoreBoard.jsx?raw";
 import playerScore from "./PlayerScore.jsx?raw";

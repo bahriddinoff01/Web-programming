@@ -3,26 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Week 11-2 homework: an interactive React shopping cart with a product list, quantity controls and a cart total." />
-    <title>Additional tasks · Interactive shopping cart | Week 11-2</title>
-    <script type="module" crossorigin src="./assets/task4-BG3IXgKZ.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/page-CtLDEyqN.js">
-    <link rel="stylesheet" crossorigin href="./assets/page-BSeQdBjy.css">
+    <meta name="description" content="Week 11-2 Task 4: rendering an array of students with .map() and a stable key." />
+    <title>Task 4 · Rendering a list with keys | Week 11-2</title>
+    <link rel="icon" href="./assets/favicon-BKeWLYPp.svg" type="image/svg+xml" />
+    <script type="module" crossorigin src="./assets/task4-ByrX9491.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/page-iZ2EYeiW.js">
+    <link rel="stylesheet" crossorigin href="./assets/page-Bi4E37oX.css">
   </head>
   <body class="bg-[#f7f7fb] text-[#17161f] antialiased dark:bg-[#111117] dark:text-[#ececf3]">
-    <div class="mx-auto max-w-6xl px-5 sm:px-8">
+    <div class="mx-auto max-w-4xl px-5 sm:px-8">
       <header class="pb-8 pt-10">
         <nav aria-label="Breadcrumb" class="mb-6 text-sm text-gray-600 dark:text-gray-400">
           <ol class="flex flex-wrap gap-2">
             <li><a class="hover:text-indigo-700 dark:hover:text-indigo-300" href="../../main%20container/Main.html">Home</a> /</li>
             <li><a class="hover:text-indigo-700 dark:hover:text-indigo-300" href="../../main%20container/Week11.html">Week 11</a> /</li>
             <li><a class="hover:text-indigo-700 dark:hover:text-indigo-300" href="./index.html">Week 11-2</a> /</li>
-            <li><span aria-current="page" class="font-medium text-[#17161f] dark:text-[#ececf3]">Additional tasks</span></li>
+            <li><span aria-current="page" class="font-medium text-[#17161f] dark:text-[#ececf3]">Task 4</span></li>
           </ol>
         </nav>
-        <p class="mb-3 text-xs font-bold uppercase tracking-[0.08em] text-indigo-700 dark:text-indigo-300">Week 11-2 · Additional tasks</p>
-        <h1 class="mb-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Interactive shopping cart</h1>
-        <p class="max-w-3xl text-lg text-gray-600 dark:text-gray-400"><strong class="text-[#17161f] dark:text-[#ececf3]">Task:</strong> Homework: a product list of at least 5 items (name, price, image URL), Add / Remove buttons, a cart sidebar with the total computed from state, + and − quantity controls per item, all inside a ShoppingCart component.</p>
+        <p class="mb-3 text-xs font-bold uppercase tracking-[0.08em] text-indigo-700 dark:text-indigo-300">Week 11-2 · Task 4</p>
+        <h1 class="mb-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Rendering a list with keys</h1>
+        <p class="max-w-3xl text-lg text-gray-600 dark:text-gray-400"><strong class="text-[#17161f] dark:text-[#ececf3]">Task:</strong> Render an array of students with .map(), giving every item a unique, stable key.</p>
       </header>
 
       <main class="space-y-10 pb-10">
@@ -34,10 +35,9 @@
         <section aria-labelledby="how-title">
           <h2 id="how-title" class="mb-3 text-xl font-bold">How it works</h2>
           <ul class="list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300">
-            <li><code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">ShoppingCart</code> is the parent: it owns the cart state (an array of items) and passes data and functions down to <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">ProductList</code> and <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">CartPanel</code>.</li>
-            <li>Adding a product that is already in the cart raises its quantity with <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">.map()</code> and the spread; a new product is added with <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">[...prev, …]</code>.</li>
-            <li>Remove uses <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">.filter()</code>; − lowers the quantity and an item that reaches 0 leaves the cart.</li>
-            <li>The total and the item count are computed from state with <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">.reduce()</code> every render, never stored separately.</li>
+            <li><code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">STUDENTS</code> is a plain array of objects, kept outside the component because it never changes.</li>
+            <li><code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">STUDENTS.map(...)</code> turns each object into an <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">&lt;li&gt;</code>, and React shows the whole array.</li>
+            <li>Each <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">&lt;li&gt;</code> gets <code class="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-gray-800">key={student.id}</code>. The key lets React tell items apart when the list changes; the array index is avoided because it changes when items move.</li>
           </ul>
         </section>
 
@@ -47,8 +47,8 @@
         </section>
 
         <nav aria-label="Tasks" class="grid gap-3 border-t border-gray-200 pt-6 sm:grid-cols-2 dark:border-gray-800">
-          <a class="rounded-xl border border-gray-200 bg-white p-4 hover:border-indigo-500 dark:border-gray-800 dark:bg-[#1a1a22]" href="./task3.html"><small class="block text-gray-600 dark:text-gray-400">&larr; Previous</small><strong>Task 3 · Scoreboard: lifting state up</strong></a>
-          <a class="rounded-xl border border-gray-200 bg-white p-4 text-right hover:border-indigo-500 sm:col-start-2 dark:border-gray-800 dark:bg-[#1a1a22]" href="./task5.html"><small class="block text-gray-600 dark:text-gray-400">Next &rarr;</small><strong>Task 5 · Counter with history &amp; undo</strong></a>
+          <a class="rounded-xl border border-gray-200 bg-white p-4 hover:border-indigo-500 dark:border-gray-800 dark:bg-[#1a1a22]" href="./task3.html"><small class="block text-gray-600 dark:text-gray-400">&larr; Previous</small><strong>Task 3 · ProductCard code challenge</strong></a>
+          <a class="rounded-xl border border-gray-200 bg-white p-4 hover:border-indigo-500 dark:border-gray-800 dark:bg-[#1a1a22] text-right sm:col-start-2" href="./task5.html"><small class="block text-gray-600 dark:text-gray-400">Next &rarr;</small><strong>Task 5 · Conditional rendering</strong></a>
         </nav>
       </main>
 

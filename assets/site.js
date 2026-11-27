@@ -29,8 +29,8 @@
         { n: 8,  title: "Forms & Validation",     path: "main container/Week8.html" },
         { n: 9,  title: "Accessibility",          path: "main container/Week9.html" },
         { n: 10, title: "Git, GitHub & Pages",    path: "main container/Week10.html" },
-        { n: 11, title: "React",                  path: "main container/Week11.html" },
-        { n: 12, title: "Coming soon",            path: "main container/Week12.html" }
+        { n: 11, title: "React components",       path: "main container/Week11.html" },
+        { n: 12, title: "State & effects",        path: "main container/Week12.html" }
     ];
 
     // Where the "back" link on an exercise page should go.
@@ -53,6 +53,8 @@
         ["week 11/week 11-1/", "week 11/week 11-1/index.html", "Week 11-1"],
         ["week 11/week 11-2/", "week 11/week 11-2/index.html", "Week 11-2"],
         ["week 11/",         "main container/Week11.html",  "Week 11"],
+        ["week 12/week 12-1/", "week 12/week 12-1/index.html", "Week 12-1"],
+        ["week 12/week 12-2/", "week 12/week 12-2/index.html", "Week 12-2"],
         ["week 12/",         "main container/Week12.html",  "Week 12"]
     ];
 

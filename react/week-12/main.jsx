@@ -1,4 +1,4 @@
-// Starts the Week 12 page and shows your tasks.
+// Dev page for Week 12-1: run npm run dev, then open /week-12/ to try your tasks.
 // Add your next tasks here when they're ready.
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
